@@ -70,6 +70,7 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
+        {/* 
         <motion.div
           className="mt-16 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl border border-border/50"
           initial={{ opacity: 0, y: 40 }}
@@ -77,6 +78,7 @@ export function HeroSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         />
+        */}
       </div>
     </section>
   )
