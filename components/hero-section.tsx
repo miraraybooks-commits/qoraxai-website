@@ -25,7 +25,7 @@ export function HeroSection() {
       id="hero"
     className="relative overflow-hidden bg-gradient-to-b from-gray-900 to-black pt-32 pb-24 text-center"
   >
-    <div className="absolute inset-0 -z-10">
+    <div className="absolute inset-0 bg-black/50 -z-10">
       <Image
         src="/banner.jpg" // or your correct path
         alt="QoraxAI Banner"
