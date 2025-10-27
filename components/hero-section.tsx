@@ -45,27 +45,26 @@ export function HeroSection() {
         >
           <motion.div className="space-y-4" variants={itemVariants}>
             <motion.h1
-              className="text-5xl md:text-7xl font-bold leading-tight text-balance text-white drop-shadow-lg"
+              className="text-5xl → sm:text-6xl → md:text-7xl font-bold leading-tight text-balance text-white drop-shadow-lg"
               variants={itemVariants}
             >
               We don't promise. We prove.
             </motion.h1>
-            <motion.p
-              className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto"
-              variants={itemVariants}
-            >
-              Cut tech costs 20–40%. Automate slow systems. Secure your data.
-            </motion.p>
-          </motion.div>
+           <motion.p
+            className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mt-6 sm:mt-8 leading-relaxed"
+            variants={itemVariants}
+          >
+            Cut tech costs 20–40%. Automate slow systems. Secure your data.
+          </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 sm:mt-10"
             variants={itemVariants}
           >
             <Link href="#contact">
               <Button
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 flex items-center gap-2"
+                className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-3 flex items-center gap-2 text-lg sm:text-xl"
               >
                 Get Free Tech Audit
                 <ArrowRight className="w-4 h-4" />
@@ -75,12 +74,13 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border border-gray-500 text-white hover:bg-gray-900/40 rounded-full px-8"
+                className="border border-gray-500 text-white hover:bg-gray-900/40 rounded-full px-8 py-3 text-lg sm:text-xl"
               >
                 Explore Services
               </Button>
             </Link>
           </motion.div>
+
         </motion.div>
       </div>
     </section>
