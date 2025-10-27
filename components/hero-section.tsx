@@ -28,7 +28,7 @@ export function HeroSection() {
       {/* ✅ Background banner */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/banner.jpg"   // ✅ Change to your actual image name & extension
+          src="/banner.jpg"   
           alt="QoraxAI Banner"
           fill
           priority
