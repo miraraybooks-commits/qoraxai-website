@@ -23,7 +23,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-        className="relative overflow-hidden bg-gradient-to-b from-gray-900 to-black text-center h-[600px]"
+        className="relative overflow-hidden bg-gradient-to-b from-gray-900 to-black text-center h-[600px] pt-[80px]"
       >
         <div className="absolute inset-0 z-0">
           <Image
