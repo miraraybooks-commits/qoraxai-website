@@ -23,18 +23,17 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden pt-32 pb-20 px-4 sm:px-6 lg:px-8"
-    >
-      {/* ✅ Background banner */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/banner.jpg"   
-          alt="QoraxAI Banner"
-          fill
-          priority
-          className="object-cover opacity-25"
-        />
-      </div>
+    className="relative overflow-hidden bg-gradient-to-b from-gray-900 to-black pt-32 pb-24 text-center"
+  >
+    <div className="absolute inset-0 -z-10">
+      <Image
+        src="/banner.jpg" // or your correct path
+        alt="QoraxAI Banner"
+        fill
+        priority
+        className="object-cover opacity-50"
+      />
+    </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
