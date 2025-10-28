@@ -18,18 +18,10 @@ export function Footer() {
             priority
             className="h-auto w-auto max-h-10 sm:max-h-12 md:max-h-14"/>
             <h3 className="font-bold mb-4">QoraxAI</h3>
-        </Link>
+          </Link>
             <p className="text-sm text-muted-foreground">Transform your business with cutting-edge AI solutions.</p>
           </div>
-          <div>
-            <h4 className="font-semibold mb-4">Contact & Info</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>🎯 Zone Tower, Senpara, Dhaka, Bangladesh</li>
-              <li>🌐 Website: <Link href="https://qoraxai.com" className="hover:text-foreground transition">qoraxai.com</Link></li>
-              <li>✉ Email: <Link href="mailto:sales@qoraxai.com" className="hover:text-foreground transition">sales@qoraxai.com</Link></li>
-              <li>💬 WhatsApp: <Link href="https://wa.me/8801718723202" className="hover:text-foreground transition">+880 1718 723202</Link></li>
-            </ul>
-          </div>
+          
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -68,6 +60,15 @@ export function Footer() {
                   Contact
                 </Link>
               </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4">Contact & Info</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>🎯 Zone Tower, Senpara, Dhaka, Bangladesh</li>
+              <li>🌐 Website: <Link href="https://qoraxai.com" className="hover:text-foreground transition">qoraxai.com</Link></li>
+              <li>✉ Email: <Link href="mailto:sales@qoraxai.com" className="hover:text-foreground transition">sales@qoraxai.com</Link></li>
+              <li>💬 WhatsApp: <Link href="https://wa.me/8801718723202" className="hover:text-foreground transition">+880 1718 723202</Link></li>
             </ul>
           </div>
         </div>

@@ -225,12 +225,12 @@ const COUNTRIES = [
 ]
 
 const SERVICES = [
-  "AI Consulting",
-  "Machine Learning Solutions",
-  "Data Analytics",
-  "Process Automation",
-  "Custom AI Development",
-  "AI Training & Workshops",
+  "Website Performance Check",
+  "Database Health & Performance",
+  "Cybersecurity Assessment",
+  "Power BI / MIS Dashboards",
+  "Company Cost-Optimization",
+  "Managed IT Services",
 ]
 
 export function ContactForm() {
