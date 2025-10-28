@@ -11,7 +11,7 @@ export function Header() {
 
         <Link href="/" className="flex items-center flex-shrink-0">
           <Image
-            src="/Logo_white-250x250.png"
+            src="/logo_white-250x250.png"
             alt="QoraxAI Logo"
             width={150}
             height={50}
