@@ -28,13 +28,6 @@ export function Footer() {
               <li>🌐 Website: <Link href="https://qoraxai.com" className="hover:text-foreground transition">qoraxai.com</Link></li>
               <li>✉ Email: <Link href="mailto:sales@qoraxai.com" className="hover:text-foreground transition">sales@qoraxai.com</Link></li>
               <li>💬 WhatsApp: <Link href="https://wa.me/8801718723202" className="hover:text-foreground transition">+880 1718 723202</Link></li>
-              <li>📢 Social Media: 
-                <span className="flex space-x-2 mt-1">
-                  <Link href="#" className="hover:text-foreground transition">Facebook</Link>
-                  <Link href="#" className="hover:text-foreground transition">LinkedIn</Link>
-                  <Link href="#" className="hover:text-foreground transition">Instagram</Link>
-                </span>
-              </li>
             </ul>
           </div>
           <div>
@@ -80,19 +73,18 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-sm items-center text-muted-foreground">© 2025 QoraxAI. All rights reserved.</p>
-          {/*<div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition">
-              Twitter
+          <p className="text-sm text-muted-foreground">© 2025 QoraxAI. All rights reserved.</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <Link href="https://www.facebook.com/QoraxAI/" className="text-muted-foreground hover:text-foreground transition">
+              Facebook
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition">
+            <Link href="http://linkedin.com/company/qoraxai" className="text-muted-foreground hover:text-foreground transition">
               LinkedIn
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition">
-              GitHub
+            <Link href="https://www.instagram.com/qoraxai" className="text-muted-foreground hover:text-foreground transition">
+              Instagram
             </Link> 
           </div>
-          */}
         </div>
       </div>
     </footer>
