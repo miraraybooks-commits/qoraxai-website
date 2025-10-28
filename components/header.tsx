@@ -1,17 +1,23 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export function Header() {
   return (
     <header className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-          <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">Q</span>
-          </div>
-          <span className="font-bold text-xl text-white hidden sm:inline">QoraxAI</span>
+
+        <Link href="/" className="flex items-center flex-shrink-0">
+          <Image
+            src="/Logo_white-250x250.png"
+            alt="QoraxAI Logo"
+            width={150}
+            height={50}
+            priority
+            className="h-auto w-auto max-h-10 sm:max-h-12 md:max-h-14"/>
+            <span className="font-bold text-xl text-white hidden sm:inline">QoraxAI</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 flex-1 justify-center">
