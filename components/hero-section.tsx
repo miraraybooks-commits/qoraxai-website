@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 export function HeroSection() {
   const containerVariants = {
@@ -27,10 +28,20 @@ export function HeroSection() {
   }
 
   return (
-    <section id="hero" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="hero" className="relative flex flex-col justify-center items-center text-center h-screen px-4 sm:px-6 lg:px-8 overflow-hidden">
+
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/banner.jpg"
+          alt="Hero Background"
+          fill
+          priority
+          className="object-cover opacity-50"
+        />
+      </div>
       <div className="max-w-7xl mx-auto">
         <motion.div
-          className="space-y-8 text-center"
+          className="space-y-10 text-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -43,7 +54,7 @@ export function HeroSection() {
             >
               We don't promise. We prove.
             </motion.h1>
-            <motion.p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto" variants={itemVariants}>
+            <motion.p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed" variants={itemVariants}>
               Cut tech costs 20–40%. Automate slow systems. Secure your data.
             </motion.p>
           </motion.div>
