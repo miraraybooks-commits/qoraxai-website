@@ -30,7 +30,7 @@ export function HeroSection() {
   return (
     <section id="hero" className="relative flex flex-col justify-center items-center text-center h-screen px-4 sm:px-6 lg:px-8 overflow-hidden">
 
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         <Image
           src="/banner.jpg"
           alt="Hero Background"
