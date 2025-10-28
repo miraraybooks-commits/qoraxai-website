@@ -49,7 +49,7 @@ export function HeroSection() {
         >
           <motion.div className="space-y-4" variants={itemVariants}>
             <motion.h1
-              className="text-5xl text-6xl sm:text-7xl md:text-8xl font-extrabold leading-[1.1] text-white drop-shadow-2xl tracking-tight"
+              className="text-5xl md:text-7xl font-bold leading-tight text-balance text-white"
               variants={itemVariants}
             >
               We don't promise. We prove.
