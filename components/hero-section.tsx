@@ -36,10 +36,10 @@ export function HeroSection() {
           alt="Hero Background"
           fill
           priority
-          className="object-cover opacity-50"
+          className="object-cover opacity-60"
         />
       </div>
-      <div className="max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
           className="space-y-10 text-center"
           variants={containerVariants}
