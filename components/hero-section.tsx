@@ -5,6 +5,8 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
+import Image from "next/image"
+
 
 export function HeroSection() {
   const containerVariants = {
@@ -48,6 +50,15 @@ export function HeroSection() {
           viewport={{ once: true }}
         >
           <motion.div className="space-y-4" variants={itemVariants}>
+            <motion.div variants={itemVariants} className="flex justify-center mb-6">
+              <Image
+                src="/Logo_white.png"
+                alt="QoraxAI Logo"
+                width={220}
+                height={80}
+                priority
+                className="h-auto w-auto max-h-16 sm:max-h-20 md:max-h-24"/>
+            </motion.div>
             <motion.h1
               className="text-5xl md:text-7xl font-bold leading-tight text-balance text-white"
               variants={itemVariants}
