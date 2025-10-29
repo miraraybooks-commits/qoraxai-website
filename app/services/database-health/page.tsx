@@ -42,7 +42,7 @@ export default function SQLDatabasePerformancePage() {
         {/* Hero Image */}
         <div className="relative w-full h-64 sm:h-80 md:h-96 mb-8 overflow-hidden rounded-2xl shadow-lg">
           <Image
-            src="/sql-database-performance.png"
+            src="/database-health.png"
             alt="SQL Database Health & Performance Check"
             fill
             className="object-cover object-center"
