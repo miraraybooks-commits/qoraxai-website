@@ -44,7 +44,7 @@ export function SolutionSection() {
   return (
     <section
       id="solution"
-      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[600px]"
     >
       {/* 🔹 Background image with reduced opacity */}
       <div
