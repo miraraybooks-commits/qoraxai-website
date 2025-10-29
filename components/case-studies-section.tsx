@@ -93,23 +93,26 @@ export function CaseStudiesSection() {
     {
       metric: "10L+",
       label: "New Monthly Revenue",
-      quote:
-        "Challenge: A leading logistics startup was losing time managing daily parcel operations.\n\nSolution: QoraxAI built a custom Parcel Pick & Drop system, fully automating booking, routing, and delivery tracking.\n\nResult: Generated 10+ lakh BDT/month in new recurring revenue and cut manual workload by 60% — turning operations into opportunity.",
+      quote: `Challenge: A leading logistics startup was losing time managing daily parcel operations.
+
+Solution: QoraxAI built a custom Parcel Pick & Drop system, fully automating booking, routing, and delivery tracking.
+
+Result: Generated 10+ lakh BDT per month in new recurring revenue and cut manual workload by 60% — turning operations into opportunity.`,
     },
     {
       metric: "30%",
       label: "Sales Growth",
-      quote:
-        "Challenge: A mid-sized retail brand struggled with slow reporting and scattered data.\n\nSolution: We implemented Power BI dashboards and optimized their SQL database, delivering real-time insights and faster access to critical data.\n\nResult: Achieved 30% sales growth and 3x faster processing — empowering leadership to make confident, data-driven decisions.",
+      quote: `Challenge: A mid-sized retail brand struggled with slow reporting and scattered data.
+
+Solution: We implemented Power BI dashboards and optimized their SQL database, delivering real-time insights and faster access to critical data.
+
+Result: Achieved 30% sales growth and 3x faster processing — empowering leadership to make confident, data-driven decisions.`,
     },
   ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   }
 
   const itemVariants = {
@@ -159,12 +162,13 @@ export function CaseStudiesSection() {
                   <p className="text-muted-foreground text-sm">{study.label}</p>
                 </div>
               </div>
-              <p
-                className="text-muted-foreground italic leading-relaxed"
-                style={{ whiteSpace: "pre-line" }}
-              >
-                {study.quote}
-              </p>
+
+              {/* Render each line of quote as a separate paragraph */}
+              {study.quote.split("\n").map((line, i) => (
+                <p key={i} className="text-muted-foreground italic leading-relaxed">
+                  {line}
+                </p>
+              ))}
             </motion.div>
           ))}
         </motion.div>
