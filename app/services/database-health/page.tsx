@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Cost Optimization – Save 20–40% on IT for Bangladeshi SMEs | QoraxAI",
+  description: "QoraxAI helps Bangladeshi SMEs cut IT costs 20–40% by identifying underused subscriptions, cloud waste, and redundant IT expenses. Get a free tech audit today.",
+}
+
 export default function DatabaseHealthPage() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">

@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "QoraxAI - Advanced AI Platform",
-  description: "Transform your business with cutting-edge AI solutions",
+  title: "QoraxAI: IT Audit to Cut Costs & Drive Growth for Bangladeshi SMEs",
+  description: "QoraxAI helps SMEs cut operating costs 20–40% through IT audits, automation, and AI solutions. Boost growth today.",
   generator: "v0.app",
 }
 
