@@ -82,6 +82,7 @@ export function CaseStudiesSection() {
   )
 }
 */}
+
 "use client"
 
 import { motion } from "framer-motion"
@@ -164,7 +165,10 @@ Result: 📈 Achieved 30% sales growth and 3x faster processing — empowering l
                   <p className="text-muted-foreground text-sm">{study.label}</p>
                 </div>
               </div>
-              <p className="text-muted-foreground italic leading-relaxed" style={{ whiteSpace: "pre-line" }}>
+              <p
+                className="text-muted-foreground italic leading-relaxed"
+                style={{ whiteSpace: "pre-line" }}
+              >
                 {study.quote}
               </p>
             </motion.div>
