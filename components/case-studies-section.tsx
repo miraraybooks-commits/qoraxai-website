@@ -6,15 +6,15 @@ import { TrendingUp } from "lucide-react"
 export function CaseStudiesSection() {
   const caseStudies = [
     {
-      metric: "40%",
-      label: "Cost Reduction",
+      metric: "10L+",
+      label: "New Monthly Revenue",
       quote:
-        "QoraxAI helped us eliminate redundant systems and cut our tech spending significantly while improving performance.",
+        "QoraxAI built a custom Parcel Pick & Drop system that automated operations and unlocked over 10 lakh BDT in new monthly revenue while cutting manual work by 60%.",
     },
     {
       metric: "3x",
-      label: "Faster Processing",
-      quote: "Their database optimization work transformed our operations. What used to take hours now takes minutes.",
+      label: "Sales Growth",
+      quote: "By implementing Power BI dashboards and optimizing their SQL database, QoraxAI helped the client achieve 30% sales growth and 3x faster reporting — turning data into decisions.",
     },
   ]
 
