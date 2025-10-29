@@ -44,11 +44,11 @@ export function SolutionSection() {
   return (
     <section
       id="solution"
-      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[600px]"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[300px] sm:min-h-[500px] md:min-h-[600px]"
     >
       {/* 🔹 Background image with reduced opacity */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-40"
+        className="absolute inset-0 bg-contain sm:bg-cover bg-center opacity-40"
         style={{ backgroundImage: "url('/our-solution.png')" }}
       ></div>
 
