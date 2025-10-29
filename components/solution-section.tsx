@@ -48,7 +48,7 @@ export function SolutionSection() {
     >
       {/* 🔹 Background image with reduced opacity */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-20"
+        className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: "url('/sur-solution.png')" }}
       ></div>
 
