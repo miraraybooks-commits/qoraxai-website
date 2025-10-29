@@ -42,8 +42,21 @@ export function SolutionSection() {
   }
 
   return (
-    <section id="solution" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="solution"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
+      {/* 🔹 Background image with reduced opacity */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-20"
+        style={{ backgroundImage: "url('/sur-solution.png')" }}
+      ></div>
+
+      {/* 🔹 Optional darker overlay (can adjust opacity or remove if not needed) */}
+      <div className="absolute inset-0 bg-black/30"></div>
+
+      {/* 🔹 Content Layer */}
+      <div className="relative max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -51,9 +64,12 @@ export function SolutionSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-foreground mb-4">Our Solution</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4">
+            Our Solution
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We combine fractional CTO expertise with proven tech efficiency strategies to transform your business
+            We combine fractional CTO expertise with proven tech efficiency
+            strategies to transform your business
           </p>
         </motion.div>
 
@@ -69,11 +85,13 @@ export function SolutionSection() {
             return (
               <motion.div
                 key={index}
-                className="p-8 bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-xl text-center"
+                className="p-8 bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-xl text-center relative z-10"
                 variants={itemVariants}
               >
                 <Icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  {feature.title}
+                </h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </motion.div>
             )
