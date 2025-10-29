@@ -112,10 +112,7 @@ Result: 📈 Achieved 30% sales growth and 3x faster processing — empowering l
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   }
 
   const itemVariants = {
@@ -134,10 +131,10 @@ Result: 📈 Achieved 30% sales growth and 3x faster processing — empowering l
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Case Studies & Results
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Real results from real clients
           </p>
         </motion.div>
@@ -153,22 +150,19 @@ Result: 📈 Achieved 30% sales growth and 3x faster processing — empowering l
           {caseStudies.map((study, index) => (
             <motion.div
               key={index}
-              className="p-8 bg-background border border-border rounded-lg"
+              className="p-8 bg-white border border-gray-200 rounded-lg"
               variants={itemVariants}
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <TrendingUp className="w-6 h-6 text-primary" />
+                <div className="p-3 bg-blue-100 rounded-lg">
+                  <TrendingUp className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <p className="text-4xl font-bold text-primary">{study.metric}</p>
-                  <p className="text-muted-foreground text-sm">{study.label}</p>
+                  <p className="text-4xl font-bold text-blue-600">{study.metric}</p>
+                  <p className="text-gray-600 text-sm">{study.label}</p>
                 </div>
               </div>
-              <p
-                className="text-muted-foreground italic leading-relaxed"
-                style={{ whiteSpace: "pre-line" }}
-              >
+              <p className="text-gray-600 italic leading-relaxed" style={{ whiteSpace: "pre-line" }}>
                 {study.quote}
               </p>
             </motion.div>
