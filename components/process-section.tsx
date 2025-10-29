@@ -48,17 +48,11 @@ export function ProcessSection() {
       id="process"
       className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
-      {/* ==== Background Gradient ==== */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1f] via-[#0c1533] to-[#0a0f1f]" />
+      {/* === Decorative Circles (Glow Backgrounds) === */}
+      <div className="absolute -top-32 -left-32 w-[400px] h-[400px] bg-primary/20 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 -right-32 w-[400px] h-[400px] bg-blue-600/20 rounded-full blur-[120px]" />
 
-      {/* ==== Curved Overlay (top + bottom arcs) ==== */}
-      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-[#11224a]/70 to-transparent rounded-b-[50%]" />
-      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#11224a]/70 to-transparent rounded-t-[50%]" />
-
-      {/* ==== Subtle Tech Lines Overlay ==== */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#1e2a4a_1px,transparent_1px)] bg-[size:40px_40px] opacity-10" />
-
-      {/* ==== Content ==== */}
+      {/* === Content === */}
       <div className="relative max-w-7xl mx-auto text-center text-white z-10">
         <motion.div
           className="mb-16"
