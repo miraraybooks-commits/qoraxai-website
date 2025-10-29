@@ -95,7 +95,7 @@ export function CaseStudiesSection() {
       label: "New Monthly Revenue",
       quote: `Challenge: A leading logistics startup was losing time managing daily parcel operations.
 
-Solution: QoraxAI built a custom “Parcel Pick & Drop” system, fully automating booking, routing, and delivery tracking.
+Solution: QoraxAI built a custom 'Parcel Pick & Drop' system, fully automating booking, routing, and delivery tracking.
 
 Result: 🚀 Generated 10+ lakh BDT/month in new recurring revenue and cut manual workload by 60% — turning operations into opportunity.`,
     },
