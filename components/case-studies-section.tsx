@@ -75,8 +75,10 @@ export function CaseStudiesSection() {
               </div>
               <p className="text-muted-foreground italic">{study.quote}</p>
             </motion.div>
+            <p className="text-muted-foreground">Test</p>
           ))}
         </motion.div>
+        <p className="text-muted-foreground">sdfsdfsdfsdfsd</p>
       </div>
     </section>
   )
