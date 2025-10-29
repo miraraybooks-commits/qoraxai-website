@@ -62,7 +62,7 @@ export default function ManagedITServicesPage() {
 
         <div className="relative h-72 sm:h-96 lg:h-[420px] overflow-hidden rounded-2xl shadow-lg">
           <Image
-            src="/managed-it.png"
+            src="/managed-it.jpg"
             alt="Power Managed IT Services"
             fill
             className="object-cover object-center"
