@@ -1,5 +1,6 @@
 import type React from "react"
 import { Geist, Geist_Mono } from "next/font/google"
+import { GoogleTagManager } from '@next/third-parties/google';
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
