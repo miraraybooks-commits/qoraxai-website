@@ -140,44 +140,21 @@ export function SolutionSection() {
     visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.45 } },
   }
 
-  // Safe inline styles using only widely supported CSS
-  const foregroundColor = "var(--foreground)"
-  const textColorStyle = { color: foregroundColor }
-  const mutedTextColorStyle = { color: "rgba(255, 255, 255, 0.75)" } // assumes light text on dark bg
-  const plateStyle = {
-    backgroundColor: "rgba(255, 255, 255, 0.06)",
-  }
-  const iconBgStyle = {
-    backgroundColor: "rgba(255, 255, 255, 0.08)",
-  }
-  const bgImageStyle = {
-    backgroundImage: "url('/our-solution.png')",
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-  }
-
   return (
     <section
       id="solution"
-      className="relative py-16 px-4 sm:py-20 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative py-16 px-4 sm:py-20 sm:px-6 lg:px-8 overflow-hidden bg-background"
       aria-labelledby="solution-heading"
     >
       {/* Background Image */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 opacity-40"
-        style={bgImageStyle}
+        className="absolute inset-0 opacity-40 bg-[url('/our-solution.png')] bg-center bg-cover"
       />
 
       {/* Plate */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div
-          className="rounded-3xl shadow-xl w-11/12 md:w-4/5 lg:w-3/4"
-          style={{
-            ...plateStyle,
-            minHeight: 220,
-          }}
-        />
+        <div className="rounded-3xl shadow-xl w-11/12 md:w-4/5 lg:w-3/4 h-[220px] bg-white/5" />
       </div>
 
       {/* Content */}
@@ -191,12 +168,11 @@ export function SolutionSection() {
         >
           <h2
             id="solution-heading"
-            className="text-3xl sm:text-4xl font-bold mb-3"
-            style={textColorStyle}
+            className="text-3xl sm:text-4xl font-bold mb-3 text-foreground"
           >
             Our Solution
           </h2>
-          <p className="max-w-2xl mx-auto text-sm sm:text-base" style={mutedTextColorStyle}>
+          <p className="max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground">
             We combine fractional CTO expertise with proven tech efficiency strategies to transform your business.
           </p>
         </motion.div>
@@ -213,18 +189,18 @@ export function SolutionSection() {
             return (
               <motion.div
                 key={idx}
-                className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5"
+                className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm"
                 variants={itemVariants}
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-none w-12 h-12 rounded-lg flex items-center justify-center" style={iconBgStyle}>
-                    <Icon className="w-6 h-6" style={textColorStyle} />
+                  <div className="flex-none w-12 h-12 rounded-lg bg-white/8 flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-1" style={textColorStyle}>
+                    <h3 className="text-lg font-semibold mb-1 text-foreground">
                       {feature.title}
                     </h3>
-                    <p className="text-sm" style={mutedTextColorStyle}>
+                    <p className="text-sm text-muted-foreground">
                       {feature.description}
                     </p>
                   </div>
