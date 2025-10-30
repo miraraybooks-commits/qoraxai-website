@@ -44,7 +44,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mb-0 pb-0 mx-auto">
         <motion.div
           className="space-y-10 text-center"
           variants={containerVariants}
