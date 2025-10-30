@@ -357,168 +357,170 @@ export function ContactForm() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <div className="space-y-8 border border-gray-600">
-            {/* Name and Email */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <motion.div className="space-y-3" variants={itemVariants}>
-                <Label htmlFor="name" className="text-base font-semibold">
-                  Name *
-                </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="Your full name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base"
-                />
-              </motion.div>
-              <motion.div className="space-y-3" variants={itemVariants}>
-                <Label htmlFor="email" className="text-base font-semibold">
-                  Email *
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base"
-                />
-              </motion.div>
-            </div>
+        <div className="border border-gray-600 rounded-lg p-4">
+            <div className="space-y-8">
+              {/* Name and Email */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <motion.div className="space-y-3" variants={itemVariants}>
+                  <Label htmlFor="name" className="text-base font-semibold">
+                    Name *
+                  </Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="Your full name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base"
+                  />
+                </motion.div>
+                <motion.div className="space-y-3" variants={itemVariants}>
+                  <Label htmlFor="email" className="text-base font-semibold">
+                    Email *
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="your@email.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base"
+                  />
+                </motion.div>
+              </div>
 
-            {/* Mobile with Country Code */}
-            <div className="grid md:grid-cols-2 gap-6">
+              {/* Mobile with Country Code */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <motion.div className="space-y-3" variants={itemVariants}>
+                  <Label htmlFor="countryCode" className="text-base font-semibold">
+                    Country Code *
+                  </Label>
+                  <select
+                    id="countryCode"
+                    name="countryCode"
+                    value={formData.countryCode}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-background/50 border border-border/50 rounded-lg px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 h-11 text-base"
+                  >
+                    {COUNTRIES.map((country) => (
+                      <option key={country.code + country.name} value={country.code}>
+                        {country.flag} {country.name} ({country.code})
+                      </option>
+                    ))}
+                  </select>
+                </motion.div>
+                <motion.div className="space-y-3" variants={itemVariants}>
+                  <Label htmlFor="mobile" className="text-base font-semibold">
+                    Mobile Number *
+                  </Label>
+                  <div className="flex gap-2">
+                    <div className="flex items-center px-4 py-2.5 bg-background/50 border border-border/50 rounded-lg text-foreground font-semibold min-w-fit">
+                      {selectedCountry?.flag} {formData.countryCode}
+                    </div>
+                    <Input
+                      id="mobile"
+                      name="mobile"
+                      placeholder="1234567890"
+                      value={formData.mobile}
+                      onChange={handleChange}
+                      required
+                      className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base flex-1"
+                    />
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Company Name */}
               <motion.div className="space-y-3" variants={itemVariants}>
-                <Label htmlFor="countryCode" className="text-base font-semibold">
-                  Country Code *
+                <Label htmlFor="company" className="text-base font-semibold">
+                  Company Name *
+                </Label>
+                <Input
+                  id="company"
+                  name="company"
+                  placeholder="Your company name"
+                  value={formData.company}
+                  onChange={handleChange}
+                  required
+                  className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base"
+                />
+              </motion.div>
+
+              {/* Service Dropdown */}
+              <motion.div className="space-y-3" variants={itemVariants}>
+                <Label htmlFor="service" className="text-base font-semibold">
+                  Service of Interest *
                 </Label>
                 <select
-                  id="countryCode"
-                  name="countryCode"
-                  value={formData.countryCode}
+                  id="service"
+                  name="service"
+                  value={formData.service}
                   onChange={handleChange}
                   required
                   className="w-full bg-background/50 border border-border/50 rounded-lg px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 h-11 text-base"
                 >
-                  {COUNTRIES.map((country) => (
-                    <option key={country.code + country.name} value={country.code}>
-                      {country.flag} {country.name} ({country.code})
+                  <option value="">Select a service...</option>
+                  {SERVICES.map((service) => (
+                    <option key={service} value={service}>
+                      {service}
                     </option>
                   ))}
                 </select>
               </motion.div>
+
+              {/* Description */}
               <motion.div className="space-y-3" variants={itemVariants}>
-                <Label htmlFor="mobile" className="text-base font-semibold">
-                  Mobile Number *
+                <Label htmlFor="description" className="text-base font-semibold">
+                  Description *
                 </Label>
-                <div className="flex gap-2">
-                  <div className="flex items-center px-4 py-2.5 bg-background/50 border border-border/50 rounded-lg text-foreground font-semibold min-w-fit">
-                    {selectedCountry?.flag} {formData.countryCode}
-                  </div>
-                  <Input
-                    id="mobile"
-                    name="mobile"
-                    placeholder="1234567890"
-                    value={formData.mobile}
-                    onChange={handleChange}
-                    required
-                    className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base flex-1"
-                  />
-                </div>
+                <textarea
+                  id="description"
+                  name="description"
+                  placeholder="Tell us about your needs and what you're looking to achieve..."
+                  value={formData.description}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full bg-background/50 border border-border/50 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 text-base resize-none"
+                />
+              </motion.div>
+
+              {error && (
+                <motion.div
+                  className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                >
+                  <p className="text-sm text-destructive font-medium">{error}</p>
+                </motion.div>
+              )}
+              {success && (
+                <motion.div
+                  className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                >
+                  <p className="text-sm text-green-500 font-medium">
+                    Thank you! Check your email for confirmation. We'll be in touch soon.
+                  </p>
+                </motion.div>
+              )}
+
+              <motion.div variants={itemVariants}>
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-12 text-base transition-all duration-200 shadow-lg hover:shadow-xl"
+                >
+                  {isLoading ? "Submitting..." : "Request Free Tech Audit"}
+                </Button>
               </motion.div>
             </div>
-
-            {/* Company Name */}
-            <motion.div className="space-y-3" variants={itemVariants}>
-              <Label htmlFor="company" className="text-base font-semibold">
-                Company Name *
-              </Label>
-              <Input
-                id="company"
-                name="company"
-                placeholder="Your company name"
-                value={formData.company}
-                onChange={handleChange}
-                required
-                className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base"
-              />
-            </motion.div>
-
-            {/* Service Dropdown */}
-            <motion.div className="space-y-3" variants={itemVariants}>
-              <Label htmlFor="service" className="text-base font-semibold">
-                Service of Interest *
-              </Label>
-              <select
-                id="service"
-                name="service"
-                value={formData.service}
-                onChange={handleChange}
-                required
-                className="w-full bg-background/50 border border-border/50 rounded-lg px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 h-11 text-base"
-              >
-                <option value="">Select a service...</option>
-                {SERVICES.map((service) => (
-                  <option key={service} value={service}>
-                    {service}
-                  </option>
-                ))}
-              </select>
-            </motion.div>
-
-            {/* Description */}
-            <motion.div className="space-y-3" variants={itemVariants}>
-              <Label htmlFor="description" className="text-base font-semibold">
-                Description *
-              </Label>
-              <textarea
-                id="description"
-                name="description"
-                placeholder="Tell us about your needs and what you're looking to achieve..."
-                value={formData.description}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="w-full bg-background/50 border border-border/50 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 text-base resize-none"
-              />
-            </motion.div>
-
-            {error && (
-              <motion.div
-                className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                <p className="text-sm text-destructive font-medium">{error}</p>
-              </motion.div>
-            )}
-            {success && (
-              <motion.div
-                className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                <p className="text-sm text-green-500 font-medium">
-                  Thank you! Check your email for confirmation. We'll be in touch soon.
-                </p>
-              </motion.div>
-            )}
-
-            <motion.div variants={itemVariants}>
-              <Button
-                type="submit"
-                disabled={isLoading}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-12 text-base transition-all duration-200 shadow-lg hover:shadow-xl"
-              >
-                {isLoading ? "Submitting..." : "Request Free Tech Audit"}
-              </Button>
-            </motion.div>
-          </div>
+        </div>
         </motion.form>
       </div>
     </section>
