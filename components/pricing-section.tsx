@@ -88,14 +88,25 @@ export function PricingSection() {
               <div className="mb-6">
                 <span className="text-4xl font-bold">{plan.price}</span>
               </div>
-              <Button
+              {/*<Button
                 className={`w-full mb-6 ${
                   plan.highlighted
                     ? "bg-blue-600 hover:bg-blue-700 text-white"
                     : "bg-blue-600 hover:bg-blue-700 text-white"
                 }`}>
                 <Link href="https://wa.me/8801718723202" className="hover:text-foreground transition">Request Pricing</Link>
+              </Button>*/}
+              <Button
+                asChild
+                className="w-full mb-6 bg-blue-600 hover:bg-blue-700 text-white"              >
+                <a
+                  href="https://wa.me/8801718723202"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Request Pricing
+                </a>
               </Button>
+
               <ul className="space-y-3">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm">
