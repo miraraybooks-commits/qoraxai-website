@@ -132,54 +132,50 @@ export function SolutionSection() {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
   }
 
   return (
     <section
       id="solution"
       className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
-      aria-labelledby="solution-heading"
     >
-      {/* Background image (behind everything) */}
+      {/* Background Image */}
       <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-center bg-cover opacity-40"
+        className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: "url('/our-solution.png')" }}
-      />
+      ></div>
 
-      {/* Semi-transparent plate centered in the section (in front of bg, behind content) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div
-          className="w-[92%] md:w-[86%] lg:w-[78%] bg-blue-600/55 backdrop-blur-sm rounded-3xl border border-white/20 shadow-xl"
-          style={{ minHeight: 280 }}
-        />
+      {/* Blue Plate (in front of background, behind content) */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="bg-blue-600 bg-opacity-70 rounded-3xl shadow-lg w-11/12 md:w-4/5 h-4/5"></div>
       </div>
 
-      {/* Content (on top of plate) */}
+      {/* Content */}
       <div className="relative max-w-7xl mx-auto text-center z-10">
         <motion.div
-          className="mb-12"
-          initial={{ opacity: 0, y: 18 }}
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 id="solution-heading" className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Our Solution
           </h2>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            We combine fractional CTO expertise with proven tech efficiency strategies to transform your business.
+            We combine fractional CTO expertise with proven tech efficiency
+            strategies to transform your business.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid gap-8 md:grid-cols-3"
+          className="grid md:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -190,18 +186,14 @@ export function SolutionSection() {
             return (
               <motion.div
                 key={index}
-                className="p-6 bg-white/6 rounded-2xl border border-white/10 text-left text-white shadow-sm"
+                className="p-8 bg-white bg-opacity-10 rounded-2xl border border-white/20 text-white shadow-md"
                 variants={itemVariants}
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex-none w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-1">{feature.title}</h3>
-                    <p className="text-white/90">{feature.description}</p>
-                  </div>
-                </div>
+                <Icon className="w-12 h-12 text-white mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-white/90">{feature.description}</p>
               </motion.div>
             )
           })}
