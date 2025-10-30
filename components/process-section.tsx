@@ -17,7 +17,7 @@ export function ProcessSection() {
     {
       number: "03",
       title: "Implementation",
-      description: "Execute the plan with minimal disruption to your operations",
+      description: "Execute the plan smoothly and efficiently with minimal disruption to your operations.",
     },
     {
       number: "04",
