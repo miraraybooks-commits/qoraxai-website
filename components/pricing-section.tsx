@@ -93,9 +93,8 @@ export function PricingSection() {
                   plan.highlighted
                     ? "bg-blue-600 hover:bg-blue-700 text-white"
                     : "bg-blue-600 hover:bg-blue-700 text-white"
-                }`}
-              >
-                Request Pricing
+                }`}>
+                <Link href="https://wa.me/8801718723202" className="hover:text-foreground transition">Request Pricing</Link>
               </Button>
               <ul className="space-y-3">
                 {plan.features.map((feature, i) => (
