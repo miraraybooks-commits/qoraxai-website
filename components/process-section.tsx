@@ -68,7 +68,7 @@ export function ProcessSection() {
         >
           {steps.map((step, index) => (
             <motion.div key={index} className="relative" variants={itemVariants}>
-              <div className="p-8 bg-background border border-border rounded-lg">
+              <div className="p-8 bg-background border border-gray-600 rounded-lg">
                 {/* Large blue number */}
                 <div className="text-5xl font-bold text-primary mb-6">{step.number}</div>
 
