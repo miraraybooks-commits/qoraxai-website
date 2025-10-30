@@ -68,23 +68,23 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div
-            className="flex flex-wrap justify-center gap-3 mt-6"
+            className="flex flex-nowrap justify-center gap-2 mt-6 flex-col sm:flex-row sm:gap-3"
             variants={itemVariants}
           >
             <Link href="#contact">
               <Button
                 size="lg"
-                className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
+                className="bg-blue-600 text-white px-3 sm:px-5 py-2 rounded-lg hover:bg-blue-700 transition text-sm sm:text-base"
               >
                 Get Free Tech Audit
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 ml-1" />
               </Button>
             </Link>
             <Link href="#services">
               <Button
                 size="lg"
                 variant="outline"
-                className="border border-gray-400 text-gray-200 px-5 py-2 rounded-lg hover:bg-gray-800 transition"
+                className="border border-gray-400 text-gray-200 px-3 sm:px-5 py-2 rounded-lg hover:bg-gray-800 transition text-sm sm:text-base"
               >
                 Explore Services
               </Button>
