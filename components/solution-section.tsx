@@ -109,105 +109,88 @@ export function SolutionSection() {
 "use client"
 
 import { motion } from "framer-motion"
-import { Users, Zap, Lock } from "lucide-react"
 
 export function SolutionSection() {
-  const features = [
-    {
-      icon: Users,
-      title: "Fractional CTO",
-      description: "Expert guidance without the full-time cost",
-    },
-    {
-      icon: Zap,
-      title: "Tech Efficiency",
-      description: "Streamlined systems that actually work",
-    },
-    {
-      icon: Lock,
-      title: "Automation",
-      description: "Smart workflows that save time and money",
-    },
-  ]
-
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.18 } },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 10, scale: 0.98 },
-    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.45 } },
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.6 },
+    },
   }
 
   return (
     <section
       id="solution"
-      className="relative py-16 px-4 sm:py-20 sm:px-6 lg:px-8 overflow-hidden bg-background"
-      aria-labelledby="solution-heading"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[300px] sm:min-h-[500px] md:min-h-[600px]"
     >
-      {/* Background Image */}
+
       <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-40 bg-[url('/our-solution.png')] bg-center bg-cover"
-      />
+        className="absolute inset-0 bg-contain sm:bg-cover bg-center bg-no-repeat opacity-40"
+        style={{ backgroundImage: "url('/our-solution.png')" }}>
+          <span className="sr-only">
+            Illustration showing QoraxAI's IT solutions and services for business optimization
+          </span>
+        </div>
 
-      {/* Plate */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="rounded-3xl shadow-xl w-11/12 md:w-4/5 lg:w-3/4 h-[220px] bg-white/5" />
-      </div>
 
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto z-10">
+      <div className="absolute inset-0 bg-blue-600/80 rounded-3xl"></div>
+
+
+      <div className="relative max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-10 sm:mb-14"
-          initial={{ opacity: 0, y: 16 }}
+          className="text-center mb-8"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2
-            id="solution-heading"
-            className="text-3xl sm:text-4xl font-bold mb-3 text-foreground"
-          >
-            Our Solution
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Subscribe to Our Newsletter
           </h2>
-          <p className="max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground">
-            We combine fractional CTO expertise with proven tech efficiency strategies to transform your business.
-          </p>
         </motion.div>
 
         <motion.div
-          className="grid gap-6 sm:gap-8 md:grid-cols-3"
+          className="flex flex-col items-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {features.map((feature, idx) => {
-            const Icon = feature.icon
-            return (
-              <motion.div
-                key={idx}
-                className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm"
-                variants={itemVariants}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-none w-12 h-12 rounded-lg bg-white/8 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1 text-foreground">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            )
-          })}
+          <motion.form
+            className="flex flex-col sm:flex-row items-center gap-4 mb-4 w-full max-w-2xl"
+            variants={itemVariants}
+          >
+            <input
+              type="email"
+              placeholder="Enter your Email"
+              className="flex-grow px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-500 border-none focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 rounded-lg bg-black text-white font-semibold hover:bg-gray-800 transition-colors"
+            >
+              Subscribe Now →
+            </button>
+          </motion.form>
+
+          <motion.p
+            className="text-sm text-white/80 max-w-2xl text-center"
+            variants={itemVariants}
+          >
+            Refer to our Privacy Policy for data management specifics
+          </motion.p>
         </motion.div>
       </div>
     </section>
