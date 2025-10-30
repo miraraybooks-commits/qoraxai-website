@@ -8,17 +8,17 @@ export function SolutionSection() {
     {
       icon: Users,
       title: "Fractional CTO",
-      description: "Expert guidance without the full-time cost",
+      description: "Get strategic technology leadership — without the cost of a full-time executive. We guide your business in choosing the right tech stack, setting digital priorities, and aligning every IT investment with your growth goals.",
     },
     {
       icon: Zap,
       title: "Tech Efficiency",
-      description: "Streamlined systems that actually work",
+      description: "We streamline your entire IT ecosystem by removing redundancy, improving integration, and optimizing performance. The result: systems that actually work together — faster, lighter, and more cost-effective.",
     },
     {
       icon: Lock,
       title: "Automation",
-      description: "Smart workflows that save time and money",
+      description: "We design smart, automated workflows that replace repetitive manual work. From data handling to approvals, automation frees your team to focus on innovation and high-value tasks — saving time and reducing human error.",
     },
   ]
 
@@ -71,8 +71,7 @@ export function SolutionSection() {
             Our Solution
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We combine fractional CTO expertise with proven tech efficiency
-            strategies to transform your business
+            We combine Fractional CTO expertise with proven tech efficiency strategies to transform your business — helping you scale smarter, cut waste, and achieve measurable results faster.
           </p>
         </motion.div>
 
