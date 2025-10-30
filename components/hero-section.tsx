@@ -31,7 +31,7 @@ export function HeroSection() {
     <section
       id="hero"
       {/*className="relative flex flex-col justify-center items-center text-center min-h-[50vh] sm:min-h-[80vh] px-4 sm:px-6 lg:px-8 overflow-hidden">*/}
-      className="relative flex flex-col justify-center items-center text-center min-h-[50vh] sm:min-h-[80vh] px-4 sm:px-6 lg:px-8 overflow-hidden pt-20 sm:pt-24">
+      className="relative flex flex-col justify-center items-center text-center min-h-[50vh] sm:min-h-[80vh] px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
