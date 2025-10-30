@@ -30,7 +30,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex flex-col justify-center items-center text-center min-h-[60vh] sm:min-h-screen px-4 sm:px-6 lg:px-8 overflow-hidden">
+      className="relative flex flex-col justify-center items-center text-center min-h-fit sm:min-h-screen px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
