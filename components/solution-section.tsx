@@ -87,7 +87,7 @@ export function SolutionSection() {
             return (
               <motion.div
                 key={index}
-                className="p-8 bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-xl text-center relative z-10"
+                className="p-8 bg-gradient-to-br from-primary/10 to-transparent border border-primary/60 rounded-xl text-center relative z-10"
                 variants={itemVariants}
               >
                 <Icon className="w-12 h-12 text-primary mx-auto mb-4" />
