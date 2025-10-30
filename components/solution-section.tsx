@@ -145,7 +145,7 @@ export function SolutionSection() {
         </div>
 
 
-      <div className="absolute inset-0 bg-blue-600/80 rounded-3xl"></div>
+      <div className="absolute inset-0 bg-[oklch(0.08_0_0)/0.8] rounded-3xl"></div>
 
 
       <div className="relative max-w-7xl mx-auto">
@@ -156,7 +156,7 @@ export function SolutionSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-[oklch(0.98_0_0)] mb-4">
             Subscribe to Our Newsletter
           </h2>
         </motion.div>
@@ -175,18 +175,18 @@ export function SolutionSection() {
             <input
               type="email"
               placeholder="Enter your Email"
-              className="flex-grow px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-500 border-none focus:outline-none focus:ring-2 focus:ring-white"
+              className="flex-grow px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-500 border-none focus:outline-none focus:ring-2 focus:ring-[oklch(0.98_0_0)]"
             />
             <button
               type="submit"
-              className="px-6 py-3 rounded-lg bg-black text-white font-semibold hover:bg-gray-800 transition-colors"
+              className="px-6 py-3 rounded-lg bg-black text-[oklch(0.98_0_0)] font-semibold hover:bg-gray-800 transition-colors"
             >
               Subscribe Now →
             </button>
           </motion.form>
 
           <motion.p
-            className="text-sm text-white/80 max-w-2xl text-center"
+            className="text-sm text-[oklch(0.98_0_0)/0.8] max-w-2xl text-center"
             variants={itemVariants}
           >
             Refer to our Privacy Policy for data management specifics
