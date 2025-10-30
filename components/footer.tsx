@@ -39,11 +39,6 @@ export function Footer() {
                 <Link href="#case-studies" className="hover:text-foreground transition">
                   Case Studies
                 </Link>
-              <li/>
-              <li>
-                <Link href="#pricing" className="hover:text-foreground transition">
-                  Pricing
-                </Link>
               </li>
             </ul>
           </div>
