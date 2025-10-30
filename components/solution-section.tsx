@@ -132,68 +132,101 @@ export function SolutionSection() {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+    visible: { opacity: 1, transition: { staggerChildren: 0.18 } },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, y: 10, scale: 0.98 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.45 } },
+  }
+
+  // inline style values that reference your CSS variables and use safe alpha fallbacks
+  const textColorStyle = { color: "var(--foreground)" } // your project sets --foreground
+  const plateStyle = {
+    backgroundColor: "rgba(255,255,255,0.06)", // subtle light plate on dark background
+    // if you prefer a darker plate, change to rgba(0,0,0,0.45)
+  }
+  const bgImageStyle = {
+    backgroundImage: "url('/our-solution.png')",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
   }
 
   return (
     <section
       id="solution"
-      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative py-16 px-4 sm:py-20 sm:px-6 lg:px-8 overflow-hidden"
+      aria-labelledby="solution-heading"
     >
-      {/* Background Image */}
+      {/* Background Image (behind everything) */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-40"
-        style={{ backgroundImage: "url('/our-solution.png')" }}
-      ></div>
+        aria-hidden="true"
+        className="absolute inset-0 opacity-40"
+        style={bgImageStyle}
+      />
 
-      {/* Blue Plate (in front of background, behind content) */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="bg-blue-600 bg-opacity-70 rounded-3xl shadow-lg w-11/12 md:w-4/5 h-4/5"></div>
+      {/* Plate centered (in front of bg, behind content) */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div
+          className="rounded-3xl shadow-xl w-11/12 md:w-4/5 lg:w-3/4"
+          style={{
+            ...plateStyle,
+            minHeight: 220,
+          }}
+        />
       </div>
 
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto text-center z-10">
+      {/* Content (on top of plate) */}
+      <div className="relative max-w-7xl mx-auto z-10">
         <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mb-10 sm:mb-14"
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2
+            id="solution-heading"
+            className="text-3xl sm:text-4xl font-bold mb-3"
+            style={textColorStyle}
+          >
             Our Solution
           </h2>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            We combine fractional CTO expertise with proven tech efficiency
-            strategies to transform your business.
+          <p className="max-w-2xl mx-auto text-sm sm:text-base" style={textColorStyle}>
+            We combine fractional CTO expertise with proven tech efficiency strategies to transform your business.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-3 gap-8"
+          className="grid gap-6 sm:gap-8 md:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {features.map((feature, index) => {
+          {features.map((feature, idx) => {
             const Icon = feature.icon
             return (
               <motion.div
-                key={index}
-                className="p-8 bg-white bg-opacity-10 rounded-2xl border border-white/20 text-white shadow-md"
+                key={idx}
+                className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/5"
                 variants={itemVariants}
               >
-                <Icon className="w-12 h-12 text-white mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-white/90">{feature.description}</p>
+                <div className="flex items-start gap-4">
+                  <div className="flex-none w-12 h-12 rounded-lg flex items-center justify-center"
+                       style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                    <Icon className="w-6 h-6" style={{ color: "var(--foreground)" }} />
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1" style={textColorStyle}>
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm" style={{ color: "color-mix(in srgb, var(--foreground) 75%, transparent)" }}>
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             )
           })}
