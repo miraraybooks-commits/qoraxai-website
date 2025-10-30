@@ -38,7 +38,7 @@ export function HeroSection() {
           alt="AI‑powered IT services platform for small and medium businesses in Bangladesh"
           fill
           priority
-          className="object-contain sm:object-cover object-center opacity-60"
+          className="object-cover object-center opacity-60"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
         />
       </div>
