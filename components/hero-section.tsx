@@ -52,15 +52,15 @@ export function HeroSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.div className="space-y-4" variants={itemVariants}>
+          <motion.div className="space-y-4 text-center" variants={itemVariants}>
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white"
               variants={itemVariants}
             >
               We don't promise. We prove.
             </motion.h1>
             <motion.p
-              className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
               Cut tech costs 20–40%. Automate slow systems. Secure your data.
@@ -68,13 +68,13 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-wrap justify-center gap-3 mt-6"
             variants={itemVariants}
           >
             <Link href="#contact">
               <Button
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 flex items-center gap-2"
+                className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
               >
                 Get Free Tech Audit
                 <ArrowRight className="w-4 h-4" />
@@ -84,7 +84,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border border-gray-600 text-white hover:bg-gray-900/50 rounded-full px-8 bg-transparent"
+                className="border border-gray-400 text-gray-200 px-5 py-2 rounded-lg hover:bg-gray-800 transition"
               >
                 Explore Services
               </Button>
