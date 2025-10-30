@@ -23,10 +23,10 @@ export default function RootLayout({
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
           </head>
-          <GoogleTagManager gtmId="GTM-P2ZSVZXQ" />
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
+        <GoogleTagManager gtmId="GTM-P2ZSVZXQ" />
       </body>
     </html>
   )
