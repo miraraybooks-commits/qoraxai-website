@@ -133,7 +133,7 @@ export function SolutionSection() {
   return (
     <section
       id="solution"
-      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[300px] sm:min-h-[500px] md:min-h-[600px]"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-background"
     >
 
       <div
