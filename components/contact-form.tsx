@@ -351,13 +351,13 @@ export function ContactForm() {
 
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-gradient-to-br from-background to-background/50 border border-gray-600 rounded-2xl p-8 md:p-12 shadow-lg backdrop-blur-sm"
+          className="bg-gradient-to-br from-background to-background/50 border border-border/50 rounded-2xl p-8 md:p-12 shadow-lg backdrop-blur-sm"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <div className="space-y-8">
+          <div className="space-y-8 border border-gray-600">
             {/* Name and Email */}
             <div className="grid md:grid-cols-2 gap-6">
               <motion.div className="space-y-3" variants={itemVariants}>
