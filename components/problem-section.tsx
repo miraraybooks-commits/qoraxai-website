@@ -69,7 +69,7 @@ export function ProblemSection() {
             return (
               <motion.div
                 key={index}
-                className="p-8 bg-background border border-border rounded-xl hover:border-primary/50 transition-colors"
+                className="p-8 bg-background border border-gray-600 rounded-xl hover:border-primary/50 transition-colors"
                 variants={itemVariants}
               >
                 <Icon className="w-12 h-12 text-primary mb-4" />
