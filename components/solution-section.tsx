@@ -1,4 +1,4 @@
-{/*"use client"
+"use client"
 
 import { motion } from "framer-motion"
 import { Users, Zap, Lock } from "lucide-react"
@@ -99,98 +99,6 @@ export function SolutionSection() {
               </motion.div>
             )
           })}
-        </motion.div>
-      </div>
-    </section>
-  )
-}
-*/}
-
-"use client"
-
-import { motion } from "framer-motion"
-
-export function SolutionSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.6 },
-    },
-  }
-
-  return (
-    <section
-      id="solution"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-background"
-    >
-
-      <div
-        className="absolute inset-0 bg-contain sm:bg-cover bg-center bg-no-repeat opacity-40"
-        style={{ backgroundImage: "url('/our-solution.png')" }}>
-          <span className="sr-only">
-            Illustration showing QoraxAI's IT solutions and services for business optimization
-          </span>
-        </div>
-
-
-      <div className="absolute inset-0 bg-[oklch(0.08_0_0)/0.8] rounded-3xl"></div>
-
-
-      <div className="relative max-w-7xl mx-auto">
-        <motion.div
-          className="text-center mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl font-bold text-[oklch(0.98_0_0)] mb-4">
-            Subscribe to Our Newsletter
-          </h2>
-        </motion.div>
-
-        <motion.div
-          className="flex flex-col items-center"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.form
-            className="flex flex-col sm:flex-row items-center gap-4 mb-4 w-full max-w-2xl"
-            variants={itemVariants}
-          >
-            <input
-              type="email"
-              placeholder="Enter your Email"
-              className="flex-grow px-4 py-3 rounded-lg bg-white text-gray-800 placeholder-gray-500 border-none focus:outline-none focus:ring-2 focus:ring-[oklch(0.98_0_0)]"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-lg bg-black text-[oklch(0.98_0_0)] font-semibold hover:bg-gray-800 transition-colors"
-            >
-              Subscribe Now →
-            </button>
-          </motion.form>
-
-          <motion.p
-            className="text-sm text-[oklch(0.98_0_0)/0.8] max-w-2xl text-center"
-            variants={itemVariants}
-          >
-            Refer to our Privacy Policy for data management specifics
-          </motion.p>
         </motion.div>
       </div>
     </section>
