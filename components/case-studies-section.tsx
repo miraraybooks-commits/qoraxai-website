@@ -61,7 +61,7 @@ export function CaseStudiesSection() {
           {caseStudies.map((study, index) => (
             <motion.div
               key={index}
-              className="p-8 bg-background border border-border rounded-lg"
+              className="p-8 bg-background border border-gray-600 rounded-lg"
               variants={itemVariants}
             >
               <div className="flex items-start gap-4 mb-6">

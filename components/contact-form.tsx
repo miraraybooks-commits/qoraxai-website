@@ -351,7 +351,7 @@ export function ContactForm() {
 
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-gradient-to-br from-background to-background/50 border border-border/50 rounded-2xl p-8 md:p-12 shadow-lg backdrop-blur-sm"
+          className="bg-gradient-to-br from-background to-background/50 border border-gray-600 rounded-2xl p-8 md:p-12 shadow-lg backdrop-blur-sm"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
