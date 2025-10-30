@@ -8,17 +8,17 @@ export function ProblemSection() {
     {
       icon: AlertCircle,
       title: "Slow Systems",
-      description: "Legacy infrastructure draining productivity and revenue",
+      description: "Legacy infrastructure and poorly integrated tools drag down productivity. Every second wasted on loading screens, manual data entry, or broken workflows adds up to lost hours — and lost revenue. Your team spends more time fighting systems than serving customers, slowing your entire business momentum.",
     },
     {
       icon: TrendingUp,
       title: "High Tech Costs",
-      description: "Overspending on tools and services that don't deliver ROI",
+      description: "Many companies overspend on disconnected software, redundant subscriptions, and underused services. Instead of driving growth, their tech stack drains budgets without delivering measurable ROI. You end up paying more for less — with no clear visibility into what’s actually working.",
     },
     {
       icon: Zap,
       title: "Manual Chaos",
-      description: "Repetitive tasks consuming time and creating errors",
+      description: "Repetitive tasks and paper-based or spreadsheet-driven processes lead to delays, errors, and burnout. Manual approvals, data re-entry, and inconsistent reporting not only waste time but also increase the risk of mistakes that can cost customers or compliance issues. Your people want to innovate — but they’re trapped maintaining systems that should already be automated.",
     },
   ]
 
@@ -53,7 +53,7 @@ export function ProblemSection() {
         >
           <h2 className="text-4xl font-bold text-foreground mb-4">The Problem</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Most businesses are losing money to outdated systems and inefficient processes
+            Most businesses are quietly losing money to outdated systems and inefficient workflows — not because they lack talent, but because their technology hasn’t kept up with their growth.
           </p>
         </motion.div>
 
