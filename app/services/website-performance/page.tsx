@@ -79,7 +79,7 @@ export default function WebsitePerformanceCheckPage() {
         <div className="relative h-72 sm:h-96 lg:h-[420px] overflow-hidden rounded-2xl shadow-lg">
           <Image
             src="/website-performance.png"
-            alt="Website Performance Check"
+            alt="Analysis of website loading speed, uptime, and overall performance"
             fill
             className="object-cover object-center"
             priority

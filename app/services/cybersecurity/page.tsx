@@ -44,7 +44,7 @@ export default function CybersecurityAssessmentPage() {
         <div className="relative w-full h-64 sm:h-80 md:h-96 mb-8 overflow-hidden rounded-2xl shadow-lg">
           <Image
             src="/cybersecurity.png"
-            alt="Cybersecurity Assessment by QoraxAI"
+            alt="Digital security and protection against cyber threats"
             fill
             className="object-cover object-center"
             priority

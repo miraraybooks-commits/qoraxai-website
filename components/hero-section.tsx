@@ -35,7 +35,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/banner.jpg"
-          alt="Hero Background"
+          alt="AI‑powered IT services platform for small and medium businesses in Bangladesh"
           fill
           priority
           className="object-contain sm:object-cover object-center opacity-60"
