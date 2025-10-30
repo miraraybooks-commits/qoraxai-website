@@ -9,12 +9,12 @@ export function CaseStudiesSection() {
       metric: "10L+",
       label: "New Monthly Revenue",
       quote:
-        "Challenge: A leading logistics startup was losing time managing daily parcel operations. Solution: QoraxAI built a custom “Parcel Pick & Drop” system, fully automating booking, routing, and delivery tracking.Result: 🚀 Generated 10+ lakh BDT/month in new recurring revenue and cut manual workload by 60% — turning operations into opportunity.",
+        "Challenge: A leading logistics company was losing time managing daily parcel operations. Solution: QoraxAI built a custom “Parcel Pick & Drop” system, fully automating booking, routing, and delivery tracking. Result: Generated 10+ lakh BDT/month in new recurring revenue and cut manual workload by 60% — turning operations into opportunity.",
     },
     {
       metric: "3x",
       label: "Sales Growth",
-      quote: "Challenge: A mid-sized retail brand struggled with slow reporting and scattered data. Solution: We implemented Power BI dashboards and optimized their SQL database, delivering real-time insights and faster access to critical data. Result: 📈 Achieved 30% sales growth and 3x faster processing — empowering leadership to make confident, data-driven decisions.",
+      quote: "Challenge: A mid-sized retail brand struggled with slow reporting and scattered data. Solution: We implemented Power BI dashboards and optimized their SQL database, delivering real-time insights and faster access to critical data. Result: Achieved 30% sales growth and 3x faster processing — empowering leadership to make confident, data-driven decisions.",
     },
   ]
 
