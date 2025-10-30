@@ -52,7 +52,7 @@ export function HeroSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.div className="space-y-2 sm:space-y-3 md:space-y-4 text-center" variants={itemVariants}>
+          <motion.div className="space-y-2 sm:space-y-3 md:space-y-4 text-center mb-0 pb-0" variants={itemVariants}>
             <motion.h1
               className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white"
               variants={itemVariants}>
