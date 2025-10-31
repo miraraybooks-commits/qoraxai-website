@@ -12,11 +12,11 @@ export default function Privacy() {
       </Head>
 
       <main className="max-w-4xl mx-auto px-6 py-16">
-        <h1 className="text-4xl font-bold mb-6 text-gray-900">
+        <h1 className="text-4xl font-bold mb-6 text-white">
           Privacy Policy
         </h1>
 
-        <p className="text-gray-700 mb-4">
+        <p className="text-white/90 mb-4">
           At <strong>Qorax AI</strong>, your privacy is important to us. This
           Privacy Policy explains how we collect, use, and protect your personal
           information when you use our website and services.
