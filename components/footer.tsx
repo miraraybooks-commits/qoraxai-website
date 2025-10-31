@@ -57,7 +57,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="#" className="hover:text-foreground transition">
-                  Careers
+                  Complete Guides for company cost Savings
                 </Link>
               </li>
             </ul>

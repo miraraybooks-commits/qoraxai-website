@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://qoraxai.com/</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://qoraxai.com/website-performance</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://qoraxai.com/database-health</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://qoraxai.com/cybersecurity</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://qoraxai.com/dashboarding</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://qoraxai.com/cost-optimization</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://qoraxai.com/managed-it</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://qoraxai.com/terms</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://qoraxai.com/privacy</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>0.50</priority>
+  </url>
+
+</urlset>
