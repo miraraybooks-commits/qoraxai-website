@@ -55,7 +55,7 @@ export default function CompanyCostOptimizationPage() {
         {/* Image */}
         <div className="relative w-full h-64 sm:h-80 md:h-96 mb-16 overflow-hidden rounded-2xl shadow-lg">
           <Image
-            src="/cost-optimization.png"
+            src="/cost-optimization.webp"
             alt="Abstract concept of reducing company costs and improving operational efficiency"
             fill
             className="object-cover object-center"

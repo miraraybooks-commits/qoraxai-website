@@ -49,7 +49,7 @@ export function SolutionSection() {
 
       <div
         className="absolute inset-0 bg-contain sm:bg-cover bg-center bg-no-repeat opacity-40"
-        style={{ backgroundImage: "url('/our-solution.png')" }}>
+        style={{ backgroundImage: "url('/our-solution.webp')" }}>
           <span className="sr-only">
             Illustration showing QoraxAI's IT solutions and services for business optimization
           </span>

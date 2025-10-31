@@ -64,7 +64,7 @@ export default function PowerBIDashboardingPage() {
 
         <div className="relative h-72 sm:h-96 lg:h-[420px] overflow-hidden rounded-2xl shadow-lg">
           <Image
-            src="/bi-dashboard.jpg"
+            src="/bi-dashboard.webp"
             alt="Power BI dashboard showing company performance metrics and insights"
             fill
             className="object-cover object-center"

@@ -43,7 +43,7 @@ export default function CybersecurityAssessmentPage() {
         {/* Hero Image */}
         <div className="relative w-full h-64 sm:h-80 md:h-96 mb-8 overflow-hidden rounded-2xl shadow-lg">
           <Image
-            src="/cybersecurity.png"
+            src="/cybersecurity.webp"
             alt="Digital security and protection against cyber threats"
             fill
             className="object-cover object-center"
