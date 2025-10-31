@@ -39,7 +39,7 @@ export default function CostSavingsGuidePage() {
         <ul className="list-disc list-inside text-white/90 mb-4">
           <li>Use a CDN and cache aggressively to reduce server load and bandwidth cost.</li>
           <li>Optimize images, lazy-load assets and minimise JavaScript to speed up the experience.</li>
-          <li>Monitor site performance (Lighthouse, Web Vitals) and set targets (eg. <2 s load time).</li>
+          <li>Monitor site performance (Lighthouse, Web Vitals) and set targets (eg. Less 2s load time).</li>
         </ul>
         <p className="text-white/90 mb-4">
           <strong>Bangladeshi Example:</strong> A Dhaka-based e-commerce venture saw server costs drop by ~30% after switching to a caching + CDN strategy and reducing bounce rates by 25%, leading to more purchases per visitor.
