@@ -190,7 +190,7 @@ export default function CostSavingsGuidePage() {
         <p className="text-white/90 mb-6">
           Talk to our expert team at Qorax AI and let’s build a roadmap for your business that delivers savings, speed, and security.
         </p>
-        <a href="/contact" className="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">
+        <a href="/#contact" className="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">
           Contact Us Today
         </a>
       </section>
