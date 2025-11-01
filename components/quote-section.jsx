@@ -22,36 +22,75 @@
 // 4. You can customize colors, padding, or typography via Tailwind classes below.
 // 5. Accessibility: quote is wrapped in <blockquote> with role and a visually-hidden citation label.
 
-import React from 'react';
+"use client"
 
-export default function QuoteSection() {
+import { motion } from "framer-motion"
+
+export function QuoteSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12 },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 8 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  }
+
   return (
-    <section aria-labelledby="qoraxai-quote" className="bg-gradient-to-r from-white via-gray-50 to-white">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <svg className="mx-auto mb-4 h-8 w-8 text-gray-300" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <path d="M7.17 6A4.17 4.17 0 0 0 3 10.17v3.16A4.17 4.17 0 0 0 7.17 17.5H9.5v-6H7.17zM17.17 6A4.17 4.17 0 0 0 13 10.17v3.16A4.17 4.17 0 0 0 17.17 17.5H19.5v-6H17.17z" fill="currentColor" />
-          </svg>
+    <section id="quote" className="py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Intro / heading (animated) */}
+        <motion.div
+          className="text-center mb-8"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="text-2xl font-semibold text-foreground">What our results look like</h3>
+        </motion.div>
 
-          <blockquote className="relative text-gray-800 text-lg sm:text-xl leading-relaxed italic">
-            <p id="qoraxai-quote" className="px-4 sm:px-6 lg:px-8">
+        {/* Quote card/container */}
+        <motion.div
+          className="mx-auto max-w-3xl"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.blockquote
+            className="relative bg-background border border-gray-600 rounded-lg p-8 shadow-sm"
+            variants={itemVariants}
+            aria-labelledby="qoraxai-quote"
+          >
+            {/* decorative quote mark */}
+            <svg
+              className="absolute -top-3 left-6 h-8 w-8 text-primary/60"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden
+            >
+              <path d="M7.17 6A4.17 4.17 0 0 0 3 10.17v3.16A4.17 4.17 0 0 0 7.17 17.5H9.5v-6H7.17zM17.17 6A4.17 4.17 0 0 0 13 10.17v3.16A4.17 4.17 0 0 0 17.17 17.5H19.5v-6H17.17z" fill="currentColor"/>
+            </svg>
+
+            <p id="qoraxai-quote" className="text-lg sm:text-xl leading-relaxed italic text-gray-800 px-2">
               “In 2024 alone, QoraxAI helped 15+ companies reduce IT spending by an average of 32% — without changing their teams or tools.”
             </p>
-          </blockquote>
 
-          <footer className="mt-6">
-            <div className="text-sm text-gray-500">QoraxAI Impact Report</div>
-          </footer>
-        </div>
-      </div>
-
-      {/* Decorative underline */}
-      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
-        <div className="h-1 bg-gradient-to-r from-transparent via-gray-200 to-transparent rounded mt-2" aria-hidden />
+            <footer className="mt-6 pl-2">
+              <div className="text-sm text-muted-foreground">QoraxAI Impact Report</div>
+            </footer>
+          </motion.blockquote>
+        </motion.div>
       </div>
     </section>
-  );
+  )
 }
+
 
 /*
 Styling notes & variations
