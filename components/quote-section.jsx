@@ -77,7 +77,7 @@ export function QuoteSection() {
               <path d="M7.17 6A4.17 4.17 0 0 0 3 10.17v3.16A4.17 4.17 0 0 0 7.17 17.5H9.5v-6H7.17zM17.17 6A4.17 4.17 0 0 0 13 10.17v3.16A4.17 4.17 0 0 0 17.17 17.5H19.5v-6H17.17z" fill="currentColor"/>
             </svg>
 
-            <p id="qoraxai-quote" className="text-lg sm:text-xl leading-relaxed italic text-gray-800 px-2">
+            <p id="qoraxai-quote" className="text-lg sm:text-xl leading-relaxed italic text-white px-2">
               “In 2024 alone, QoraxAI helped 15+ companies reduce IT spending by an average of 32% — without changing their teams or tools.”
             </p>
 
