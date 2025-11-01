@@ -1,11 +1,11 @@
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { QuoteSection } from "@/components/quote-section"
+import { CaseStudiesSection } from "@/components/case-studies-section"
 import { ProblemSection } from "@/components/problem-section"
 import { SolutionSection } from "@/components/solution-section"
 import { ServicesSection } from "@/components/services-section"
 import { ProcessSection } from "@/components/process-section"
-import { CaseStudiesSection } from "@/components/case-studies-section"
 import { DifferentiatorsSection } from "@/components/differentiators-section"
 import { PricingSection } from "@/components/pricing-section"
 import { FAQSection } from "@/components/faq-section"
@@ -19,11 +19,11 @@ export default function Home() {
       <Header />
       <HeroSection />
       <QuoteSection />
+      <CaseStudiesSection />
       <ProblemSection />
       <SolutionSection />
       <ServicesSection />
       <ProcessSection />
-      <CaseStudiesSection />
       <DifferentiatorsSection />
       <PricingSection />
       <FAQSection />
