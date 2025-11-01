@@ -62,7 +62,7 @@ export function HeroSection() {
               className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              Cut tech costs 20–40%. Automate slow systems. Secure your data.
+              We helps Bangladeshi SMEs and enterprises cut tech costs 20–40%, automate operations, and secure their data — with Fractional CTO expertise you can trust.
             </motion.p>
           </motion.div>
 
