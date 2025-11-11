@@ -94,7 +94,7 @@ export function DifferentiatorsSection() {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-2xl font-bold text-foreground text-gray-800 mb-4">Meet Our Founder</h3>
-            <p className="text-muted-foreground text-gray-800 mb-4">
+            <p className="text-gray-800 mb-4">
               With 20+ years of IT leadership experience, our founder brings deep expertise in enterprise systems,
               digital transformation, and business optimization.
             </p>
