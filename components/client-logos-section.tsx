@@ -57,13 +57,11 @@ import Image from "next/image"
 
 export function ClientLogosSection() {
   const logos = [
-    "/logos/google.png",
-    "/logos/microsoft.png",
-    "/logos/ibm.png",
-    "/logos/amazon.png",
-    "/logos/facebook.png",
-    "/logos/adobe.png",
-    "/logos/netflix.png",
+    "/client-logos/hooversagro.png",
+    "/client-logos/laenterprise.png",
+    "/client-logos/holyday.png",
+    "/client-logos/logo-dark.png",
+    "/client-logos/Logo-Home.png",
   ]
 
   return (
