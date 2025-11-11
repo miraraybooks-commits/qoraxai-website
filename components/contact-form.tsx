@@ -360,7 +360,7 @@ export function ContactForm() {
         <div className="border border-gray-600 bg-gray-50 rounded-lg p-4">
             <div className="space-y-8">
               {/* Name and Email */}
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid bg-gray-50 md:grid-cols-2 gap-6">
                 <motion.div className="space-y-3" variants={itemVariants}>
                   <Label htmlFor="name" className="text-base font-semibold">
                     Name *
