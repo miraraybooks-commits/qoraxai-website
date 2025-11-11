@@ -372,7 +372,7 @@ export function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-background/10 border-border/10 focus:border-primary/10 focus:ring-primary/10 h-11 text-base"
+                    className="bg-background/20 border-border/20 focus:border-primary/20 focus:ring-primary/20 h-11 text-base"
                   />
                 </motion.div>
                 <motion.div className="space-y-3" variants={itemVariants}>
@@ -387,7 +387,7 @@ export function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-background/10 border-border/10 focus:border-primary/10 focus:ring-primary/10 h-11 text-base"
+                    className="bg-background/20 border-border/20 focus:border-primary/20 focus:ring-primary/20 h-11 text-base"
                   />
                 </motion.div>
               </div>
@@ -404,7 +404,7 @@ export function ContactForm() {
                     value={formData.countryCode}
                     onChange={handleChange}
                     required
-                    className="w-full bg-background/10 border border-border/10 rounded-lg px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary/10 h-11 text-base"
+                    className="w-full bg-background/20 border border-border/20 rounded-lg px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/20 h-11 text-base"
                   >
                     {COUNTRIES.map((country) => (
                       <option key={country.code + country.name} value={country.code}>
