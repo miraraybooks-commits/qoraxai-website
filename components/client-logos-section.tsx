@@ -6,6 +6,9 @@ export function ClientLogosSection() {
   const logos = [
     "/client-logos/hooversagro.png",
     "/client-logos/laenterprise.png",
+    "/client-logos/holyday.png",
+    "/client-logos/logo-dark.png",
+    "/client-logos/Logo-Home.png",
   ]
 
   return (
