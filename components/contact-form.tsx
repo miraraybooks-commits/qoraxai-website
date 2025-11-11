@@ -372,7 +372,7 @@ export function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base"
+                    className="bg-background/20 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base"
                   />
                 </motion.div>
                 <motion.div className="space-y-3" variants={itemVariants}>
