@@ -56,13 +56,13 @@ export function DifferentiatorsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-foreground mb-4">Why Choose Us</h2>
+          <h2 className="text-4xl font-bold text-foreground text-gray-800 mb-4">Why Choose Us</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             20+ years of IT leadership and proven expertise
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center text-gray-800">
           <motion.div
             className="space-y-6"
             variants={containerVariants}
