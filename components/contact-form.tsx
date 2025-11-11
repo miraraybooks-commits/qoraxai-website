@@ -372,7 +372,7 @@ export function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-background/20 border-border/20 focus:border-primary/20 focus:ring-primary/20 h-11 text-base"
+                    className="bg-background/10 border-border/10 focus:border-primary/10 focus:ring-primary/10 h-11 text-base"
                   />
                 </motion.div>
                 <motion.div className="space-y-3" variants={itemVariants}>
@@ -387,7 +387,7 @@ export function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-background/20 border-border/20 focus:border-primary/20 focus:ring-primary/20 h-11 text-base"
+                    className="bg-background/10 border-border/10 focus:border-primary/10 focus:ring-primary/10 h-11 text-base"
                   />
                 </motion.div>
               </div>
