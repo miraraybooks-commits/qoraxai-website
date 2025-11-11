@@ -357,7 +357,7 @@ export function ContactForm() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-        <div className="border border-gray-600 rounded-lg p-4">
+        <div className="border border-gray-600 bg-gray-50 rounded-lg p-4">
             <div className="space-y-8">
               {/* Name and Email */}
               <div className="grid md:grid-cols-2 gap-6">

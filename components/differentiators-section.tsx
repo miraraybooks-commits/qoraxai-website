@@ -98,7 +98,7 @@ export function DifferentiatorsSection() {
               With 20+ years of IT leadership experience, our founder brings deep expertise in enterprise systems,
               digital transformation, and business optimization.
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-gray-800">
               Dedicated to helping SMEs leverage technology for sustainable growth and competitive advantage.
             </p>
           </motion.div>
