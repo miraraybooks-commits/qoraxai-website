@@ -17,7 +17,7 @@ export function ClientLogosSection() {
         <h2 className="text-center text-4xl font-bold text-foreground mb-10 text-gray-800">
           Trusted by Our Clients
         </h2>
-        <p className="text-muted-foreground mb-10">
+        <p className="text-muted-foreground mb-10 text-gray-600">
           We’re proud to have partnered with innovative brands worldwide.
         </p>
 
