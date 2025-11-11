@@ -87,7 +87,7 @@ export function DifferentiatorsSection() {
           </motion.div>
 
           <motion.div
-            className="bg-gradient-to-br from-black-300 to-blue-400 border border-gray-400 rounded-lg p-8"
+            className="bg-gradient-to-br from-black-300 to-blue-350 border border-gray-300 rounded-lg p-8"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
