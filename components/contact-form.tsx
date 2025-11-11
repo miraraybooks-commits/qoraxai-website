@@ -404,7 +404,7 @@ export function ContactForm() {
                     value={formData.countryCode}
                     onChange={handleChange}
                     required
-                    className="w-full bg-background/20 border border-border/20 rounded-lg px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/20 h-11 text-base"
+                    className="w-full bg-background/20 border border-border/20 rounded-lg px-4 py-2.5 text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/20 h-11 text-base"
                   >
                     {COUNTRIES.map((country) => (
                       <option key={country.code + country.name} value={country.code}>
@@ -418,7 +418,7 @@ export function ContactForm() {
                     Mobile Number *
                   </Label>
                   <div className="flex gap-2">
-                    <div className="flex items-center px-4 py-2.5 bg-background/20 border border-border/20 rounded-lg text-foreground font-semibold min-w-fit">
+                    <div className="flex items-center px-4 py-2.5 bg-background/20 border border-border/20 rounded-lg text-muted-foreground font-semibold min-w-fit">
                       {selectedCountry?.flag} {formData.countryCode}
                     </div>
                     <Input
@@ -428,7 +428,7 @@ export function ContactForm() {
                       value={formData.mobile}
                       onChange={handleChange}
                       required
-                      className="bg-background/20 border-border/20 text-foreground focus:border-primary/20 focus:ring-primary/20 h-11 text-base flex-1"
+                      className="bg-background/20 border-border/20 focus:border-primary/20 focus:ring-primary/20 h-11 text-base flex-1"
                     />
                   </div>
                 </motion.div>
@@ -461,7 +461,7 @@ export function ContactForm() {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  className="w-full bg-background/20 border border-border/20 rounded-lg px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/20 h-11 text-base"
+                  className="w-full bg-background/20 border border-border/20 rounded-lg px-4 py-2.5 text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/20 h-11 text-base"
                 >
                   <option value="">Select a service...</option>
                   {SERVICES.map((service) => (
