@@ -78,7 +78,7 @@ export function DifferentiatorsSection() {
                     <Icon className="w-6 h-6 text-primary mt-1" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-1">{item.title}</h3>
+                    <h3 className="text-lg font-semibold text-foreground text-gray-800 mb-1">{item.title}</h3>
                     <p className="text-muted-foreground">{item.description}</p>
                   </div>
                 </motion.div>
@@ -93,8 +93,8 @@ export function DifferentiatorsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-foreground mb-4">Meet Our Founder</h3>
-            <p className="text-muted-foreground mb-4">
+            <h3 className="text-2xl font-bold text-foreground text-gray-800 mb-4">Meet Our Founder</h3>
+            <p className="text-muted-foreground text-gray-800 mb-4">
               With 20+ years of IT leadership experience, our founder brings deep expertise in enterprise systems,
               digital transformation, and business optimization.
             </p>
