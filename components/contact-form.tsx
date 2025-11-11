@@ -428,7 +428,7 @@ export function ContactForm() {
                       value={formData.mobile}
                       onChange={handleChange}
                       required
-                      className="bg-background/20 border-border/20 focus:border-primary/20 focus:ring-primary/20 h-11 text-base flex-1"
+                      className="bg-background/20 border-border/20 text-foreground focus:border-primary/20 focus:ring-primary/20 h-11 text-base flex-1"
                     />
                   </div>
                 </motion.div>
@@ -480,7 +480,7 @@ export function ContactForm() {
                 <textarea
                   id="description"
                   name="description"
-                  placeholder="Tell us about your needs and what you're looking to achieve..."
+                  placeholder="Tell us about your needs and what you're looking to achieve from us..."
                   value={formData.description}
                   onChange={handleChange}
                   required
