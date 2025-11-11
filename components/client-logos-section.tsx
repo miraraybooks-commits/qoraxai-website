@@ -4,8 +4,8 @@ import Image from "next/image"
 
 export function ClientLogosSection() {
   const logos = [
-    "/LOGOLA.png",
-    "/Scree001.png",
+    "/client-logos/hooversagro.png",
+    "/client-logos/laenterprise.png",
   ]
 
   return (
