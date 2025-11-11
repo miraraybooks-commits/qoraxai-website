@@ -372,7 +372,7 @@ export function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-background/20 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base"
+                    className="bg-background/20 border-border/20 focus:border-primary/20 focus:ring-primary/20 h-11 text-base"
                   />
                 </motion.div>
                 <motion.div className="space-y-3" variants={itemVariants}>
@@ -387,7 +387,7 @@ export function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base"
+                    className="bg-background/20 border-border/20 focus:border-primary/20 focus:ring-primary/20 h-11 text-base"
                   />
                 </motion.div>
               </div>
@@ -404,7 +404,7 @@ export function ContactForm() {
                     value={formData.countryCode}
                     onChange={handleChange}
                     required
-                    className="w-full bg-background/50 border border-border/50 rounded-lg px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 h-11 text-base"
+                    className="w-full bg-background/20 border border-border/20 rounded-lg px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/20 h-11 text-base"
                   >
                     {COUNTRIES.map((country) => (
                       <option key={country.code + country.name} value={country.code}>
@@ -418,7 +418,7 @@ export function ContactForm() {
                     Mobile Number *
                   </Label>
                   <div className="flex gap-2">
-                    <div className="flex items-center px-4 py-2.5 bg-background/50 border border-border/50 rounded-lg text-foreground font-semibold min-w-fit">
+                    <div className="flex items-center px-4 py-2.5 bg-background/20 border border-border/20 rounded-lg text-foreground font-semibold min-w-fit">
                       {selectedCountry?.flag} {formData.countryCode}
                     </div>
                     <Input
@@ -428,7 +428,7 @@ export function ContactForm() {
                       value={formData.mobile}
                       onChange={handleChange}
                       required
-                      className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base flex-1"
+                      className="bg-background/20 border-border/20 focus:border-primary/20 focus:ring-primary/20 h-11 text-base flex-1"
                     />
                   </div>
                 </motion.div>
@@ -446,7 +446,7 @@ export function ContactForm() {
                   value={formData.company}
                   onChange={handleChange}
                   required
-                  className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20 h-11 text-base"
+                  className="bg-background/20 border-border/20 focus:border-primary/20 focus:ring-primary/20 h-11 text-base"
                 />
               </motion.div>
 
@@ -461,7 +461,7 @@ export function ContactForm() {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  className="w-full bg-background/50 border border-border/50 rounded-lg px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 h-11 text-base"
+                  className="w-full bg-background/20 border border-border/20 rounded-lg px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/20 h-11 text-base"
                 >
                   <option value="">Select a service...</option>
                   {SERVICES.map((service) => (
@@ -485,7 +485,7 @@ export function ContactForm() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full bg-background/50 border border-border/50 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 text-base resize-none"
+                  className="w-full bg-background/20 border border-border/20 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/20 text-base resize-none"
                 />
               </motion.div>
 
