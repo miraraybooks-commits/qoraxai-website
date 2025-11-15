@@ -54,7 +54,7 @@ export function QuoteSection() {
           <h3 className="text-2xl font-semibold text-foreground">What our results look like</h3>
         </motion.div>
 
-        {/* Quote card/container */}
+        {/* Quote card/container bg-background*/}
         <motion.div
           className="mx-auto max-w-3xl"
           variants={containerVariants}
@@ -63,7 +63,7 @@ export function QuoteSection() {
           viewport={{ once: true }}
         >
           <motion.blockquote
-            className="relative bg-background border border-gray-600 rounded-lg p-8 shadow-sm"
+            className="relative bg-gray-50 border border-gray-600 rounded-lg p-8 shadow-sm"
             variants={itemVariants}
             aria-labelledby="qoraxai-quote"
           >
