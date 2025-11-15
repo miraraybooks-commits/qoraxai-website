@@ -8,35 +8,43 @@ import Image from "next/image"
 const testimonials = [
   {
     id: 1,
-    certificateImage: "/qoraxai-achievement-certificate-with-blue-theme.jpg",
-    quote: "QoraxAI delivered exceptional cloud infrastructure optimization, reducing our costs by 35% while improving system performance. Highly professional!",
-    clientName: "Rahman Abdullah",
-    service: "Cloud Infrastructure & Cost Optimization",
-    clientPhoto: "/professional-businessman.png",
+    achievement: "40% Cost Saved",
+    certificateImage: "/qoraxai-cert-1.jpg",
+    quote: "QoraxAI optimized our entire e-commerce infrastructure. Server costs dropped by 40% while handling 3x more traffic. Outstanding work!",
+    clientName: "Md. Kamal Hossain",
+    company: "Dhaka Fashion Ltd.",
+    service: "Cloud Infrastructure Optimization",
+    clientPhoto: "/client-kamal-hossain.jpg",
   },
   {
     id: 2,
-    certificateImage: "/business-achievement-certificate.jpg",
-    quote: "QoraxAI helped us eliminate redundant systems and cut our tech spending significantly while improving performance.",
-    clientName: "Sarah Johnson",
-    service: "Tech Audit & Cost Optimization",
-    clientPhoto: "/professional-business-woman.png",
+    achievement: "3x Faster System",
+    certificateImage: "/qoraxai-cert-2.jpg",
+    quote: "Their database restructuring transformed our operations. What took 2 hours now completes in 20 minutes. Highly professional team!",
+    clientName: "Farhana Rahman",
+    company: "Bengal Tech Solutions",
+    service: "Database Optimization & Performance",
+    clientPhoto: "/client-farhana-rahman.jpg",
   },
   {
     id: 3,
-    certificateImage: "/database-optimization-award.jpg",
-    quote: "Their database optimization work transformed our operations. What used to take hours now takes minutes.",
-    clientName: "Michael Chen",
-    service: "Database Optimization & Performance",
-    clientPhoto: "/tech-executive-asian-man.jpg",
+    achievement: "25 Lakh+ Saved",
+    certificateImage: "/qoraxai-cert-3.jpg",
+    quote: "QoraxAI conducted a comprehensive tech audit and eliminated unnecessary subscriptions. We're saving 25 Lakh+ annually now!",
+    clientName: "Rahim Uddin Ahmed",
+    company: "Chittagong Export House",
+    service: "Tech Audit & Cost Analysis",
+    clientPhoto: "/client-rahim-ahmed.jpg",
   },
   {
     id: 4,
-    certificateImage: "/cloud-migration-success-certificate.jpg",
-    quote: "Professional, efficient, and results-driven. QoraxAI exceeded our expectations in every way.",
-    clientName: "Emily Rodriguez",
+    achievement: "99.9% Uptime",
+    certificateImage: "/qoraxai-cert-4.jpg",
+    quote: "After their cloud migration service, we've achieved 99.9% uptime. Zero downtime during peak seasons. Exceptional results!",
+    clientName: "Nusrat Jahan",
+    company: "Sylhet Digital Services",
     service: "Cloud Migration & Infrastructure",
-    clientPhoto: "/female-cto-professional.jpg",
+    clientPhoto: "/client-nusrat-jahan.jpg",
   },
 ]
 
@@ -44,7 +52,6 @@ export function TestimonialSliderSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(0)
 
-  // Auto-advance slider every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide()
@@ -116,15 +123,15 @@ export function TestimonialSliderSection() {
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 {/* Left: Certificate Image */}
                 <div className="relative">
-                  <div className="absolute -top-4 -left-4 bg-red-600 text-white px-4 py-2 rounded-lg font-bold text-sm transform -rotate-12 shadow-lg">
-                    8 Lakh+ TK sell
+                  <div className="absolute -top-4 -left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold text-sm transform -rotate-12 shadow-lg z-10">
+                    {currentTestimonial.achievement}
                   </div>
                   <div className="rounded-lg overflow-hidden shadow-2xl">
                     <Image
-                      src={currentTestimonial.certificateImage || "/placeholder.svg"}
+                      src={currentTestimonial.certificateImage || "/placeholder.svg?height=400&width=600"}
                       alt="Achievement Certificate"
-                      width={400}
-                      height={300}
+                      width={600}
+                      height={400}
                       className="w-full h-auto object-cover"
                     />
                   </div>
@@ -132,14 +139,14 @@ export function TestimonialSliderSection() {
 
                 {/* Right: Testimonial Content */}
                 <div className="space-y-6">
-                  <div className="text-white text-xl md:text-2xl leading-relaxed">
-                    {currentTestimonial.quote}
+                  <div className="text-white text-xl md:text-2xl leading-relaxed italic">
+                    "{currentTestimonial.quote}"
                   </div>
 
                   <div className="flex items-center gap-4 pt-4 border-t border-blue-700/30">
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-400">
                       <Image
-                        src={currentTestimonial.clientPhoto || "/placeholder.svg"}
+                        src={currentTestimonial.clientPhoto || "/placeholder.svg?height=64&width=64"}
                         alt={currentTestimonial.clientName}
                         width={64}
                         height={64}
@@ -149,6 +156,9 @@ export function TestimonialSliderSection() {
                     <div>
                       <div className="text-white font-bold text-lg">
                         {currentTestimonial.clientName}
+                      </div>
+                      <div className="text-blue-300 text-sm font-medium">
+                        {currentTestimonial.company}
                       </div>
                       <div className="text-blue-200 text-sm">
                         {currentTestimonial.service}
