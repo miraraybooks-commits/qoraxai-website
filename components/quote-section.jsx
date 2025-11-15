@@ -78,7 +78,7 @@ export function QuoteSection() {
             </svg>
 
             <p id="qoraxai-quote" className="text-lg sm:text-xl leading-relaxed italic text-black px-2">
-              “In 2024 alone, QoraxAI helped 15+ companies reduce IT spending by an average of 32% — without changing their teams or tools.”
+              “In 2024 alone, QoraxAI helped 15+ companies reduce operational costs by an average of 32% — while increasing sales and lead conversions through smarter automation.”
             </p>
 
             <footer className="mt-6 pl-2">
