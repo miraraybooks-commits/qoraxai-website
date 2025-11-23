@@ -33,7 +33,7 @@ export function ServicesSection() {
     {
       icon: DollarSign,
       title: "Boost Sales / Cost-Optimization",
-      description: "Cut unnecessary expenses and boost margins",
+      description: "Boost sales and cut unnecessary costs",
       slug: "cost-optimization",
     },
     {
