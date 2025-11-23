@@ -29,7 +29,7 @@ const testimonials = [
   {
     id: 3,
     achievement: "25 Lakh+ Saved",
-    certificateImage: "/qoraxai-cert-03.png",
+    certificateImage: "/qoraxai-cert-3.png",
     quote: "QoraxAI conducted a comprehensive tech audit and eliminated unnecessary costs. We're saving 25 Lakh+ annually now!",
     clientName: "Rahim Uddin Ahmed",
     company: "Hoovers Agrovet Limited",
