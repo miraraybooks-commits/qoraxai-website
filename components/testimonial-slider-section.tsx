@@ -9,7 +9,7 @@ const testimonials = [
   {
     id: 1,
     achievement: "40% Cost Saved",
-    certificateImage: "/qoraxai-cert-1.jpg",
+    certificateImage: "/qoraxai-cert-1.png",
     quote: "QoraxAI optimized our entire e-commerce infrastructure. Server costs dropped by 40% while handling 3x more traffic. Outstanding work!",
     clientName: "Md. Kamal Hossain",
     company: "Dhaka Fashion Ltd.",
@@ -18,31 +18,31 @@ const testimonials = [
   },
   {
     id: 2,
-    achievement: "3x Faster System",
-    certificateImage: "/qoraxai-cert-2.jpg",
-    quote: "Their database restructuring transformed our operations. What took 2 hours now completes in 20 minutes. Highly professional team!",
+    achievement: "40% Sales Growth",
+    certificateImage: "/qoraxai-cert-2.png",
+    quote: "Their digital marketing strategies and advanced tools transformed our sales. What used to take weeks to generate leads now converts into actual sales in days. Highly professional and results-driven team!",
     clientName: "Farhana Rahman",
-    company: "Bengal Tech Solutions",
-    service: "Database Optimization & Performance",
+    company: "Bengal Tech Solutions ltd.",
+    service: "Digital Marketing & Sales Growth",
     clientPhoto: "/client-farhana-rahman.jpg",
   },
   {
     id: 3,
     achievement: "25 Lakh+ Saved",
-    certificateImage: "/qoraxai-cert-3.jpg",
-    quote: "QoraxAI conducted a comprehensive tech audit and eliminated unnecessary subscriptions. We're saving 25 Lakh+ annually now!",
+    certificateImage: "/qoraxai-cert-3.png",
+    quote: "QoraxAI conducted a comprehensive tech audit and eliminated unnecessary costs. We're saving 25 Lakh+ annually now!",
     clientName: "Rahim Uddin Ahmed",
-    company: "Chittagong Export House",
+    company: "Hoovers Agrovet Limited",
     service: "Tech Audit & Cost Analysis",
     clientPhoto: "/client-rahim-ahmed.jpg",
   },
   {
     id: 4,
     achievement: "99.9% Uptime",
-    certificateImage: "/qoraxai-cert-4.jpg",
+    certificateImage: "/qoraxai-cert-4.png",
     quote: "After their cloud migration service, we've achieved 99.9% uptime. Zero downtime during peak seasons. Exceptional results!",
     clientName: "Nusrat Jahan",
-    company: "Sylhet Digital Services",
+    company: "JS Digital Services",
     service: "Cloud Migration & Infrastructure",
     clientPhoto: "/client-nusrat-jahan.jpg",
   },
@@ -101,7 +101,7 @@ export function TestimonialSliderSection() {
             Working Proof
           </h2>
           <p className="text-blue-200 text-lg">
-            Real results from real clients
+            Working results from clients feedback
           </p>
         </motion.div>
 
