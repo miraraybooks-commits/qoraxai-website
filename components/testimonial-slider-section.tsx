@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 
 const testimonials = [
@@ -10,7 +10,8 @@ const testimonials = [
     id: 1,
     achievement: "40% Cost Saved",
     certificateImage: "/qoraxai-cert-1.png",
-    quote: "QoraxAI optimized our entire e-commerce infrastructure. Server costs dropped by 40% while handling 3x more traffic. Outstanding work!",
+    quote:
+      "QoraxAI optimized our entire e-commerce infrastructure. Server costs dropped by 40% while handling 3x more traffic. Outstanding work!",
     clientName: "Md. Kamal Hossain",
     company: "Dhaka Fashion Ltd.",
     service: "Cloud Infrastructure Optimization",
@@ -20,7 +21,8 @@ const testimonials = [
     id: 2,
     achievement: "40% Sales Growth",
     certificateImage: "/qoraxai-cert-2.png",
-    quote: "Their digital marketing strategies and advanced tools transformed our sales. What used to take weeks to generate leads now converts into actual sales in days. Highly professional and results-driven team!",
+    quote:
+      "Their digital marketing strategies and advanced tools transformed our sales. What used to take weeks to generate leads now converts into actual sales in days. Highly professional and results-driven team!",
     clientName: "Farhana Rahman",
     company: "Bengal Tech Solutions ltd.",
     service: "Digital Marketing & Sales Growth",
@@ -30,7 +32,8 @@ const testimonials = [
     id: 3,
     achievement: "25 Lakh+ Saved",
     certificateImage: "/qoraxai-cert-03.png",
-    quote: "QoraxAI conducted a comprehensive tech audit and eliminated unnecessary costs. We're saving 25 Lakh+ annually now!",
+    quote:
+      "QoraxAI conducted a comprehensive tech audit and eliminated unnecessary costs. We're saving 25 Lakh+ annually now!",
     clientName: "Rahim Uddin Ahmed",
     company: "Hoovers Agrovet Limited",
     service: "Tech Audit & Cost Analysis",
@@ -40,7 +43,8 @@ const testimonials = [
     id: 4,
     achievement: "99.9% Uptime",
     certificateImage: "/qoraxai-cert-4.png",
-    quote: "After their cloud migration service, we've achieved 99.9% uptime. Zero downtime during peak seasons. Exceptional results!",
+    quote:
+      "After their cloud migration service, we've achieved 99.9% uptime. Zero downtime during peak seasons. Exceptional results!",
     clientName: "Nusrat Jahan",
     company: "JS Digital Services",
     service: "Cloud Migration & Infrastructure",
@@ -71,6 +75,11 @@ export function TestimonialSliderSection() {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
   }
 
+  const goToSlide = (index: number) => {
+    setDirection(index > currentIndex ? 1 : -1)
+    setCurrentIndex(index)
+  }
+
   const variants = {
     enter: (dir: number) => ({ x: dir > 0 ? 1000 : -1000, opacity: 0 }),
     center: { x: 0, opacity: 1 },
@@ -89,9 +98,7 @@ export function TestimonialSliderSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Working Proof
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Working Proof</h2>
           <p className="text-blue-200 text-lg">Working results from clients feedback</p>
         </motion.div>
 
@@ -115,7 +122,7 @@ export function TestimonialSliderSection() {
                   </div>
                   <div className="rounded-lg overflow-hidden shadow-2xl">
                     <Image
-                      src={currentTestimonial.certificateImage}
+                      src={currentTestimonial.certificateImage || "/placeholder.svg"}
                       alt="Certificate"
                       width={600}
                       height={400}
@@ -132,7 +139,7 @@ export function TestimonialSliderSection() {
                   <div className="flex items-center gap-4 pt-4 border-t border-blue-700/30">
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-400">
                       <Image
-                        src={currentTestimonial.clientPhoto}
+                        src={currentTestimonial.clientPhoto || "/placeholder.svg"}
                         alt={currentTestimonial.clientName}
                         width={64}
                         height={64}
@@ -152,10 +159,20 @@ export function TestimonialSliderSection() {
 
           {/* Navigation */}
           <div className="flex justify-center gap-4 mt-8">
-            <button onClick={prevSlide} className="bg-blue-700 hover:bg-blue-600 text-white p-3 rounded-full transition-colors">
+            <button
+              type="button"
+              onClick={prevSlide}
+              className="bg-blue-700 hover:bg-blue-600 text-white p-3 rounded-full transition-colors"
+              aria-label="Previous testimonial"
+            >
               <ChevronLeft className="w-6 h-6" />
             </button>
-            <button onClick={nextSlide} className="bg-blue-700 hover:bg-blue-600 text-white p-3 rounded-full transition-colors">
+            <button
+              type="button"
+              onClick={nextSlide}
+              className="bg-blue-700 hover:bg-blue-600 text-white p-3 rounded-full transition-colors"
+              aria-label="Next testimonial"
+            >
               <ChevronRight className="w-6 h-6" />
             </button>
           </div>
@@ -165,8 +182,10 @@ export function TestimonialSliderSection() {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                type="button"
+                onClick={() => goToSlide(index)}
                 className={`w-2 h-2 rounded-full transition-all ${index === currentIndex ? "bg-blue-400 w-8" : "bg-blue-700 hover:bg-blue-600"}`}
+                aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
           </div>
