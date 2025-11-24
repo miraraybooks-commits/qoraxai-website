@@ -170,14 +170,14 @@ export function TestimonialSliderSection() {
 
           <div className="flex justify-center gap-4 mt-8">
             <button
-              onClick={() => { prevSlide(); resetInterval() }}
+              onClick={() => { prevSlide()}}
               className="bg-blue-700 hover:bg-blue-600 text-white p-3 rounded-full transition-colors"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
-              onClick={() => { nextSlide(); resetInterval() }}
+              onClick={() => { nextSlide()}}
               className="bg-blue-700 hover:bg-blue-600 text-white p-3 rounded-full transition-colors"
               aria-label="Next testimonial"
             >
@@ -189,7 +189,7 @@ export function TestimonialSliderSection() {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => { setDirection(index > currentIndex ? 1 : -1); setCurrentIndex(index); resetInterval() }}
+                onClick={() => { setDirection(index > currentIndex ? 1 : -1); setCurrentIndex(index)}}
                 className={`w-2 h-2 rounded-full transition-all ${
                   index === currentIndex
                     ? "bg-blue-400 w-8"
