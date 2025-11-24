@@ -14,7 +14,6 @@ import { FAQSection } from "@/components/faq-section"
 import { ContactForm } from "@/components/contact-form"
 import { Footer } from "@/components/footer"
 
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
