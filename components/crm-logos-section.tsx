@@ -17,7 +17,7 @@ export function CRMLogosSection() {
         </p>
       </div>
 
-      <div className="overflow-hidden">
+      <div className="overflow-hidden mt-12">
         <motion.div
           className="flex gap-20 justify-center items-center"
           //animate={{ x: ["0%", "-100%"] }}
