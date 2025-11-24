@@ -54,7 +54,7 @@ export function HeroSection() {
         >
           <motion.div className="space-y-2 sm:space-y-3 md:space-y-4 text-center mb-0 pb-0" variants={itemVariants}>
             <motion.h1
-              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-white"
               variants={itemVariants}>
               We don't promise. We prove.
             </motion.h1>
@@ -62,7 +62,8 @@ export function HeroSection() {
               className="text-base sm:text-lg md:text-xl text-white max-w-3xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              We help businesses grow sales faster — while cutting tech costs 20–40%, automating operations, and strengthening security with trusted Fractional CTO expertise.
+              Grow Sales. Cut Costs. Automate. Secure.
+              Fractional CTO expertise built for Bangladeshi business growth.
             </motion.p>
           </motion.div>
 
