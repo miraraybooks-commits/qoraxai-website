@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from "next/image"
@@ -51,14 +51,7 @@ const testimonials = [
 export function TestimonialSliderSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide()
-    }, 5000)
-
-    return () => clearInterval(timer)
-  }, [])
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   const nextSlide = () => {
     setDirection(1)
@@ -69,6 +62,13 @@ export function TestimonialSliderSection() {
     setDirection(-1)
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
   }
+
+  // Autoplay without page reload
+  useEffect(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(nextSlide, 5000)
+    return () => intervalRef.current && clearInterval(intervalRef.current)
+  }, [])
 
   const variants = {
     enter: (direction: number) => ({
@@ -121,7 +121,6 @@ export function TestimonialSliderSection() {
               className="bg-blue-950/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-blue-700/30"
             >
               <div className="grid md:grid-cols-2 gap-8 items-center">
-                {/* Left: Certificate Image */}
                 <div className="relative">
                   <div className="absolute -top-4 -left-4 bg-green-600 text-white px-4 py-2 rounded-lg font-bold text-sm transform -rotate-12 shadow-lg z-10">
                     {currentTestimonial.achievement}
@@ -137,7 +136,6 @@ export function TestimonialSliderSection() {
                   </div>
                 </div>
 
-                {/* Right: Testimonial Content */}
                 <div className="space-y-6">
                   <div className="text-white text-xl md:text-2xl leading-relaxed italic">
                     "{currentTestimonial.quote}"
@@ -170,17 +168,16 @@ export function TestimonialSliderSection() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Buttons */}
           <div className="flex justify-center gap-4 mt-8">
             <button
-              onClick={prevSlide}
+              onClick={() => { prevSlide(); resetInterval() }}
               className="bg-blue-700 hover:bg-blue-600 text-white p-3 rounded-full transition-colors"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
-              onClick={nextSlide}
+              onClick={() => { nextSlide(); resetInterval() }}
               className="bg-blue-700 hover:bg-blue-600 text-white p-3 rounded-full transition-colors"
               aria-label="Next testimonial"
             >
@@ -188,15 +185,11 @@ export function TestimonialSliderSection() {
             </button>
           </div>
 
-          {/* Dots Indicator */}
           <div className="flex justify-center gap-2 mt-6">
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  setDirection(index > currentIndex ? 1 : -1)
-                  setCurrentIndex(index)
-                }}
+                onClick={() => { setDirection(index > currentIndex ? 1 : -1); setCurrentIndex(index); resetInterval() }}
                 className={`w-2 h-2 rounded-full transition-all ${
                   index === currentIndex
                     ? "bg-blue-400 w-8"
@@ -210,4 +203,9 @@ export function TestimonialSliderSection() {
       </div>
     </section>
   )
+
+  function resetInterval() {
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(nextSlide, 5000)
+  }
 }
