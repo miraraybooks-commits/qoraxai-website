@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
@@ -56,7 +58,6 @@ export function TestimonialSliderSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(1)
 
-  // Autoplay only once, no interval resets on button click
   useEffect(() => {
     const interval = setInterval(() => {
       setDirection(1)
@@ -65,17 +66,23 @@ export function TestimonialSliderSection() {
     return () => clearInterval(interval)
   }, [])
 
-  const nextSlide = () => {
+  const nextSlide = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
     setDirection(1)
     setCurrentIndex((prev) => (prev + 1) % testimonials.length)
   }
 
-  const prevSlide = () => {
+  const prevSlide = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
     setDirection(-1)
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
   }
 
-  const goToSlide = (index: number) => {
+  const goToSlide = (e: React.MouseEvent<HTMLButtonElement>, index: number) => {
+    e.preventDefault()
+    e.stopPropagation()
     setDirection(index > currentIndex ? 1 : -1)
     setCurrentIndex(index)
   }
@@ -105,7 +112,7 @@ export function TestimonialSliderSection() {
         <div className="relative">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
-              key={currentIndex} // <-- stable key based on index
+              key={currentIndex}
               custom={direction}
               variants={variants}
               initial="enter"
@@ -157,7 +164,6 @@ export function TestimonialSliderSection() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation */}
           <div className="flex justify-center gap-4 mt-8">
             <button
               type="button"
@@ -177,13 +183,12 @@ export function TestimonialSliderSection() {
             </button>
           </div>
 
-          {/* Dots */}
           <div className="flex justify-center gap-2 mt-6">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 type="button"
-                onClick={() => goToSlide(index)}
+                onClick={(e) => goToSlide(e, index)}
                 className={`w-2 h-2 rounded-full transition-all ${index === currentIndex ? "bg-blue-400 w-8" : "bg-blue-700 hover:bg-blue-600"}`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
