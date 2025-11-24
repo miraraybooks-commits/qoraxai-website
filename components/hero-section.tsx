@@ -54,7 +54,7 @@ export function HeroSection() {
         >
           <motion.div className="space-y-2 sm:space-y-3 md:space-y-4 text-center mb-0 pb-0" variants={itemVariants}>
             <motion.h1
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-white"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white"
               variants={itemVariants}>
               We don't promise. We prove.
             </motion.h1>
