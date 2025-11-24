@@ -22,14 +22,14 @@ export function CRMLogosSection() {
           animate={{ x: [-80, 80, -80] }}   // back & forth effect
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         >
-          {/* Zoho CRM Logo */}
+          {/* Zoho CRM Logo 
           <img src="/logos/zoho-crm.webp" alt="Zoho CRM" className="h-14 object-contain opacity-90 hover:opacity-100 transition"/>
-
-          {/* HubSpot CRM Logo */}
           <img src="/logos/hubspot-crm.webp" alt="HubSpot CRM" className="h-14 object-contain opacity-90 hover:opacity-100 transition"/>
-
-          {/* SuiteCRM Logo */}
           <img src="/logos/suite-crm.webp" alt="SuiteCRM" className="h-14 object-contain opacity-90 hover:opacity-100 transition"/>
+          */}
+          <img src="/logos/zoho-crm.webp" alt="Zoho CRM" className="h-14 object-contain" />
+          <img src="/logos/hubspot-crm.webp" alt="HubSpot CRM" className="h-14 object-contain" />
+          <img src="/logos/suite-crm.webp" alt="SuiteCRM" className="h-14 object-contain" />
         </motion.div>
       </div>
     </section>
