@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function CRMLogosSection() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-white">
       <div className="container mx-auto text-center mb-10">
         <h2 className="text-4xl font-bold text-foreground mb-4">
           Our CRM Expertise
@@ -14,32 +14,22 @@ export function CRMLogosSection() {
         </p>
       </div>
 
-      <div className="overflow-hidden relative">
+      <div className="overflow-hidden">
         <motion.div
           className="flex gap-20 justify-center items-center"
-          animate={{ x: ["0%", "-100%"] }}
-          transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
+          //animate={{ x: ["0%", "-100%"] }}
+          //transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
+          animate={{ x: [-80, 80, -80] }}   // back & forth effect
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         >
           {/* Zoho CRM Logo */}
-          <img
-            src="/logos/zoho-crm.webp"
-            alt="Zoho CRM"
-            className="h-14 object-contain opacity-90 hover:opacity-100 transition"
-          />
+          <img src="/logos/zoho-crm.webp" alt="Zoho CRM" className="h-14 object-contain opacity-90 hover:opacity-100 transition"/>
 
           {/* HubSpot CRM Logo */}
-          <img
-            src="/logos/hubspot-crm.webp"
-            alt="HubSpot CRM"
-            className="h-14 object-contain opacity-90 hover:opacity-100 transition"
-          />
+          <img src="/logos/hubspot-crm.webp" alt="HubSpot CRM" className="h-14 object-contain opacity-90 hover:opacity-100 transition"/>
 
           {/* SuiteCRM Logo */}
-          <img
-            src="/logos/suite-crm.webp"
-            alt="SuiteCRM"
-            className="h-14 object-contain opacity-90 hover:opacity-100 transition"
-          />
+          <img src="/logos/suite-crm.webp" alt="SuiteCRM" className="h-14 object-contain opacity-90 hover:opacity-100 transition"/>
         </motion.div>
       </div>
     </section>
