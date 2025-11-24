@@ -58,7 +58,7 @@ export function TestimonialSliderSection() {
     }, 5000)
 
     return () => clearInterval(timer)
-  }, [currentIndex])
+  }, [])
 
   const nextSlide = () => {
     setDirection(1)
