@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from "next/image"
 
 const testimonials = [
@@ -10,8 +10,7 @@ const testimonials = [
     id: 1,
     achievement: "40% Cost Saved",
     certificateImage: "/qoraxai-cert-1.png",
-    quote:
-      "QoraxAI optimized our entire e-commerce infrastructure. Server costs dropped by 40% while handling 3x more traffic. Outstanding work!",
+    quote: "QoraxAI optimized our entire e-commerce infrastructure. Server costs dropped by 40% while handling 3x more traffic. Outstanding work!",
     clientName: "Md. Kamal Hossain",
     company: "Dhaka Fashion Ltd.",
     service: "Cloud Infrastructure Optimization",
@@ -21,8 +20,7 @@ const testimonials = [
     id: 2,
     achievement: "40% Sales Growth",
     certificateImage: "/qoraxai-cert-2.png",
-    quote:
-      "Their digital marketing strategies and advanced tools transformed our sales. What used to take weeks to generate leads now converts into actual sales in days. Highly professional and results-driven team!",
+    quote: "Their digital marketing strategies and advanced tools transformed our sales. What used to take weeks to generate leads now converts into actual sales in days. Highly professional and results-driven team!",
     clientName: "Farhana Rahman",
     company: "Bengal Tech Solutions ltd.",
     service: "Digital Marketing & Sales Growth",
@@ -32,8 +30,7 @@ const testimonials = [
     id: 3,
     achievement: "25 Lakh+ Saved",
     certificateImage: "/qoraxai-cert-03.png",
-    quote:
-      "QoraxAI conducted a comprehensive tech audit and eliminated unnecessary costs. We're saving 25 Lakh+ annually now!",
+    quote: "QoraxAI conducted a comprehensive tech audit and eliminated unnecessary costs. We're saving 25 Lakh+ annually now!",
     clientName: "Rahim Uddin Ahmed",
     company: "Hoovers Agrovet Limited",
     service: "Tech Audit & Cost Analysis",
@@ -43,8 +40,7 @@ const testimonials = [
     id: 4,
     achievement: "99.9% Uptime",
     certificateImage: "/qoraxai-cert-4.png",
-    quote:
-      "After their cloud migration service, we've achieved 99.9% uptime. Zero downtime during peak seasons. Exceptional results!",
+    quote: "After their cloud migration service, we've achieved 99.9% uptime. Zero downtime during peak seasons. Exceptional results!",
     clientName: "Nusrat Jahan",
     company: "JS Digital Services",
     service: "Cloud Migration & Infrastructure",
@@ -58,12 +54,11 @@ export function TestimonialSliderSection() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setDirection(1)
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+      nextSlide()
     }, 5000)
 
     return () => clearInterval(timer)
-  }, []) // Empty dependency array - only runs once on mount
+  }, [currentIndex])
 
   const nextSlide = () => {
     setDirection(1)
@@ -102,8 +97,12 @@ export function TestimonialSliderSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Working Proof</h2>
-          <p className="text-blue-200 text-lg">Working results from clients feedback</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Working Proof
+          </h2>
+          <p className="text-blue-200 text-lg">
+            Working results from clients feedback
+          </p>
         </motion.div>
 
         <div className="relative">
@@ -155,9 +154,15 @@ export function TestimonialSliderSection() {
                       />
                     </div>
                     <div>
-                      <div className="text-white font-bold text-lg">{currentTestimonial.clientName}</div>
-                      <div className="text-blue-300 text-sm font-medium">{currentTestimonial.company}</div>
-                      <div className="text-blue-200 text-sm">{currentTestimonial.service}</div>
+                      <div className="text-white font-bold text-lg">
+                        {currentTestimonial.clientName}
+                      </div>
+                      <div className="text-blue-300 text-sm font-medium">
+                        {currentTestimonial.company}
+                      </div>
+                      <div className="text-blue-200 text-sm">
+                        {currentTestimonial.service}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -193,7 +198,9 @@ export function TestimonialSliderSection() {
                   setCurrentIndex(index)
                 }}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentIndex ? "bg-blue-400 w-8" : "bg-blue-700 hover:bg-blue-600"
+                  index === currentIndex
+                    ? "bg-blue-400 w-8"
+                    : "bg-blue-700 hover:bg-blue-600"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
