@@ -59,10 +59,10 @@ export function HeroSection() {
               We don't promise. We prove.
             </motion.h1>
             <motion.p
-              className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-white max-w-3xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              We helps Bangladeshi SMEs and enterprises cut tech costs 20–40%, automate operations, and secure their data — with Fractional CTO expertise you can trust.
+              We help businesses grow sales faster — while cutting tech costs 20–40%, automating operations, and strengthening security with trusted Fractional CTO expertise.
             </motion.p>
           </motion.div>
 
