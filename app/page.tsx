@@ -7,6 +7,7 @@ import { ClientLogosSection } from "@/components/client-logos-section"
 import { ProblemSection } from "@/components/problem-section"
 import { SolutionSection } from "@/components/solution-section"
 import { ServicesSection } from "@/components/services-section"
+import { CRMLogosSection } from "@/components/crm-logos-section"
 import { ProcessSection } from "@/components/process-section"
 import { DifferentiatorsSection } from "@/components/differentiators-section"
 import { PricingSection } from "@/components/pricing-section"
@@ -26,6 +27,7 @@ export default function Home() {
       <ProblemSection />
       <SolutionSection />
       <ServicesSection />
+      <CRMLogosSection />
       <ProcessSection />
       <DifferentiatorsSection />
       <PricingSection />
