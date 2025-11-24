@@ -108,7 +108,7 @@ export function TestimonialSliderSection() {
         <div className="relative">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
-              key={currentIndex}
+              key={currentTestimonial.id}
               custom={direction}
               variants={variants}
               initial="enter"
