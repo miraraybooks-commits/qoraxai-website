@@ -62,8 +62,9 @@ export function HeroSection() {
               className="text-base sm:text-lg md:text-xl text-white max-w-3xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              Grow Sales. Cut Costs. Automate. Secure. <br />
-              Fractional CTO expertise built for Bangladeshi business growth.
+              Grow Sales. Reduce Waste. Automate Operations. Secure Growth. <br />
+              
+              Results-Driven Digital Growth Partner
             </motion.p>
           </motion.div>
 
