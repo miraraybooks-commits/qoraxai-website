@@ -3,79 +3,44 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* New professional color scheme - light/corporate theme focused on trust and growth */
 :root {
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.12 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.65 0.25 280);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.15 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.25 0 0);
-  --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.65 0.25 280);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.15 0 0);
-  --ring: oklch(0.65 0.25 280);
-  --chart-1: oklch(0.65 0.25 280);
-  --chart-2: oklch(0.6 0.2 200);
-  --chart-3: oklch(0.55 0.2 150);
-  --chart-4: oklch(0.7 0.2 50);
-  --chart-5: oklch(0.65 0.2 100);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.12 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.65 0.25 280);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.15 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.25 0 0);
-  --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.65 0.25 280);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.15 0 0);
-  --ring: oklch(0.65 0.25 280);
-  --chart-1: oklch(0.65 0.25 280);
-  --chart-2: oklch(0.6 0.2 200);
-  --chart-3: oklch(0.55 0.2 150);
-  --chart-4: oklch(0.7 0.2 50);
-  --chart-5: oklch(0.65 0.2 100);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --background: oklch(0.99 0 0); /* Clean white background */
+  --foreground: oklch(0.15 0 0); /* Dark charcoal for text */
+  --card: oklch(0.98 0 0); /* Slightly off-white for cards */
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(0.99 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.45 0.2 250); /* Professional blue - trust & growth */
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.55 0.18 160); /* Success green - revenue growth */
+  --secondary-foreground: oklch(0.99 0 0);
+  --muted: oklch(0.95 0.005 250);
+  --muted-foreground: oklch(0.5 0.01 250);
+  --accent: oklch(0.6 0.22 280); /* Accent purple for highlights */
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.9 0.005 250);
+  --input: oklch(0.96 0.005 250);
+  --ring: oklch(0.45 0.2 250);
+  --chart-1: oklch(0.45 0.2 250); /* Primary blue */
+  --chart-2: oklch(0.55 0.18 160); /* Success green */
+  --chart-3: oklch(0.6 0.22 280); /* Purple */
+  --chart-4: oklch(0.65 0.2 50); /* Warm gold */
+  --chart-5: oklch(0.5 0.15 200); /* Cyan */
+  --radius: 0.75rem;
+  --sidebar: oklch(0.99 0 0);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.45 0.2 250);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.97 0.005 250);
+  --sidebar-accent-foreground: oklch(0.15 0 0);
+  --sidebar-border: oklch(0.92 0.005 250);
+  --sidebar-ring: oklch(0.7 0.01 250);
 }
 
 @theme inline {
-  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -123,14 +88,13 @@
   }
 }
 
-/* Smooth scrolling and animations */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom gradient for hero section */
+/* Professional gradient for hero - subtle and elegant */
 .gradient-hero {
-  background: linear-gradient(135deg, oklch(0.08 0 0) 0%, oklch(0.12 0 0) 100%);
+  background: linear-gradient(135deg, oklch(0.99 0 0) 0%, oklch(0.97 0.01 250) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -138,10 +102,19 @@ html {
 .gradient-hero::before {
   content: "";
   position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, oklch(0.65 0.25 280 / 0.1) 0%, transparent 70%);
+  top: -30%;
+  right: -20%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, oklch(0.45 0.2 250 / 0.08) 0%, transparent 70%);
   pointer-events: none;
+}
+
+/* Sales-focused accent styles */
+.revenue-highlight {
+  background: linear-gradient(120deg, oklch(0.55 0.18 160) 0%, oklch(0.5 0.2 140) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
 }
