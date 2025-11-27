@@ -55,10 +55,18 @@ const testimonials = [
 export function TestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   const slideVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
+      x: isMobile ? 0 : direction > 0 ? 1000 : -1000,
       opacity: 0,
     }),
     center: {
@@ -68,7 +76,7 @@ export function TestimonialSection() {
     },
     exit: (direction: number) => ({
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
+      x: isMobile ? 0 : direction < 0 ? 1000 : -1000,
       opacity: 0,
     }),
   }
@@ -132,21 +140,27 @@ export function TestimonialSection() {
                   animate="center"
                   exit="exit"
                   transition={{
-                    x: { type: "spring", stiffness: 300, damping: 30 },
-                    opacity: { duration: 0.2 },
+                    x: {
+                      type: isMobile ? "tween" : "spring",
+                      stiffness: 300,
+                      damping: 30,
+                      duration: isMobile ? 0.3 : undefined,
+                    },
+                    opacity: { duration: isMobile ? 0.15 : 0.2 },
                   }}
-                  drag="x"
-                  dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={1}
-                  onDragEnd={(e, { offset, velocity }) => {
-                    const swipe = swipePower(offset.x, velocity.x)
-
-                    if (swipe < -swipeConfidenceThreshold) {
-                      paginate(1)
-                    } else if (swipe > swipeConfidenceThreshold) {
-                      paginate(-1)
-                    }
-                  }}
+                  {...(!isMobile && {
+                    drag: "x",
+                    dragConstraints: { left: 0, right: 0 },
+                    dragElastic: 1,
+                    onDragEnd: (e, { offset, velocity }) => {
+                      const swipe = swipePower(offset.x, velocity.x)
+                      if (swipe < -swipeConfidenceThreshold) {
+                        paginate(1)
+                      } else if (swipe > swipeConfidenceThreshold) {
+                        paginate(-1)
+                      }
+                    },
+                  })}
                   className="grid md:grid-cols-[300px_1fr] gap-8 items-center"
                 >
                   {/* Certificate with Achievement Badge */}
@@ -154,42 +168,42 @@ export function TestimonialSection() {
                     <div className="relative rounded-lg overflow-hidden shadow-xl">
                       <Image
                         src={currentTestimonial.certificateImage || "/placeholder.svg"}
-                        alt={`${currentTestimonial.company} appreciation certificate for QoraxAI services`}
+                        alt={`${currentTestimonial.company} appreciation certificate`}
                         width={300}
                         height={400}
-                        quality={80}
+                        quality={isMobile ? 60 : 80}
                         className="w-full h-auto object-cover"
                         loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 300px"
                       />
                     </div>
-                    {/* Achievement Badge */}
-                    <div className="absolute -top-4 -left-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg rotate-[-12deg] font-bold">
+                    <div className="absolute -top-4 -left-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg rotate-[-12deg] font-bold text-sm md:text-base">
                       {currentTestimonial.achievement}
                     </div>
                   </div>
 
                   {/* Testimonial Content */}
                   <div className="space-y-6">
-                    <blockquote className="text-lg md:text-xl text-gray-200 leading-relaxed italic">
+                    <blockquote className="text-base md:text-xl text-gray-200 leading-relaxed italic">
                       "{currentTestimonial.quote}"
                     </blockquote>
 
                     <div className="flex items-center gap-4">
-                      <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500 shadow-lg">
+                      <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-blue-500 shadow-lg flex-shrink-0">
                         <Image
                           src={currentTestimonial.clientPhoto || "/placeholder.svg"}
-                          alt={`${currentTestimonial.clientName} from ${currentTestimonial.company}`}
+                          alt={currentTestimonial.clientName}
                           fill
-                          quality={80}
+                          quality={isMobile ? 60 : 80}
                           className="object-cover"
                           loading="lazy"
-                          sizes="64px"
+                          sizes="(max-width: 768px) 48px, 64px"
                         />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold text-white">{currentTestimonial.clientName}</h4>
-                        <p className="text-blue-400 font-medium">{currentTestimonial.service}</p>
-                        <p className="text-gray-400 text-sm">{currentTestimonial.company}</p>
+                        <h4 className="text-lg md:text-xl font-bold text-white">{currentTestimonial.clientName}</h4>
+                        <p className="text-blue-400 font-medium text-sm md:text-base">{currentTestimonial.service}</p>
+                        <p className="text-gray-400 text-xs md:text-sm">{currentTestimonial.company}</p>
                       </div>
                     </div>
                   </div>
@@ -198,7 +212,6 @@ export function TestimonialSection() {
 
               {/* Navigation Controls */}
               <div className="flex items-center justify-between mt-8">
-                {/* Navigation Arrows */}
                 <div className="flex gap-2">
                   <button
                     type="button"
@@ -207,10 +220,10 @@ export function TestimonialSection() {
                       e.stopPropagation()
                       paginate(-1)
                     }}
-                    className="w-12 h-12 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors shadow-lg"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors shadow-lg"
                     aria-label="Previous testimonial"
                   >
-                    <ChevronLeft className="w-6 h-6" />
+                    <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                   </button>
                   <button
                     type="button"
@@ -219,14 +232,13 @@ export function TestimonialSection() {
                       e.stopPropagation()
                       paginate(1)
                     }}
-                    className="w-12 h-12 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors shadow-lg"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors shadow-lg"
                     aria-label="Next testimonial"
                   >
-                    <ChevronRight className="w-6 h-6" />
+                    <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                   </button>
                 </div>
 
-                {/* Dot Indicators */}
                 <div className="flex gap-2">
                   {testimonials.map((_, index) => (
                     <button
