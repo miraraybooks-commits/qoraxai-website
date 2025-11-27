@@ -10,16 +10,19 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
+            <Link href="/" className="flex items-center gap-3 mb-6">
               <Image
-                src="/logo_white-250x250.png"
+                src="/images/qoraxai-logo-nobackground-20-no-20name.png"
                 alt="QoraxAI Logo"
-                width={120}
-                height={40}
-                className="h-auto w-auto max-h-10"
+                width={50}
+                height={50}
+                className="h-12 w-12"
               />
+              <span className="font-bold text-2xl">
+                <span className="text-foreground">Qorax</span>
+                <span className="text-[#00A7E1]">AI</span>
+              </span>
             </Link>
-            <h3 className="font-bold text-lg mb-3 text-foreground">QoraxAI</h3>
             <p className="text-sm text-muted-foreground text-pretty">
               Revenue-focused technology partner helping Bangladeshi businesses grow through strategic digital
               transformation.

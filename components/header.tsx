@@ -11,16 +11,19 @@ export function Header() {
   return (
     <header className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+        <Link href="/" className="flex items-center gap-3 flex-shrink-0">
           <Image
-            src="/logo_white-250x250.png"
+            src="/images/qoraxai-logo-nobackground-20-no-20name.png"
             alt="QoraxAI Logo"
-            width={150}
-            height={50}
+            width={60}
+            height={60}
             priority
-            className="h-auto w-auto max-h-10 sm:max-h-12"
+            className="h-12 w-12 sm:h-14 sm:w-14"
           />
-          <span className="font-bold text-xl text-foreground hidden sm:inline">QoraxAI</span>
+          <span className="font-bold text-2xl sm:text-3xl">
+            <span className="text-foreground">Qorax</span>
+            <span className="text-[#00A7E1]">AI</span>
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 flex-1 justify-center">

@@ -96,9 +96,12 @@ export function HeroSection() {
             Grow Sales. Reduce Waste. Automate Operations. Secure Growth.
           </motion.p>
 
-          <motion.div className="min-h-[80px] sm:min-h-[60px] flex items-center justify-center" variants={itemVariants}>
-            <div className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto inline-flex items-baseline">
-              <span className="text-white font-medium">Because your&nbsp;</span>
+          <motion.div
+            className="min-h-[100px] sm:min-h-[70px] flex items-center justify-center px-4"
+            variants={itemVariants}
+          >
+            <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-2">
+              <span className="text-white font-medium whitespace-nowrap">Because your</span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentTextIndex}
@@ -119,7 +122,8 @@ export function HeroSection() {
                       opacity: { duration: 0.2 },
                     },
                   }}
-                  className="inline-block overflow-hidden whitespace-nowrap text-blue-400 font-medium align-baseline"
+                  className="inline-block overflow-hidden text-blue-400 font-medium"
+                  style={{ whiteSpace: "nowrap" }}
                 >
                   {rotatingTexts[currentTextIndex]}
                 </motion.span>
