@@ -30,18 +30,18 @@ export function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.4, ease: "easeOut" },
     },
   }
 
@@ -50,19 +50,18 @@ export function HeroSection() {
       id="hero"
       className="relative flex flex-col justify-center items-center text-center min-h-[85vh] sm:min-h-[90vh] px-4 sm:px-6 lg:px-8 overflow-hidden pt-20 sm:pt-24"
     >
-      {/* Background with overlay */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-gray-900 via-gray-900 to-black">
         <Image
           src="/banner.webp"
-          alt="QoraxAI - Results-Driven Digital Growth Partner"
+          alt="QoraxAI - Results-Driven Digital Growth Partner for Revenue Growth in Bangladesh"
           fill
           priority
+          quality={75}
           className="object-cover object-center opacity-20"
           sizes="100vw"
         />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         <motion.div
           className="space-y-8 text-center"
@@ -71,7 +70,6 @@ export function HeroSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* Main Heading */}
           <motion.div className="space-y-6" variants={itemVariants}>
             <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white tracking-tight"
@@ -88,7 +86,6 @@ export function HeroSection() {
             </motion.p>
           </motion.div>
 
-          {/* Value Props */}
           <motion.p
             className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light"
             variants={itemVariants}
@@ -101,7 +98,7 @@ export function HeroSection() {
             variants={itemVariants}
           >
             <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-2">
-              <span className="text-white font-medium whitespace-nowrap">Because your</span>
+              <span className="text-white font-medium whitespace-nowrap">Because your&nbsp;</span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentTextIndex}
@@ -110,16 +107,16 @@ export function HeroSection() {
                     opacity: 1,
                     width: "auto",
                     transition: {
-                      width: { duration: 0.8, ease: "easeInOut" },
-                      opacity: { duration: 0.3, delay: 0.2 },
+                      width: { duration: 0.5, ease: "easeInOut" },
+                      opacity: { duration: 0.2, delay: 0.1 },
                     },
                   }}
                   exit={{
                     opacity: 0,
                     width: 0,
                     transition: {
-                      width: { duration: 0.5, ease: "easeInOut" },
-                      opacity: { duration: 0.2 },
+                      width: { duration: 0.3, ease: "easeInOut" },
+                      opacity: { duration: 0.1 },
                     },
                   }}
                   className="inline-block overflow-hidden text-blue-400 font-medium"
@@ -131,9 +128,8 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* CTA Buttons */}
           <motion.div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-4 pt-4" variants={itemVariants}>
-            <Link href="#contact">
+            <Link href="#contact" prefetch={false}>
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-blue-600 text-white px-8 py-6 rounded-full hover:bg-blue-700 transition-all text-base sm:text-lg font-semibold shadow-lg hover:shadow-blue-500/50 hover:scale-105"
@@ -142,7 +138,7 @@ export function HeroSection() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-            <Link href="#services">
+            <Link href="#services" prefetch={false}>
               <Button
                 size="lg"
                 variant="outline"

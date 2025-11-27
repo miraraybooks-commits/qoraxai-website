@@ -114,12 +114,11 @@ export function TestimonialSection() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold mb-4">Client Success Stories</h2>
-          <p className="text-muted-foreground text-lg">Real results from real clients</p>
+          <p className="text-muted-foreground text-lg">Real results from real clients in Bangladesh</p>
         </motion.div>
 
         <div className="max-w-6xl mx-auto">
           <div className="bg-[#0a2540] rounded-2xl p-8 md:p-12 shadow-2xl border border-blue-900/30 relative overflow-hidden">
-            {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl" />
 
@@ -155,10 +154,12 @@ export function TestimonialSection() {
                     <div className="relative rounded-lg overflow-hidden shadow-xl">
                       <Image
                         src={currentTestimonial.certificateImage || "/placeholder.svg"}
-                        alt="Achievement Certificate"
+                        alt={`${currentTestimonial.company} appreciation certificate for QoraxAI services`}
                         width={300}
                         height={400}
+                        quality={80}
                         className="w-full h-auto object-cover"
+                        loading="lazy"
                       />
                     </div>
                     {/* Achievement Badge */}
@@ -177,9 +178,12 @@ export function TestimonialSection() {
                       <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500 shadow-lg">
                         <Image
                           src={currentTestimonial.clientPhoto || "/placeholder.svg"}
-                          alt={currentTestimonial.clientName}
+                          alt={`${currentTestimonial.clientName} from ${currentTestimonial.company}`}
                           fill
+                          quality={80}
                           className="object-cover"
+                          loading="lazy"
+                          sizes="64px"
                         />
                       </div>
                       <div>
