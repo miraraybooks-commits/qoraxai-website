@@ -97,12 +97,12 @@ export function HeroSection() {
           </motion.p>
 
           <motion.div className="min-h-[80px] sm:min-h-[60px] flex items-center justify-center" variants={itemVariants}>
-            <div className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto">
-              <span className="text-white font-medium">Because your </span>
+            <div className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto inline-flex items-baseline">
+              <span className="text-white font-medium">Because your&nbsp;</span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentTextIndex}
-                  initial={{ opacity: 0, width: 0, display: "inline-block" }}
+                  initial={{ opacity: 0, width: 0 }}
                   animate={{
                     opacity: 1,
                     width: "auto",
@@ -119,7 +119,7 @@ export function HeroSection() {
                       opacity: { duration: 0.2 },
                     },
                   }}
-                  className="inline-block overflow-hidden whitespace-nowrap text-blue-400 font-medium"
+                  className="inline-block overflow-hidden whitespace-nowrap text-blue-400 font-medium align-baseline"
                 >
                   {rotatingTexts[currentTextIndex]}
                 </motion.span>
