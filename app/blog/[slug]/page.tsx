@@ -5,37 +5,35 @@ import { createServerClient } from "@/lib/supabase/server"
 import { ArrowLeft, Calendar, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export async function generateStaticParams() {
-  const supabase = await createServerClient()
-  const { data: posts } = await supabase.from("blog_posts").select("slug").eq("published", true)
+// Blog posts will be rendered dynamically on-demand instead
 
-  return (
-    posts?.map((post) => ({
-      slug: post.slug,
-    })) || []
-  )
-}
+export const dynamic = "force-dynamic"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  console.log("[v0] Generating metadata for slug:", slug)
 
-  const supabase = await createServerClient()
-  const { data: post } = await supabase.from("blog_posts").select("*").eq("slug", slug).eq("published", true).single()
+  try {
+    const supabase = await createServerClient()
+    const { data: post } = await supabase
+      .from("blog_posts")
+      .select("title, excerpt")
+      .eq("slug", slug)
+      .eq("published", true)
+      .single()
 
-  console.log("[v0] Post found for metadata:", post ? post.title : "Not found")
+    if (!post) return { title: "Blog Post Not Found | QoraxAI" }
 
-  if (!post) return {}
-
-  return {
-    title: `${post.title} | QoraxAI Blog`,
-    description: post.excerpt,
+    return {
+      title: `${post.title} | QoraxAI Blog`,
+      description: post.excerpt || "Read the latest insights from QoraxAI",
+    }
+  } catch (error) {
+    return { title: "Blog Post | QoraxAI" }
   }
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  console.log("[v0] Fetching blog post for slug:", slug)
 
   const supabase = await createServerClient()
 
@@ -46,10 +44,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .eq("published", true)
     .single()
 
-  console.log("[v0] Post query result:", { found: !!post, error: error?.message })
-
-  if (!post) {
-    console.log("[v0] Post not found, showing 404")
+  if (!post || error) {
     notFound()
   }
 
