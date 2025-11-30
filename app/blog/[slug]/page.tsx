@@ -5,14 +5,25 @@ import { createServerClient } from "@/lib/supabase/server"
 import { ArrowLeft, Calendar, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateStaticParams() {
   const supabase = await createServerClient()
-  const { data: post } = await supabase
-    .from("blog_posts")
-    .select("*")
-    .eq("slug", params.slug)
-    .eq("published", true)
-    .single()
+  const { data: posts } = await supabase.from("blog_posts").select("slug").eq("published", true)
+
+  return (
+    posts?.map((post) => ({
+      slug: post.slug,
+    })) || []
+  )
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  console.log("[v0] Generating metadata for slug:", slug)
+
+  const supabase = await createServerClient()
+  const { data: post } = await supabase.from("blog_posts").select("*").eq("slug", slug).eq("published", true).single()
+
+  console.log("[v0] Post found for metadata:", post ? post.title : "Not found")
 
   if (!post) return {}
 
@@ -22,17 +33,25 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  console.log("[v0] Fetching blog post for slug:", slug)
+
   const supabase = await createServerClient()
 
-  const { data: post } = await supabase
+  const { data: post, error } = await supabase
     .from("blog_posts")
     .select("*")
-    .eq("slug", params.slug)
+    .eq("slug", slug)
     .eq("published", true)
     .single()
 
-  if (!post) notFound()
+  console.log("[v0] Post query result:", { found: !!post, error: error?.message })
+
+  if (!post) {
+    console.log("[v0] Post not found, showing 404")
+    notFound()
+  }
 
   return (
     <div className="min-h-screen bg-white">

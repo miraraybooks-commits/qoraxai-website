@@ -1,14 +1,13 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { createBrowserClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Trash2, Edit, Plus } from "lucide-react"
+import { Trash2, Edit, Plus, LogOut } from "lucide-react"
 
 export default function AdminBlogPage() {
   const router = useRouter()
@@ -18,6 +17,7 @@ export default function AdminBlogPage() {
   const [editingPost, setEditingPost] = useState<any>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [userEmail, setUserEmail] = useState<string>("")
   const [formData, setFormData] = useState({
     title: "",
     slug: "",
@@ -29,8 +29,23 @@ export default function AdminBlogPage() {
   })
 
   useEffect(() => {
+    checkAuth()
     loadPosts()
   }, [])
+
+  async function checkAuth() {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+    if (user) {
+      setUserEmail(user.email || "")
+    }
+  }
+
+  async function handleLogout() {
+    await supabase.auth.signOut()
+    router.push("/admin/login")
+  }
 
   async function loadPosts() {
     try {
@@ -140,11 +155,20 @@ export default function AdminBlogPage() {
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold">Blog Admin</h1>
-          <Button onClick={() => setShowForm(!showForm)}>
-            <Plus className="mr-2 h-4 w-4" />
-            New Post
-          </Button>
+          <div>
+            <h1 className="text-3xl font-bold">Blog Admin</h1>
+            {userEmail && <p className="text-sm text-gray-600 mt-1">Logged in as: {userEmail}</p>}
+          </div>
+          <div className="flex gap-2">
+            <Button onClick={() => setShowForm(!showForm)}>
+              <Plus className="mr-2 h-4 w-4" />
+              New Post
+            </Button>
+            <Button variant="outline" onClick={handleLogout}>
+              <LogOut className="mr-2 h-4 w-4" />
+              Logout
+            </Button>
+          </div>
         </div>
 
         {error && (
