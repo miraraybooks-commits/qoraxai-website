@@ -35,6 +35,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
 
+  console.log("[v0] Requested slug:", slug)
+
   const supabase = await createServerClient()
 
   const { data: post, error } = await supabase
@@ -43,6 +45,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .eq("slug", slug)
     .eq("published", true)
     .single()
+
+  console.log("[v0] Post found:", !!post, "| Error:", error?.message || "none")
+  if (!post) {
+    console.log("[v0] No post found for slug:", slug)
+  }
 
   if (!post || error) {
     notFound()

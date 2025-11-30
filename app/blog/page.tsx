@@ -24,6 +24,9 @@ export default async function BlogPage() {
   }
 
   console.log("[v0] Blog posts fetched:", posts?.length || 0)
+  posts?.forEach((post: any) => {
+    console.log("[v0] Post slug:", post.slug, "| Title:", post.title, "| Published:", post.published)
+  })
 
   return (
     <div className="min-h-screen bg-white">
