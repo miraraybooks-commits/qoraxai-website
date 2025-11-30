@@ -1,7 +1,18 @@
 import type { MetadataRoute } from "next"
+import { createServerClient } from "@/lib/supabase/server"
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://qoraxai.com"
+
+  const supabase = await createServerClient()
+  const { data: posts } = await supabase.from("blog_posts").select("slug, updated_at").eq("published", true)
+
+  const blogPosts: MetadataRoute.Sitemap = (posts || []).map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.updated_at),
+    changeFrequency: "weekly",
+    priority: 0.7,
+  }))
 
   return [
     {
@@ -10,6 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 1,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    ...blogPosts,
     {
       url: `${baseUrl}/services/sales-growth`,
       lastModified: new Date(),
