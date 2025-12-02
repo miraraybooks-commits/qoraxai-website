@@ -7,7 +7,6 @@ import { createBrowserClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { RichTextEditor } from "@/components/rich-text-editor"
 import { Trash2, Edit, Plus, LogOut } from "lucide-react"
 
 export default function AdminBlogPage() {
@@ -213,16 +212,36 @@ export default function AdminBlogPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Content</label>
-                <RichTextEditor
+                <label className="block text-sm font-medium mb-2">Content (HTML Supported)</label>
+                <Textarea
                   value={formData.content}
-                  onChange={(value) => setFormData({ ...formData, content: value })}
-                  placeholder="Write your blog post content here. Use the toolbar to format text, add headings, lists, links, and more..."
+                  onChange={(e) => setFormData({ ...formData, content: e.target.value })}
+                  rows={15}
+                  placeholder="Write your blog post content here. You can use HTML tags like <h2>, <p>, <strong>, <em>, <ul>, <li>, <a href=''>, etc."
+                  className="font-mono text-sm"
                 />
-                <p className="text-xs text-gray-500 mt-2">
-                  Use the formatting toolbar above to create professional blog posts with headings, bold/italic text,
-                  bullet points, and links.
-                </p>
+                <div className="mt-2 text-xs text-gray-600 space-y-1">
+                  <p className="font-medium">Supported HTML tags:</p>
+                  <p>
+                    <code className="bg-gray-100 px-1 rounded">&lt;h2&gt;Heading&lt;/h2&gt;</code> - For headings
+                  </p>
+                  <p>
+                    <code className="bg-gray-100 px-1 rounded">&lt;p&gt;Paragraph&lt;/p&gt;</code> - For paragraphs
+                  </p>
+                  <p>
+                    <code className="bg-gray-100 px-1 rounded">&lt;strong&gt;Bold&lt;/strong&gt;</code> - For bold text
+                  </p>
+                  <p>
+                    <code className="bg-gray-100 px-1 rounded">&lt;em&gt;Italic&lt;/em&gt;</code> - For italic text
+                  </p>
+                  <p>
+                    <code className="bg-gray-100 px-1 rounded">&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code> -
+                    For bullet lists
+                  </p>
+                  <p>
+                    <code className="bg-gray-100 px-1 rounded">&lt;a href="URL"&gt;Link&lt;/a&gt;</code> - For links
+                  </p>
+                </div>
               </div>
 
               <div>
