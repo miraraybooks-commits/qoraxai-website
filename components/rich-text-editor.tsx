@@ -4,8 +4,14 @@ import { useEffect, useState } from "react"
 import dynamic from "next/dynamic"
 import "react-quill/dist/quill.snow.css"
 
-// Dynamically import ReactQuill to avoid SSR issues
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false })
+const ReactQuill = dynamic(() => import("react-quill"), {
+  ssr: false,
+  loading: () => (
+    <div className="border rounded-md p-4 bg-gray-50 h-[300px] flex items-center justify-center text-gray-500">
+      Loading editor...
+    </div>
+  ),
+})
 
 interface RichTextEditorProps {
   value: string
@@ -52,14 +58,14 @@ export function RichTextEditor({ value, onChange, placeholder }: RichTextEditorP
 
   if (!mounted) {
     return (
-      <div className="border rounded-md p-4 bg-gray-50 h-64 flex items-center justify-center text-gray-500">
+      <div className="border rounded-md p-4 bg-gray-50 h-[300px] flex items-center justify-center text-gray-500">
         Loading editor...
       </div>
     )
   }
 
   return (
-    <div className="rich-text-editor">
+    <div className="rich-text-editor-wrapper">
       <ReactQuill
         theme="snow"
         value={value}
@@ -67,22 +73,7 @@ export function RichTextEditor({ value, onChange, placeholder }: RichTextEditorP
         modules={modules}
         formats={formats}
         placeholder={placeholder || "Write your content here..."}
-        className="bg-white"
       />
-      <style jsx global>{`
-        .rich-text-editor .ql-container {
-          min-height: 300px;
-          font-size: 16px;
-        }
-        .rich-text-editor .ql-editor {
-          min-height: 300px;
-        }
-        .rich-text-editor .ql-toolbar {
-          background: #f8f9fa;
-          border-top-left-radius: 0.375rem;
-          border-top-right-radius: 0.375rem;
-        }
-      `}</style>
     </div>
   )
 }
