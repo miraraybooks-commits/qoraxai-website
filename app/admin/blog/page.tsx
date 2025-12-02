@@ -7,6 +7,7 @@ import { createBrowserClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { RichTextEditor } from "@/components/rich-text-editor"
 import { Trash2, Edit, Plus, LogOut } from "lucide-react"
 
 export default function AdminBlogPage() {
@@ -212,13 +213,16 @@ export default function AdminBlogPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Content (HTML supported)</label>
-                <Textarea
+                <label className="block text-sm font-medium mb-2">Content</label>
+                <RichTextEditor
                   value={formData.content}
-                  onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                  rows={10}
-                  required
+                  onChange={(value) => setFormData({ ...formData, content: value })}
+                  placeholder="Write your blog post content here. Use the toolbar to format text, add headings, lists, links, and more..."
                 />
+                <p className="text-xs text-gray-500 mt-2">
+                  Use the formatting toolbar above to create professional blog posts with headings, bold/italic text,
+                  bullet points, and links.
+                </p>
               </div>
 
               <div>
