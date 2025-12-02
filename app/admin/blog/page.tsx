@@ -18,6 +18,7 @@ export default function AdminBlogPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [userEmail, setUserEmail] = useState<string>("")
+  const [uploading, setUploading] = useState(false)
   const [formData, setFormData] = useState({
     title: "",
     slug: "",
@@ -151,6 +152,56 @@ export default function AdminBlogPage() {
       .replace(/^-|-$/g, "")
   }
 
+  async function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    // Check if it's an image
+    if (!file.type.startsWith("image/")) {
+      setError("Please select an image file")
+      return
+    }
+
+    setUploading(true)
+    setError(null)
+
+    try {
+      // Create a unique filename with the original extension
+      const fileExt = file.name.split(".").pop()
+      const fileName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${fileExt}`
+      const filePath = `blog/${fileName}`
+
+      console.log("[v0] Uploading image:", fileName, "Type:", file.type)
+
+      // Upload to Supabase Storage
+      const { data, error: uploadError } = await supabase.storage.from("blog-images").upload(filePath, file, {
+        cacheControl: "3600",
+        upsert: false,
+      })
+
+      if (uploadError) {
+        console.error("[v0] Upload error:", uploadError)
+        setError(`Failed to upload image: ${uploadError.message}`)
+        setUploading(false)
+        return
+      }
+
+      // Get public URL
+      const {
+        data: { publicUrl },
+      } = supabase.storage.from("blog-images").getPublicUrl(filePath)
+
+      console.log("[v0] Image uploaded successfully:", publicUrl)
+      setFormData({ ...formData, featured_image: publicUrl })
+      setError(null)
+    } catch (err: any) {
+      console.error("[v0] Exception uploading:", err)
+      setError(`Exception: ${err.message}`)
+    } finally {
+      setUploading(false)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-6xl mx-auto">
@@ -245,12 +296,40 @@ export default function AdminBlogPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Featured Image URL</label>
-                <Input
-                  value={formData.featured_image}
-                  onChange={(e) => setFormData({ ...formData, featured_image: e.target.value })}
-                  placeholder="/blog/image.jpg"
-                />
+                <label className="block text-sm font-medium mb-2">Featured Image</label>
+                <div className="space-y-2">
+                  <div className="flex gap-2">
+                    <Input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      disabled={uploading}
+                      className="flex-1"
+                    />
+                    {uploading && <span className="text-sm text-gray-500">Uploading...</span>}
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    Accepts: .jpg, .jpeg, .png, .webp, .gif, .svg and all image formats
+                  </p>
+                  <Input
+                    value={formData.featured_image}
+                    onChange={(e) => setFormData({ ...formData, featured_image: e.target.value })}
+                    placeholder="Or enter image URL manually"
+                    className="mt-2"
+                  />
+                  {formData.featured_image && (
+                    <div className="mt-2">
+                      <img
+                        src={formData.featured_image || "/placeholder.svg"}
+                        alt="Preview"
+                        className="max-w-xs h-auto rounded border"
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none"
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div>
