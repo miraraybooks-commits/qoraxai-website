@@ -3,9 +3,9 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "Cost Reduction & IT Optimization – Cut IT Costs by 20-40% | QoraxAI",
+  title: "IT Cost Reduction - Save 20-40% on Tech | QoraxAI",
   description:
-    "QoraxAI helps businesses reduce IT costs by 20-40% through cloud optimization, subscription audits, infrastructure rightsizing, and waste elimination. Get a free cost audit today.",
+    "Cut IT costs 20-40% through cloud optimization, license audits & infrastructure rightsizing. Free cost audit from QoraxAI Bangladesh today.",
 }
 
 export default function CostReductionPage() {

@@ -3,9 +3,9 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "Website Performance Check – Optimize Speed, SEO & Conversion | QoraxAI",
+  title: "Website Performance Optimization & Speed Check | QoraxAI",
   description:
-    "QoraxAI’s Website Performance Check uncovers what slows your site down. Boost speed, SEO, and conversion with expert technical analysis. Get a free 30-minute audit today.",
+    "Boost site speed, improve SEO rankings & increase conversions with expert performance analysis. Free 30-minute website audit from QoraxAI.",
 }
 
 export default function WebsitePerformanceCheckPage() {

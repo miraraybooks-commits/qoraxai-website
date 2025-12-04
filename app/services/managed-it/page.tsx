@@ -3,9 +3,9 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "Power Managed IT Services – Reliable, Scalable, Always-On IT | QoraxAI",
+  title: "Managed IT Services - 24/7 Support & Monitoring | QoraxAI",
   description:
-    "QoraxAI’s Power Managed IT Services help businesses simplify technology, ensure uptime, and scale securely with proactive monitoring, cloud management, and 24/7 support.",
+    "Proactive IT management with 24/7 support, cloud management & cybersecurity. Ensure 99.9% uptime with QoraxAI's managed IT services.",
 }
 
 export default function ManagedITServicesPage() {
@@ -17,12 +17,12 @@ export default function ManagedITServicesPage() {
         {/* Hero Section */}
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center mb-20">
           <div>
-            <h1 className="text-4xl font-bold text-primary mb-4">Power Managed IT Services</h1>
+            <h1 className="text-4xl font-bold text-primary mb-4">Managed IT Services</h1>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Technology should power your business — not slow it down. QoraxAI’s{" "}
-              <strong>Power Managed IT Services</strong> give you proactive, always-on management for your systems,
-              infrastructure, and cybersecurity. From day-to-day IT support to strategic technology planning, we ensure
-              your business operates efficiently, securely, and without interruption.
+              Technology should power your business — not slow it down. QoraxAI’s <strong>Managed IT Services</strong>{" "}
+              give you proactive, always-on management for your systems, infrastructure, and cybersecurity. From
+              day-to-day IT support to strategic technology planning, we ensure your business operates efficiently,
+              securely, and without interruption.
             </p>
 
             <Link
@@ -164,8 +164,8 @@ export default function ManagedITServicesPage() {
         <div className="bg-primary/5 py-16 text-center rounded-3xl shadow-inner mx-auto max-w-5xl">
           <h2 className="text-3xl font-bold mb-4 text-primary">Let’s Power Your IT — Together</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            QoraxAI’s Power Managed IT Services keep your systems secure, stable, and scalable — so you can focus on
-            growing your business. Take the first step with a free 30-minute consultation.
+            QoraxAI’s Managed IT Services keep your systems secure, stable, and scalable — so you can focus on growing
+            your business. Take the first step with a free 30-minute consultation.
           </p>
 
           <Link

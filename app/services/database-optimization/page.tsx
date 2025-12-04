@@ -3,9 +3,9 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "Database Optimization & Performance – Faster Queries, Better Uptime | QoraxAI",
+  title: "Database Optimization - Faster Queries & Uptime | QoraxAI",
   description:
-    "QoraxAI's Database Optimization service improves query performance, reduces downtime, and scales your database infrastructure for growth. Get a free database health check today.",
+    "Improve query speed 50-90%, ensure 99.9% uptime & scale databases efficiently. Free database health check from QoraxAI Bangladesh.",
 }
 
 export default function DatabaseOptimizationPage() {

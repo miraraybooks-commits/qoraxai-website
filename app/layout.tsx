@@ -3,14 +3,14 @@ import { Inter, DM_Sans } from "next/font/google"
 import { GoogleTagManager } from "@next/third-parties/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-QoraxAI: Boost Sales with Tech | IT Services Bangladesh
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display" })
 
 export const metadata = {
-  title: "Grow Revenue with QoraxAI’s Tech Services – BD",
+  title: "QoraxAI - IT Services for Sales Growth in Bangladesh",
   description:
-    "Accelerate your revenue by 250% with QoraxAI's. Sales growth, cost reduction, website optimization, database health, and cybersecurity in Bangladesh.",
+    "Boost revenue 250% with QoraxAI's tech services. Sales growth, cost reduction, website optimization, managed IT & cybersecurity in Bangladesh.",
   keywords: [
     "revenue growth Bangladesh",
     "sales acceleration",
@@ -117,7 +117,6 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://qoraxai.com" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
       <body className={`font-sans antialiased`}>

@@ -3,9 +3,9 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "Cybersecurity Assessment – Identify Threats, Secure Your Business | QoraxAI",
+  title: "Cybersecurity Assessment - Protect Your Business | QoraxAI",
   description:
-    "QoraxAI’s Cybersecurity Assessment identifies vulnerabilities, strengthens data protection, and helps your company prevent cyberattacks. Get a 30-minute free security audit today.",
+    "Identify vulnerabilities, strengthen data protection & prevent cyberattacks with comprehensive security assessment. Free audit from QoraxAI.",
 }
 
 export default function CybersecurityAssessmentPage() {

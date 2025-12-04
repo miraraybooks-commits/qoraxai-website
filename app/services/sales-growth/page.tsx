@@ -3,9 +3,9 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "Sales Growth & Revenue Optimization – Grow Your Business with Technology | QoraxAI",
+  title: "Sales Growth & Revenue Optimization Services | QoraxAI",
   description:
-    "QoraxAI helps businesses increase sales and revenue through data-driven strategies, conversion optimization, marketing automation, and performance analytics. Get a free growth audit today.",
+    "Increase sales 25-40% with data-driven strategies, conversion optimization & marketing automation. Get free growth audit from QoraxAI Bangladesh.",
 }
 
 export default function SalesGrowthPage() {
