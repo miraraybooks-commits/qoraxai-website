@@ -3,14 +3,14 @@ import { Inter, DM_Sans } from "next/font/google"
 import { GoogleTagManager } from "@next/third-parties/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-
+QoraxAI: Boost Sales with Tech | IT Services Bangladesh
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display" })
 
 export const metadata = {
-  title: "QoraxAI: Revenue Growth Through Technology | Sales-Focused IT Services Bangladesh",
+  title: "Grow Revenue with QoraxAI’s Tech Services – BD",
   description:
-    "Accelerate your revenue by 250% with QoraxAI's sales-focused technology services. Sales growth, cost reduction, website optimization, managed IT, database health, and cybersecurity in Bangladesh.",
+    "Accelerate your revenue by 250% with QoraxAI's. Sales growth, cost reduction, website optimization, database health, and cybersecurity in Bangladesh.",
   keywords: [
     "revenue growth Bangladesh",
     "sales acceleration",
