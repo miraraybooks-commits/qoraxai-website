@@ -217,9 +217,9 @@ export default function Privacy() {
               If you have any questions about our Privacy Policy or how we handle your data, please contact us at:
             </p>
             <div className="mt-4 p-4 bg-background/50 rounded-lg border border-border">
-              <p className="font-semibold text-foreground mb-2">QoraxAI Privacy Team</p>
-              <a href="mailto:privacy@qoraxai.com" className="text-primary hover:underline">
-                privacy@qoraxai.com
+              <p className="font-semibold text-foreground mb-2">QoraxAI Support</p>
+              <a href="mailto:sayeed@qoraxai.com" className="text-primary hover:underline">
+                sayeed@qoraxai.com
               </a>
             </div>
           </section>
