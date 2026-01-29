@@ -255,9 +255,9 @@ export default function TermsPage() {
               If you have any questions about these Terms of Service or our legal policies, please contact us:
             </p>
             <div className="p-4 bg-background/50 rounded-lg border border-border">
-              <p className="font-semibold text-foreground mb-2">QoraxAI Legal Team</p>
-              <a href="mailto:legal@qoraxai.com" className="text-primary hover:underline">
-                legal@qoraxai.com
+              <p className="font-semibold text-foreground mb-2">QoraxAI Support</p>
+              <a href="mailto:sayeed@qoraxai.com" className="text-primary hover:underline">
+                sayeed@qoraxai.com
               </a>
             </div>
           </section>
