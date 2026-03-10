@@ -125,7 +125,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
-        
+        <GoogleTagManager gtmId="GTM-P2ZSVZXQ" />
       </body>
     </html>
   )
