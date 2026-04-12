@@ -48,12 +48,7 @@ const ProcessSection = dynamic(
   },
 )
 
-const PricingSection = dynamic(
-  () => import("@/components/pricing-section").then((mod) => ({ default: mod.PricingSection })),
-  {
-    loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
-  },
-)
+
 
 const FAQSection = dynamic(() => import("@/components/faq-section").then((mod) => ({ default: mod.FAQSection })), {
   loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
@@ -89,9 +84,6 @@ export default function Home() {
       </Suspense>
       <Suspense fallback={<div className="h-96 bg-muted/20 animate-pulse" />}>
         <ProcessSection />
-      </Suspense>
-      <Suspense fallback={<div className="h-96 bg-muted/20 animate-pulse" />}>
-        <PricingSection />
       </Suspense>
       <Suspense fallback={<div className="h-96 bg-muted/20 animate-pulse" />}>
         <FAQSection />
