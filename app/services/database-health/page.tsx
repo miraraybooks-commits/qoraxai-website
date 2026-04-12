@@ -32,7 +32,11 @@ import Link from "next/link";
 export const metadata = {
   title: "SQL Database Health & Performance Check – Optimize Speed, Reliability & Security | QoraxAI",
   description:
-    "QoraxAI’s SQL Database Health & Performance Check helps businesses optimize query speed, fix inefficiencies, and improve data reliability. Get a 30-minute free database audit today.",
+    "QoraxAI's SQL Database Health & Performance Check helps businesses optimize query speed, fix inefficiencies, and improve data reliability. Get a 30-minute free database audit today.",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function SQLDatabasePerformancePage() {

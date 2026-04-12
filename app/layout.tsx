@@ -2,6 +2,7 @@ import type React from "react"
 import { Inter, DM_Sans } from "next/font/google"
 import { GoogleTagManager } from "@next/third-parties/google"
 import { Analytics } from "@vercel/analytics/next"
+import { CookieConsent } from "@/components/cookie-consent"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -124,6 +125,7 @@ export default function RootLayout({
       </head>
       <body className={`font-sans antialiased`}>
         {children}
+        <CookieConsent />
         <Analytics />
         <GoogleTagManager gtmId="GTM-P2ZSVZXQ" />
       </body>

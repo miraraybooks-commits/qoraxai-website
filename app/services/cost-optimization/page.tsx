@@ -6,6 +6,10 @@ export const metadata = {
   title: "Company Cost Optimization – Cut 20–40% IT Spending Without Compromise | QoraxAI",
   description:
     "QoraxAI helps companies reduce IT and operational costs by 20–40% through data-driven insights, cloud efficiency, and smart automation. Book your free 30-minute cost optimization audit today.",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function CompanyCostOptimizationPage() {

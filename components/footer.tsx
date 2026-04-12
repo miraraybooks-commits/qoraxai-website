@@ -86,7 +86,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span>📍</span>
-                <span>Zone Tower, Senpara, Dhaka, Bangladesh</span>
+                <span>H#145, R#4, Mohakhali DOHS, Dhaka-1206, BD</span>
               </li>
               <li className="flex items-start gap-2">
                 <span>✉️</span>

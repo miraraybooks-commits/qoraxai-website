@@ -6,6 +6,10 @@ export const metadata = {
   title: "Website Performance Optimization & Speed Check | QoraxAI",
   description:
     "Boost site speed, improve SEO rankings & increase conversions with expert performance analysis. Free 30-minute website audit from QoraxAI.",
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function WebsitePerformanceCheckPage() {

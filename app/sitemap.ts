@@ -29,25 +29,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...blogPosts,
     {
-      url: `${baseUrl}/services/sales-growth`,
+      url: `${baseUrl}/services/business-growth-consulting`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/services/cost-reduction`,
+      url: `${baseUrl}/services/social-media-crm-integration`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/website-performance`,
+      url: `${baseUrl}/services/erp-implementation`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/managed-it`,
+      url: `${baseUrl}/services/courier-management-software`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/cybersecurity-assessment`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
@@ -59,10 +65,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/cybersecurity`,
+      url: `${baseUrl}/cookie-policy`,
       lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
+      changeFrequency: "yearly",
+      priority: 0.5,
     },
   ]
 }

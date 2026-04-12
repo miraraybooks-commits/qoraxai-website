@@ -3,9 +3,13 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "Database Optimization - Faster Queries & Uptime | QoraxAI",
+  title: "SQL Server & MySQL Database Optimization | Performance Tuning | QoraxAI",
   description:
-    "Improve query speed 50-90%, ensure 99.9% uptime & scale databases efficiently. Free database health check from QoraxAI Bangladesh.",
+    "Optimize SQL Server and MySQL databases for speed, reliability, and cost efficiency. Expert performance tuning and query optimization.",
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function DatabaseOptimizationPage() {

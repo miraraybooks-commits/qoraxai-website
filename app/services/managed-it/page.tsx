@@ -6,6 +6,10 @@ export const metadata = {
   title: "Managed IT Services - 24/7 Support & Monitoring | QoraxAI",
   description:
     "Proactive IT management with 24/7 support, cloud management & cybersecurity. Ensure 99.9% uptime with QoraxAI's managed IT services.",
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function ManagedITServicesPage() {

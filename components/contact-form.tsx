@@ -225,12 +225,12 @@ const COUNTRIES = [
 ]
 
 const SERVICES = [
-  "Website Performance Check",
-  "Database Health & Performance",
+  "Business Growth Consulting",
+  "Social Media CRM Integration",
+  "ERPNext Implementation",
+  "Courier Management Software",
   "Cybersecurity Assessment",
-  "Power BI / MIS Dashboards",
-  "Company Cost-Optimization",
-  "Managed IT Services",
+  "Database Optimization",
 ]
 
 export function ContactForm() {
