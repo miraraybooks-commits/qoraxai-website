@@ -13,7 +13,7 @@ const RevenueStatsSection = dynamic(
 )
 
 const ServicesSectionNew = dynamic(
-  () => import("@/components/services-section-new").then((mod) => ({ default: mod.ServicesSectionNew })),
+  () => import("@/components/services-section").then((mod) => ({ default: mod.ServicesSectionNew })),
   {
     loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
   },
