@@ -12,8 +12,8 @@ const RevenueStatsSection = dynamic(
   },
 )
 
-const ServicesSectionNew = dynamic(
-  () => import("@/components/services-section").then((mod) => ({ default: mod.ServicesSectionNew })),
+const ServicesSection = dynamic(
+  () => import("@/components/services-section").then((mod) => ({ default: mod.ServicesSection })),
   {
     loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
   },
@@ -71,7 +71,7 @@ export default function Home() {
         <RevenueStatsSection />
       </Suspense>
       <Suspense fallback={<div className="h-96 bg-muted/20 animate-pulse" />}>
-        <ServicesSectionNew />
+        <ServicesSection />
       </Suspense>
       <Suspense fallback={<div className="h-96 bg-muted/20 animate-pulse" />}>
         <TestimonialSection />
