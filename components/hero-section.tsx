@@ -53,7 +53,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-gray-900 via-gray-900 to-black">
         <Image
           src="/banner.webp"
-          alt="QoraxAI - Results-Driven Digital Growth Partner for Revenue Growth in Bangladesh"
+          alt="QoraxAI - QoraxAI - Revenue Growth, IT Support & Digital Transformation"
           fill
           priority
           quality={75}
@@ -90,7 +90,7 @@ export function HeroSection() {
             className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light"
             variants={itemVariants}
           >
-            Grow Sales. Reduce Waste. Automate Operations. Secure Growth.
+            Grow Sales. Reduce Cost. Automate Operations. Ensure Security.
           </motion.p>
 
           <motion.div
