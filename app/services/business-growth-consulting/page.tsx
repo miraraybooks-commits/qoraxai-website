@@ -64,15 +64,15 @@ export default function BusinessGrowthConsultingPage() {
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-2 text-primary">Missed Market Opportunities</h3>
+              <h3 className="text-xl font-semibold mb-2 text-primary">Missed Opportunities</h3>
               <p className="text-muted-foreground">
-                Competitors capitalize on untapped segments while you remain in your current market comfort zone.
+                While you stay in your comfort zone in your current market, your competitors take advantage of untapped segments.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-2 text-primary">Ineffective Execution</h3>
+              <h3 className="text-xl font-semibold mb-2 text-primary">Poor Execution</h3>
               <p className="text-muted-foreground">
-                Strategic plans fail without proper implementation frameworks, accountability, and continuous optimization.
+                Without the right implementation frameworks, accountability, and ongoing improvement, strategic plans don't work.
               </p>
             </div>
           </div>
