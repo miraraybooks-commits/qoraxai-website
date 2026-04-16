@@ -23,7 +23,9 @@ export default function BusinessGrowthConsultingPage() {
           <div>
             <h1 className="text-4xl font-bold text-primary mb-4">Business Growth Consulting</h1>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Transform your business potential into measurable results. QoraxAI's <strong>Business Growth Consulting Services</strong> combine strategic planning, market intelligence, and operational excellence to unlock new revenue streams and market opportunities. Whether you&apos;re scaling, expanding, or optimizing, we provide the roadmap to sustainable growth.
+              You can do away with guesswork in growth of your business what you need is a clear plan and the right execution. QoraxAI&apos;s Business Growth Consulting we help you to understand your market, identify real opportunities and turn strategy into action.
+              <br /><br />
+              As you look to reach new customers, improve your operations, or scale sustainably we provide you with practical steps that result in measurable success and in turn higher profitability.
             </p>
 
             <Link
