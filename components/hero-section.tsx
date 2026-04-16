@@ -73,14 +73,14 @@ export function HeroSection() {
           <motion.div className="space-y-6" variants={itemVariants}>
 
             <motion.p
-              className="text-xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent"
+              className="text-xl sm:text-2xl md:text-3xl font-semibold text-white"
               variants={itemVariants}
             >
               We don't promise. We prove.
             </motion.p>
 
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent tracking-tight"
               variants={itemVariants}
             >
               Results-Driven Digital Growth Partner
