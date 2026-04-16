@@ -9,34 +9,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display" })
 
 export const metadata = {
-  title: "QoraxAI - Business Growth, IT Support & Digital Transformation",
+  title: "QoraxAI - AI-Powered Digital Growth Agency — Results Proven",
   description:
-    "Boost revenue with QoraxAI’s IT services—business consulting, SEO Service, CRM integration, ERPNext implementation, and cybersecurity assessment.",
-  keywords: [
-    "revenue growth",
-    "sales acceleration",
-    "IT services",
-    "it support",
-    "cost cutting strategies",
-    "website performance optimization",
-    "cost reduction strategy",
-    "database optimization",
-    "cybersecurity",
-    "digital transformation",
-    "tech consulting",
-    "ecommerce seo optimization",
-    "consulting and technology",
-    "tech solutions",
-    "sales kpi",
-    "technology consulting firms",
-    "crm management software",
-    "customer relationship management",
-    "crm software",
-    "ERPNext",
-    "SuiteCRM",
-    "content marketers",
-    "dijital marketing",
-  ],
+    "Boost revenue with QoraxAI's IT services—business consulting, SEO Service, CRM integration, ERPNext implementation, and cybersecurity assessment.",
   authors: [{ name: "QoraxAI" }],
   creator: "QoraxAI",
   publisher: "QoraxAI",
@@ -55,15 +30,15 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://qoraxai.com",
-    title: "QoraxAI: Revenue Growth Through Technology | Sales-Focused IT Services Bangladesh",
+    title: "QoraxAI | Revenue Growth Through Automation & IT Services",
     description:
-      "Accelerate your revenue by 250% with QoraxAI's sales-focused technology services. Drive growth through digital transformation.",
+      "Accelerate your revenue by 40% with QoraxAI's sales-focused technology services. Drive growth through digital transformation.",
     siteName: "QoraxAI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "QoraxAI: Revenue Accelerate Through Technology",
-    description: "Accelerate your revenue by 250% with sales-focused technology services",
+    title: "QoraxAI: Accelerate Revenue Through Technology",
+    description: "Boost revenue by up to 40% with QoraxAI's sales-focused IT services, digital transformation, and growth technology solutions.",
   },
   //verification: {
   //  google: "your-google-verification-code",
@@ -89,13 +64,13 @@ export default function RootLayout({
 }>) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "@type": "ITConsultant"  or  "LocalBusiness" + "serviceType": "Digital Marketing Agency",
     name: "QoraxAI",
     description: "Revenue growth through technology - Sales-focused IT support services",
     url: "https://qoraxai.com",
     logo: "https://qoraxai.com/qoraxai-icon.png",
     image: "https://qoraxai.com/banner.webp",
-    telephone: "+880-1234-567890",
+    telephone: "+880-1718723202",
     email: "info@qoraxai.com",
     address: {
       "@type": "PostalAddress",
