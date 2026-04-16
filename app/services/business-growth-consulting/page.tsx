@@ -23,7 +23,9 @@ export default function BusinessGrowthConsultingPage() {
           <div>
             <h1 className="text-4xl font-bold text-primary mb-4">Business Growth Consulting</h1>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Transform your business potential into measurable results. QoraxAI's <strong>Business Growth Consulting Services</strong> combine strategic planning, market intelligence, and operational excellence to unlock new revenue streams and market opportunities. Whether you&apos;re scaling, expanding, or optimizing, we provide the roadmap to sustainable growth.
+              You can do away with guesswork in growth of your business what you need is a clear plan and the right execution. QoraxAI&apos;s Business Growth Consulting we help you to understand your market, identify real opportunities and turn strategy into action.
+              <br /><br />
+              As you look to reach new customers, improve your operations, or scale sustainably we provide you with practical steps that result in measurable success and in turn higher profitability.
             </p>
 
             <Link
@@ -50,27 +52,27 @@ export default function BusinessGrowthConsultingPage() {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-semibold text-primary mb-4">The Growth Challenge</h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Many businesses plateau because they lack a clear growth strategy, market intelligence, or execution roadmap. Without the right consulting partnership, companies miss market opportunities, waste resources on ineffective initiatives, and struggle to scale sustainably.
+              A lot of businesses hit a wall because they don't have a clear plan for growth, market knowledge, or a way to carry it out. Companies miss out on business opportunities, waste money on projects that don't work, and have trouble growing in a way that lasts without the right consulting partner.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-2 text-primary">Unclear Growth Strategy</h3>
+              <h3 className="text-xl font-semibold mb-2 text-primary">Not sure on how to grow</h3>
               <p className="text-muted-foreground">
-                Without data-driven strategy, expansion efforts lack focus and ROI becomes unpredictable.
+                Without a strategy based on data, efforts to grow lack focus and the return on investment (ROI) is hard to predict.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-2 text-primary">Missed Market Opportunities</h3>
+              <h3 className="text-xl font-semibold mb-2 text-primary">Missed Opportunities</h3>
               <p className="text-muted-foreground">
-                Competitors capitalize on untapped segments while you remain in your current market comfort zone.
+                While you stay in your comfort zone in your current market, your competitors take advantage of untapped segments.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-2 text-primary">Ineffective Execution</h3>
+              <h3 className="text-xl font-semibold mb-2 text-primary">Poor Execution</h3>
               <p className="text-muted-foreground">
-                Strategic plans fail without proper implementation frameworks, accountability, and continuous optimization.
+                Without the right implementation frameworks, accountability, and ongoing improvement, strategic plans don't work.
               </p>
             </div>
           </div>
@@ -112,7 +114,7 @@ export default function BusinessGrowthConsultingPage() {
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">6. Leadership Coaching & Change Management</h3>
                 <p className="text-muted-foreground">
-                  We equip your team with frameworks and mindsets needed to lead organizational change and sustain growth momentum.
+                  We prepare your team with frameworks and mindsets needed to lead organizational change and sustain growth momentum.
                 </p>
               </div>
             </div>
