@@ -53,7 +53,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-gray-900 via-gray-900 to-black">
         <Image
           src="/banner.webp"
-          alt="QoraxAI - QoraxAI - Revenue Growth, IT Support & Digital Transformation"
+          alt="QoraxAI - Revenue Growth, IT Support & Digital Transformation"
           fill
           priority
           quality={75}
@@ -75,14 +75,14 @@ export function HeroSection() {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white tracking-tight"
               variants={itemVariants}
             >
-              We don't promise. We prove.
+              Results-Driven Digital Growth Partner
             </motion.h1>
 
             <motion.p
               className="text-xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent"
               variants={itemVariants}
             >
-              Results-Driven Digital Growth Partner
+              We don't promise. We prove.
             </motion.p>
           </motion.div>
 
