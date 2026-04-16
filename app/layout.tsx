@@ -93,6 +93,7 @@ export default function RootLayout({
     url: "https://qoraxai.com",
     logo: "https://qoraxai.com/qoraxai-icon.png",
     image: "https://qoraxai.com/banner.webp",
+    telephone: "+880-1718723202",
     email: "info@qoraxai.com",
     address: {
       "@type": "PostalAddress",
