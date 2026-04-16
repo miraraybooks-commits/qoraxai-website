@@ -52,15 +52,15 @@ export default function BusinessGrowthConsultingPage() {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-semibold text-primary mb-4">The Growth Challenge</h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Many businesses plateau because they lack a clear growth strategy, market intelligence, or execution roadmap. Without the right consulting partnership, companies miss market opportunities, waste resources on ineffective initiatives, and struggle to scale sustainably.
+              A lot of businesses hit a wall because they don't have a clear plan for growth, market knowledge, or a way to carry it out. Companies miss out on business opportunities, waste money on projects that don't work, and have trouble growing in a way that lasts without the right consulting partner.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-semibold mb-2 text-primary">Unclear Growth Strategy</h3>
+              <h3 className="text-xl font-semibold mb-2 text-primary">Not sure on how to grow</h3>
               <p className="text-muted-foreground">
-                Without data-driven strategy, expansion efforts lack focus and ROI becomes unpredictable.
+                Without a strategy based on data, efforts to grow lack focus and the return on investment (ROI) is hard to predict.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-sm">
