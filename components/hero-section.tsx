@@ -73,7 +73,7 @@ export function HeroSection() {
           <motion.div className="space-y-6" variants={itemVariants}>
 
             <motion.p
-              className="text-xl sm:text-2xl md:text-3xl font-semibold text-white pt-4"
+              className="text-xl sm:text-2xl md:text-3xl font-semibold text-white pt-6"
               variants={itemVariants}
             >
               We don't promise. We prove.
@@ -151,7 +151,7 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 pt-12 max-w-4xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 pt-6 max-w-4xl mx-auto"
             variants={itemVariants}
           >
             <div className="border border-gray-700 rounded-lg p-6 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all">
