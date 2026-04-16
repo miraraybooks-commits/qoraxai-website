@@ -90,7 +90,7 @@ export function HeroSection() {
             className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light"
             variants={itemVariants}
           >
-            Grow Sales. Reduce Waste. Automate Operations. Secure Growth.
+            Grow Sales. Reduce Cost. Automate Operations. Ensure Security.
           </motion.p>
 
           <motion.div
