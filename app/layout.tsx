@@ -9,9 +9,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display" })
 
 export const metadata = {
-  title: "QoraxAI - Revenue Growth, IT Support & Digital Transformation",
+  title: "QoraxAI - Business Growth, IT Support & Digital Transformation",
   description:
-    "Boost revenue 250% with QoraxAI's tech services. Sales growth, cost reduction, website optimization, managed IT & cybersecurity in Bangladesh.",
+    "Boost revenue with QoraxAI’s IT services—business consulting, SEO Service, CRM integration, ERPNext implementation, and cybersecurity assessment.",
   keywords: [
     "revenue growth",
     "sales acceleration",
