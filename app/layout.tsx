@@ -62,7 +62,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "QoraxAI: Revenue Growth Through Technology",
+    title: "QoraxAI: Revenue Accelerate Through Technology",
     description: "Accelerate your revenue by 250% with sales-focused technology services",
   },
   //verification: {
@@ -91,7 +91,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "QoraxAI",
-    description: "Revenue growth through technology - Sales-focused IT services in Bangladesh",
+    description: "Revenue growth through technology - Sales-focused IT support services",
     url: "https://qoraxai.com",
     logo: "https://qoraxai.com/qoraxai-icon.png",
     image: "https://qoraxai.com/banner.webp",
