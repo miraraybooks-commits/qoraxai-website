@@ -60,9 +60,9 @@ export const metadata = {
     title: "QoraxAI: Revenue Growth Through Technology",
     description: "Accelerate your revenue by 250% with sales-focused technology services",
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
+  //verification: {
+  //  google: "your-google-verification-code",
+  //},
   alternates: {
     canonical: "https://qoraxai.com",
   },
