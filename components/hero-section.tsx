@@ -71,12 +71,6 @@ export function HeroSection() {
           viewport={{ once: true }}
         >
           <motion.div className="space-y-6" variants={itemVariants}>
-            <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white tracking-tight"
-              variants={itemVariants}
-            >
-              Results-Driven Digital Growth Partner
-            </motion.h1>
 
             <motion.p
               className="text-xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent"
@@ -84,6 +78,13 @@ export function HeroSection() {
             >
               We don't promise. We prove.
             </motion.p>
+
+            <motion.h1
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white tracking-tight"
+              variants={itemVariants}
+            >
+              Results-Driven Digital Growth Partner
+            </motion.h1>
           </motion.div>
 
           <motion.p
