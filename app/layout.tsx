@@ -63,7 +63,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "QoraxAI: Revenue Accelerate Through Technology",
-    description: "Accelerate your revenue by 250% with sales-focused technology services",
+    description: "Boost revenue by up to 250% with QoraxAI's sales-focused IT services, digital transformation, and growth technology solutions.",
   },
   //verification: {
   //  google: "your-google-verification-code",
