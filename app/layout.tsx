@@ -55,13 +55,13 @@ export const metadata = {
     url: "https://qoraxai.com",
     title: "QoraxAI | Revenue Growth Through Automation & IT Services",
     description:
-      "Accelerate your revenue by 250% with QoraxAI's sales-focused technology services. Drive growth through digital transformation.",
+      "Accelerate your revenue by 40% with QoraxAI's sales-focused technology services. Drive growth through digital transformation.",
     siteName: "QoraxAI",
   },
   twitter: {
     card: "summary_large_image",
     title: "QoraxAI: Accelerate Revenue Through Technology",
-    description: "Boost revenue by up to 250% with QoraxAI's sales-focused IT services, digital transformation, and growth technology solutions.",
+    description: "Boost revenue by up to 40% with QoraxAI's sales-focused IT services, digital transformation, and growth technology solutions.",
   },
   //verification: {
   //  google: "your-google-verification-code",
@@ -93,7 +93,6 @@ export default function RootLayout({
     url: "https://qoraxai.com",
     logo: "https://qoraxai.com/qoraxai-icon.png",
     image: "https://qoraxai.com/banner.webp",
-    telephone: "+880-1234-567890",
     email: "info@qoraxai.com",
     address: {
       "@type": "PostalAddress",
