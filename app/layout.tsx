@@ -55,7 +55,7 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://qoraxai.com",
-    title: "QoraxAI: Revenue Growth Through Technology | Sales-Focused IT Services Bangladesh",
+    title: "QoraxAI | Revenue Growth Through Automation IT Services",
     description:
       "Accelerate your revenue by 250% with QoraxAI's sales-focused technology services. Drive growth through digital transformation.",
     siteName: "QoraxAI",
