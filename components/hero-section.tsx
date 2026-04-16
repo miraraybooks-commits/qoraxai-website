@@ -64,7 +64,7 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         <motion.div
-          className="space-y-8 text-center"
+          className="space-y-4 text-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
