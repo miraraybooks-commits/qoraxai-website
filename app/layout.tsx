@@ -55,14 +55,14 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://qoraxai.com",
-    title: "QoraxAI | Revenue Growth Through Automation IT Services",
+    title: "QoraxAI | Revenue Growth Through Automation & IT Services",
     description:
       "Accelerate your revenue by 250% with QoraxAI's sales-focused technology services. Drive growth through digital transformation.",
     siteName: "QoraxAI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "QoraxAI: Revenue Accelerate Through Technology",
+    title: "QoraxAI: Accelerate Revenue Through Technology",
     description: "Boost revenue by up to 250% with QoraxAI's sales-focused IT services, digital transformation, and growth technology solutions.",
   },
   //verification: {
