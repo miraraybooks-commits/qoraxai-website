@@ -114,7 +114,7 @@ export default function BusinessGrowthConsultingPage() {
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">6. Leadership Coaching & Change Management</h3>
                 <p className="text-muted-foreground">
-                  We equip your team with frameworks and mindsets needed to lead organizational change and sustain growth momentum.
+                  We prepare your team with frameworks and mindsets needed to lead organizational change and sustain growth momentum.
                 </p>
               </div>
             </div>
