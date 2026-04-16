@@ -53,7 +53,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-gray-900 via-gray-900 to-black">
         <Image
           src="/banner.webp"
-          alt="QoraxAI - QoraxAI - Revenue Growth, IT Support & Digital Transformation"
+          alt="QoraxAI - Revenue Growth, IT Support & Digital Transformation"
           fill
           priority
           quality={75}
