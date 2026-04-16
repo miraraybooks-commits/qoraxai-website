@@ -87,7 +87,7 @@ export default function RootLayout({
 }>) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "@type": "ITConsultant"  or  "LocalBusiness" + "serviceType": "Digital Marketing Agency",
     name: "QoraxAI",
     description: "Revenue growth through technology - Sales-focused IT support services",
     url: "https://qoraxai.com",
