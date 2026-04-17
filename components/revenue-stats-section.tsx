@@ -14,7 +14,7 @@ export function RevenueStatsSection() {
     },
     {
       icon: DollarSign,
-      value: "15M+",
+      value: "150M+",
       label: "Revenue Generated",
       description: "Total additional revenue unlocked for our clients",
       color: "text-primary",
