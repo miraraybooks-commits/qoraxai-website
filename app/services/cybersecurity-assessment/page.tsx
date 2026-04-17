@@ -36,7 +36,7 @@ export default function CybersecurityAssessmentPage() {
 
           <div className="relative h-72 sm:h-96 lg:h-[420px] overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/cybersecurity-assessment.webp"
+              src="/cybersecurity-assessment.jpg"
               alt="Cybersecurity assessment and vulnerability testing services"
               fill
               className="object-cover object-center"
