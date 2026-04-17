@@ -39,6 +39,7 @@ export default function CourierManagementPage() {
               src="/courier-management.jpg"
               alt="Courier and parcel management software with real-time tracking"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover object-center"
               priority
             />

@@ -41,6 +41,7 @@ export default function BusinessGrowthConsultingPage() {
               src="/business-growth.jpg"
               alt="Strategic business growth consulting and market expansion services"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover object-center"
               priority
             />
