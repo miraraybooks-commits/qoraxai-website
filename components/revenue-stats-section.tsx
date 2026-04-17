@@ -7,21 +7,21 @@ export function RevenueStatsSection() {
   const stats = [
     {
       icon: TrendingUp,
-      value: "250%",
+      value: "40%",
       label: "Average Revenue Growth",
       description: "Our clients see significant revenue increases within 12 months",
       color: "text-secondary",
     },
     {
       icon: DollarSign,
-      value: "৳15Cr+",
+      value: "15M+",
       label: "Revenue Generated",
       description: "Total additional revenue unlocked for our clients",
       color: "text-primary",
     },
     {
       icon: BarChart3,
-      value: "180%",
+      value: "50%",
       label: "Sales Conversion Boost",
       description: "Average improvement in online conversion rates",
       color: "text-accent",
