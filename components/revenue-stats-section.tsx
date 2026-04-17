@@ -14,14 +14,14 @@ export function RevenueStatsSection() {
     },
     {
       icon: DollarSign,
-      value: "৳15Cr+",
+      value: "15M+",
       label: "Revenue Generated",
       description: "Total additional revenue unlocked for our clients",
       color: "text-primary",
     },
     {
       icon: BarChart3,
-      value: "180%",
+      value: "50%",
       label: "Sales Conversion Boost",
       description: "Average improvement in online conversion rates",
       color: "text-accent",
