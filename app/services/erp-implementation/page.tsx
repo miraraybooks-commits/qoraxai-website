@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "ERPNext Implementation Services in Bangladesh | QoraxAI",
+  title: "ERPNext Setup & Implementation Services | QoraxAI",
   description:
     "ERPNext implementation for small and medium businesses. We handle installation, configuration, data migration, training, and ongoing support. Get started with a free consultation.",
   keywords: [
