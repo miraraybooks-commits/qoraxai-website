@@ -36,7 +36,7 @@ export default function CourierManagementPage() {
 
           <div className="relative h-72 sm:h-96 lg:h-[420px] overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/courier-management.webp"
+              src="/courier-management.jpg"
               alt="Courier and parcel management software with real-time tracking"
               fill
               className="object-cover object-center"
