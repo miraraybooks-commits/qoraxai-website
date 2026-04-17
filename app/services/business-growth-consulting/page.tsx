@@ -38,7 +38,7 @@ export default function BusinessGrowthConsultingPage() {
 
           <div className="relative h-72 sm:h-96 lg:h-[420px] overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/business-growth.webp"
+              src="/business-growth.jpg"
               alt="Strategic business growth consulting and market expansion services"
               fill
               className="object-cover object-center"
