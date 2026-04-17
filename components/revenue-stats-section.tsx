@@ -7,7 +7,7 @@ export function RevenueStatsSection() {
   const stats = [
     {
       icon: TrendingUp,
-      value: "250%",
+      value: "40%",
       label: "Average Revenue Growth",
       description: "Our clients see significant revenue increases within 12 months",
       color: "text-secondary",
