@@ -32,8 +32,8 @@ export function ServicesSection() {
     },
     {
       icon: DollarSign,
-      title: "Cybersecurity Assessment",
-      description: "Vulnerability testing and risk management",
+      title: "AI SEO, GEO & AEO Optimization",
+      description: "ChatGPT, Google, and voice assistant optimization",
       slug: "cybersecurity-assessment",
     },
     {
