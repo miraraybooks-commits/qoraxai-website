@@ -34,7 +34,7 @@ export function ServicesSection() {
       icon: DollarSign,
       title: "AI SEO, GEO & AEO Optimization",
       description: "ChatGPT, Google, and voice assistant optimization",
-      slug: "cybersecurity-assessment",
+      slug: "ai-seo-geo-aeo",
     },
     {
       icon: Headphones,
