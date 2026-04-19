@@ -42,9 +42,6 @@ export function Header() {
           <Link href="/blog" className="text-sm font-medium text-muted-foreground hover:text-primary transition">
             Blog
           </Link>
-          <Link href="#pricing" className="text-sm font-medium text-muted-foreground hover:text-primary transition">
-            Pricing
-          </Link>
           <Link href="#faq" className="text-sm font-medium text-muted-foreground hover:text-primary transition">
             FAQ
           </Link>
