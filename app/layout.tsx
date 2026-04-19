@@ -72,11 +72,16 @@ export default function RootLayout({
     image: "https://qoraxai.com/banner.webp",
     telephone: "+880-1718723202",
     email: "info@qoraxai.com",
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "BD",
-      addressLocality: "Dhaka",
-    },
+    areaServed: [
+      {
+        "@type": "Country",
+        name: "Bangladesh"
+      },
+      {
+        "@type": "Place",
+        name: "Worldwide"
+      }
+    ],
     sameAs: [
       "https://www.linkedin.com/company/qoraxai",
       "https://twitter.com/qoraxai",
