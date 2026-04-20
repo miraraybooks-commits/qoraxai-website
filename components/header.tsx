@@ -49,7 +49,7 @@ export function Header() {
         </nav>
 
         <a
-          href="https://wa.me/8801718723202"
+          href="https://wa.me/8801718723202?text=Hello%20QoraxAI,%20I%E2%80%99m%20interested%20in%20your%20services.%20Please%20share%20details."
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white transition-all hover:shadow-lg"
