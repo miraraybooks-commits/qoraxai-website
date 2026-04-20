@@ -23,7 +23,7 @@ export function Header() {
           <span className="font-bold text-2xl sm:text-3xl">
             <span className="text-foreground">Qorax</span>
             <span className="text-[#00A7E1]">AI</span>
-            <span className="text-foreground">Technology</span>
+            <span className="text-foreground"> Technology</span>
           </span>
         </Link>
 
