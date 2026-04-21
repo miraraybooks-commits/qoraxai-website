@@ -344,8 +344,7 @@ export function ContactForm() {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Free Tech Audit</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get a personalized assessment of your business needs. Fill out the form below and our team will be in touch
-            within 24 hours.
+            Get a personalized assessment of your business needs. Fill out the form below and our team will be in touch within 24 hours.
           </p>
         </motion.div>
 
@@ -357,7 +356,7 @@ export function ContactForm() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-        <div className="border border-gray-600 bg-gray-50 rounded-lg p-4">
+          <div className="border border-gray-600 bg-gray-50 rounded-lg p-4">
             <div className="space-y-8 text-gray-800">
               {/* Name and Email */}
               <div className="grid md:grid-cols-2 gap-6">
@@ -520,7 +519,7 @@ export function ContactForm() {
                 </Button>
               </motion.div>
             </div>
-        </div>
+          </div>
         </motion.form>
       </div>
     </section>
