@@ -76,14 +76,14 @@ export function HeroSection() {
               className="text-xl sm:text-2xl md:text-3xl font-semibold text-white pt-6"
               variants={itemVariants}
             >
-              We don't promise. We prove.
+              From ERP rollouts to AI search visibility
             </motion.p>
 
             <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent tracking-tight"
               variants={itemVariants}
             >
-              Generative Engine Optimization (GEO) & AEO Services
+              AI-Powered Tech Solutions That Grow Your Business
             </motion.h1>
           </motion.div>
 
@@ -91,7 +91,7 @@ export function HeroSection() {
             className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light"
             variants={itemVariants}
           >
-            Grow Sales. Reduce Cost. Automate Operations. Ensure Security.
+            we deliver measurable results for Bangladesh businesses
           </motion.p>
 
           <motion.div
@@ -135,7 +135,7 @@ export function HeroSection() {
                 size="lg"
                 className="w-full sm:w-auto bg-blue-600 text-white px-8 py-6 rounded-full hover:bg-blue-700 transition-all text-base sm:text-lg font-semibold shadow-lg hover:shadow-blue-500/50 hover:scale-105"
               >
-                Get Free Tech Audit
+                Book a Free Consultation
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
@@ -160,7 +160,7 @@ export function HeroSection() {
             </div>
             <div className="border border-gray-700 rounded-lg p-6 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all">
               <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">50+</div>
-              <div className="text-sm sm:text-base text-gray-300">Tech Solutions Delivered</div>
+              <div className="text-sm sm:text-base text-gray-300">Enterprise Solutions Across 12 Industries</div>
             </div>
             <div className="border border-gray-700 rounded-lg p-6 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all">
               <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">99.9%</div>
