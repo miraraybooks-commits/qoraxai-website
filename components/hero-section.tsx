@@ -76,14 +76,14 @@ export function HeroSection() {
               className="text-xl sm:text-2xl md:text-3xl font-semibold text-white pt-6"
               variants={itemVariants}
             >
-              We don't promise. We prove.
+              From ERP rollouts to AI search visibility
             </motion.p>
 
             <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent tracking-tight"
               variants={itemVariants}
             >
-              Generative Engine Optimization (GEO) & AEO Services
+              AI-Powered Tech Solutions That Grow Your Business
             </motion.h1>
           </motion.div>
 
@@ -91,7 +91,7 @@ export function HeroSection() {
             className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light"
             variants={itemVariants}
           >
-            Grow Sales. Reduce Cost. Automate Operations. Ensure Security.
+            we deliver measurable results for Bangladesh businesses
           </motion.p>
 
           <motion.div
