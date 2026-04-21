@@ -515,7 +515,7 @@ export function ContactForm() {
                   disabled={isLoading}
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-12 text-base transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
-                  {isLoading ? "Submitting..." : "Request Free Tech Audit"}
+                  {isLoading ? "Submitting..." : "Book a Free Consultation"}
                 </Button>
               </motion.div>
             </div>
