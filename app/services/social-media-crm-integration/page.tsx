@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "Zoho & ERPNext CRM Integration | QoraxAI",
+  title: "Zoho, SuiteCRM & ERPNext CRM Integration in Dhaka | QoraxAI",
   description:
     "Integrate social media with CRM systems for seamless lead collection and management. Boost conversions with automated customer engagement.",
   robots: {
