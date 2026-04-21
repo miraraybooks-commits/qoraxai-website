@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "AI SEO Services in Bangladesh (GEO & AEO) | QoraxAI",
+  title: "Business Growth Consulting Services | Strategic Planning | QoraxAI",
   description:
     "Accelerate business growth with expert consulting. Data-driven strategies for market expansion, revenue optimization, and competitive advantage.",
   robots: {
