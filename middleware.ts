@@ -3,21 +3,7 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 export async function middleware(request: NextRequest) {
-  const userAgent = request.headers.get("user-agent") || ""
-  const ua = userAgent.toLowerCase()
   const pathname = request.nextUrl.pathname
-
-  const botPatterns = [
-    "claudebot",
-    "anthropic-ai",
-    "googlebot",
-    "bingbot",
-    "gptbot",
-    "perplexitybot",
-    "facebookexternalhit",
-    "twitterbot",
-    "linkedinbot",
-  ]
 
   const PUBLIC_PATHS = [
     "/",
@@ -31,17 +17,18 @@ export async function middleware(request: NextRequest) {
     "/sitemap.xml",
   ]
 
-  const isBot = botPatterns.some((pattern) => ua.includes(pattern))
-
   const isPublicPath = PUBLIC_PATHS.some((path) => {
     if (path === "/") return pathname === "/"
     return pathname.startsWith(path)
   })
 
-  if (isBot && isPublicPath) {
+  // Public pages — allow everyone through freely
+  // No session check needed — these are marketing pages
+  if (isPublicPath) {
     return NextResponse.next()
   }
 
+  // Protected pages — run Supabase session check
   return await updateSession(request)
 }
 
