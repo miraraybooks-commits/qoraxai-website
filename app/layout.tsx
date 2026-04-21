@@ -11,7 +11,7 @@ const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display" })
 export const metadata = {
   title: "QoraxAI - AI-Powered Digital Growth Agency — Results Proven",
   description:
-    "Boost revenue with QoraxAI's IT services—business consulting, SEO Service, CRM integration, ERPNext implementation, and cybersecurity assessment.",
+    "Boost revenue with QoraxAI's IT services—business consulting, SEO Service, CRM integration, ERPNext implementation, and Courier Management Software.",
   authors: [{ name: "QoraxAI" }],
   creator: "QoraxAI",
   publisher: "QoraxAI",

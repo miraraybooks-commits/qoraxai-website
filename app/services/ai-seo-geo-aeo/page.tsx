@@ -3,9 +3,9 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "AI SEO, GEO & AEO Services | QoraxAI",
+  title: "generative engine optimization service | QoraxAI",
   description:
-    "Get found on Google, ChatGPT, Gemini, and voice assistants. QoraxAI delivers AI SEO, Generative Engine Optimization (GEO), and Answer Engine Optimization (AEO) to future-proof your search visibility.",
+    "Dominate Google, ChatGPT,  Gemini, and AI search. QoraxAI delivers AI SEO, GEO, and AEO to future-proof your search visibility.",
   robots: {
     index: true,
     follow: true,

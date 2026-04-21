@@ -3,9 +3,9 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "Courier Management Software Bangladesh | QoraxAI | Booking to Delivery",
+  title: "Courier Software Bangladesh | QoraxAI | Booking to Delivery",
   description:
-    "Bangladesh-built courier management software. Automate booking, parcel tracking, COD settlement, branch accounts, and delivery operations — all in one platform. Call 01718 723202.",
+    "Courier Software | Automate booking, parcel tracking, COD settlement, branch accounts, and delivery operations — all in one platform. Call 01718 723202.",
   keywords: [
     "courier management software Bangladesh",
     "courier software Dhaka",

@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
 export const metadata = {
-  title: "SQL Server & MySQL Database Optimization | Performance Tuning | QoraxAI",
+  title: "SQL Server & MySQL Database Performance Tuning | QoraxAI",
   description:
     "Optimize SQL Server and MySQL databases for speed, reliability, and cost efficiency. Expert performance tuning and query optimization.",
   robots: {
