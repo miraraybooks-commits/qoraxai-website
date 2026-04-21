@@ -160,7 +160,7 @@ export function HeroSection() {
             </div>
             <div className="border border-gray-700 rounded-lg p-6 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all">
               <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">50+</div>
-              <div className="text-sm sm:text-base text-gray-300">Tech Solutions Delivered</div>
+              <div className="text-sm sm:text-base text-gray-300">Enterprise Solutions Across 12 Industries</div>
             </div>
             <div className="border border-gray-700 rounded-lg p-6 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all">
               <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">99.9%</div>
