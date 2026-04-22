@@ -12,7 +12,7 @@ export const metadata = {
   metadataBase: new URL("https://qoraxai.com"),
   title: "QoraxAI - AI-Powered Digital Growth Agency — Results Proven",
   description:
-    "Boost revenue with QoraxAI's IT services—business consulting, SEO Service, CRM integration, ERPNext implementation, and Courier Management Software.",
+    "Boost revenue with QoraxAI's IT services—business consulting, SEO Service, CRM Setup & integration, ERPNext implementation, and Courier Software in Dhaka.",
   authors: [{ name: "QoraxAI" }],
   creator: "QoraxAI",
   publisher: "QoraxAI",
