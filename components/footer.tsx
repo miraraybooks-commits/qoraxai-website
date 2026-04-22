@@ -24,8 +24,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground text-pretty">
-              Revenue-focused technology partner helping Bangladeshi businesses grow through strategic digital
-              transformation.
+              A revenue-focused technology partner helping Bangladeshi businesses grow through AI-powered marketing, ERP systems, and smart digital transformation.
             </p>
           </div>
 
