@@ -24,8 +24,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground text-pretty">
-              Revenue-focused technology partner helping Bangladeshi businesses grow through strategic digital
-              transformation.
+              A revenue-focused technology partner helping Bangladeshi businesses grow through AI-powered marketing, ERP systems, and smart digital transformation.
             </p>
           </div>
 
@@ -34,22 +33,27 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
                 <Link href="#services" className="hover:text-primary transition">
-                  Sales Growth
+                  Business Growth
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="hover:text-primary transition">
-                  Cost Reduction
+                  GEO, SEO & AEO Services
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="hover:text-primary transition">
-                  Website Performance
+                  ERP Implementation
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="hover:text-primary transition">
-                  Managed IT Services
+                  Courier Software
+                </Link>
+              </li>
+              <li>
+                <Link href="#services" className="hover:text-primary transition">
+                  CRM Integration
                 </Link>
               </li>
             </ul>
@@ -112,7 +116,7 @@ export function Footer() {
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 QoraxAI. All rights reserved. Built to drive your revenue growth.
+            © 2026 QoraxAI. All rights reserved. Built to drive your revenue growth.
           </p>
           <div className="flex gap-4">
             <Link
