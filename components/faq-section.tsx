@@ -8,34 +8,34 @@ export function FAQSection() {
 
   const faqs = [
     {
-      question: "How long does a tech audit take?",
+      question: "What is Business Growth Consulting and how does it work?",
       answer:
-        "Our comprehensive tech audits typically take 2-3 weeks, depending on the complexity of your systems. We provide a detailed report with actionable recommendations.",
+        "Business Growth Consulting is a strategic service that combines market analysis, competitive research, and data-driven planning to unlock revenue growth. We use methods like market segmentation analysis, customer journey mapping, and growth opportunity identification to create a customized roadmap. Our approach helps businesses reach new customers, optimize operations, and scale sustainably with measurable results.",
     },
     {
-      question: "What industries do you work with?",
+      question: "How does Social Media CRM Integration improve customer relationships?",
       answer:
-        "We work with businesses across all industries - from startups to enterprises. Our expertise spans SaaS, e-commerce, fintech, healthcare, and more.",
+        "Social Media CRM Integration connects your social platforms with customer relationship management systems to automate lead capture and nurture customer interactions. We implement integration of Facebook, Instagram, and LinkedIn with CRM tools for real-time lead management. This ensures no customer inquiry is missed and enables personalized communication at scale.",
     },
     {
-      question: "Will your solutions disrupt our current operations?",
+      question: "What does ERP Implementation involve for my business?",
       answer:
-        "Absolutely. We integrate seamlessly with your existing team, providing guidance and support without disrupting your current operations.",
+        "ERP Implementation uses ERPNext to streamline business processes across departments - from inventory and finance to human resources. Our implementation methodology includes system configuration, data migration, staff training, and go-live support. This consolidates all operations into one integrated platform, improving efficiency, reducing errors, and providing real-time business insights.",
     },
     {
-      question: "What kind of results can we expect?",
+      question: "How can Courier Management Software optimize delivery operations?",
       answer:
-        "Most clients see 20-40% cost reductions within the first year, plus significant improvements in performance and security. Results vary based on your current state.",
+        "Courier Management Software automates booking, parcel tracking, COD settlement, and delivery dispatch using intelligent routing algorithms. The system provides real-time tracking for customers, automated branch management, and streamlined payment reconciliation. This reduces operational costs, improves delivery times, and enhances customer satisfaction with transparency.",
     },
     {
-      question: "Do you offer ongoing support?",
+      question: "What is AI SEO, GEO & AEO Optimization and why is it important?",
       answer:
-        "Yes. We offer flexible support packages ranging from quarterly check-ins to 24/7 managed services, depending on your needs.",
+        "AI SEO, GEO & AEO Optimization ensures your content ranks well across ChatGPT, Google Search, Gemini, and voice assistants like Alexa and Siri. Our methods include schema markup implementation, natural language optimization, local business listings management, and voice-search keyword targeting. This future-proofs your visibility across AI-powered search platforms and emerging search technologies.",
     },
     {
-      question: "How do I get started?",
+      question: "How does Database Optimization improve performance and reduce costs?",
       answer:
-        "Simply fill out our contact form to request a free tech audit. We'll schedule a call to understand your needs and provide initial recommendations.",
+        "Database Optimization involves analyzing and tuning SQL Server and MySQL databases for speed and efficiency. We use query optimization, index creation, storage analysis, and performance monitoring to eliminate bottlenecks. The result is faster data retrieval, reduced server load, lower hosting costs, and improved user experience.",
     },
   ]
 
