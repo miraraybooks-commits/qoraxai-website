@@ -68,11 +68,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#pricing" className="hover:text-primary transition">
-                  Pricing
-                </Link>
-              </li>
-              <li>
                 <Link href="/privacy" className="hover:text-primary transition">
                   Privacy Policy
                 </Link>
