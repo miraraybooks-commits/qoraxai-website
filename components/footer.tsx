@@ -51,6 +51,11 @@ export function Footer() {
                   Courier Software
                 </Link>
               </li>
+              <li>
+                <Link href="#services" className="hover:text-primary transition">
+                  CRM Integration
+                </Link>
+              </li>
             </ul>
           </div>
 
