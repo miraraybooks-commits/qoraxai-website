@@ -150,6 +150,13 @@ export function HeroSection() {
             </Link>
           </motion.div>
 
+          <motion.p
+            className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed pt-8 font-light"
+            variants={itemVariants}
+          >
+            At QoraxAI, we combine AI-powered technology with real business expertise to deliver tech solutions that grow your revenue. From implementing ERP systems and managing courier logistics to optimizing your database performance and boosting visibility across ChatGPT and AI search assistants, we handle the technical challenges so you can focus on growing your business. Our team has helped businesses reduce costs by 40%, streamline operations, and scale sustainably across industries.
+          </motion.p>
+
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 pt-6 max-w-4xl mx-auto"
             variants={itemVariants}
