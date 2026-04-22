@@ -116,7 +116,7 @@ export function Footer() {
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 QoraxAI. All rights reserved. Built to drive your revenue growth.
+            © 2026 QoraxAI. All rights reserved. Built to drive your revenue growth.
           </p>
           <div className="flex gap-4">
             <Link
