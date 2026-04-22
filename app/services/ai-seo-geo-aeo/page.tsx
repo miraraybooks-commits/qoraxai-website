@@ -8,7 +8,7 @@ export const metadata = {
     "Dominate Google, ChatGPT,  Gemini, and AI search. QoraxAI delivers AI SEO, GEO, and AEO to future-proof your search visibility.",
 
   alternates: {
-    canonical: "https://qoraxai.com/services/ai-seo-geo-aeo",
+    canonical: "/services/ai-seo-geo-aeo",
   },
   robots: {
     index: true,
