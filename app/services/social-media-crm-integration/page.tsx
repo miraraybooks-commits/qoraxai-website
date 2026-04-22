@@ -6,6 +6,10 @@ export const metadata = {
   title: "Zoho, SuiteCRM & ERPNext CRM Integration in Dhaka | QoraxAI",
   description:
     "Integrate social media with CRM systems for seamless lead collection and management. Boost conversions with automated customer engagement.",
+
+  alternates: {
+    canonical: "/services/social-media-crm-integration",
+  },
   robots: {
     index: true,
     follow: true,
