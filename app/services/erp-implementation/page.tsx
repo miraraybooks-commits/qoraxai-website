@@ -15,6 +15,10 @@ export const metadata = {
     "Frappe ERP",
     "ERP implementation service",
   ],
+
+  alternates: {
+    canonical: "/services/erp-implementation",
+  },
   robots: {
     index: true,
     follow: true,
