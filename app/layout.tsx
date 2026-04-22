@@ -14,8 +14,8 @@ const GoogleTagManager = dynamic(
   () => import("@next/third-parties/google").then(mod => mod.GoogleTagManager),
   { ssr: false }
 )
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
-const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" })
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display", display: "swap" })
 
 export const metadata = {
   metadataBase: new URL("https://qoraxai.com"),
