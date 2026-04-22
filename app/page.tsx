@@ -1,4 +1,4 @@
-"use client"
+export const revalidate = 3600
 
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
