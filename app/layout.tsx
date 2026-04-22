@@ -1,6 +1,6 @@
 import type React from "react"
 import { Inter, DM_Sans } from "next/font/google"
-import { GoogleTagManager } from "@next/third-parties/google"
+//import { GoogleTagManager } from "@next/third-parties/google"
 //import { Analytics } from "@vercel/analytics/next"
 import { CookieConsent } from "@/components/cookie-consent"
 import dynamic from "next/dynamic"
