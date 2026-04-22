@@ -15,6 +15,9 @@ export const metadata = {
     "multi-branch courier system",
     "delivery management software Bangladesh",
   ],
+  alternates: {
+    canonical: "/services/courier-management-software",
+  },
   robots: {
     index: true,
     follow: true,
