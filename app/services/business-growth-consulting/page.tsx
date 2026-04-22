@@ -6,6 +6,9 @@ export const metadata = {
   title: "AI-powered business growth consulting in Bangladesh | QoraxAI",
   description:
     "Accelerate business growth with expert consulting. Data-driven strategies for market expansion, revenue optimization, and competitive advantage.",
+  alternates: {
+    canonical: "/services/business-growth-consulting",
+  },
   robots: {
     index: true,
     follow: true,

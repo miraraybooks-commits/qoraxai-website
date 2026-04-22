@@ -6,6 +6,9 @@ export const metadata = {
   title: "SQL Server & MySQL Database Performance Tuning | QoraxAI",
   description:
     "Optimize SQL Server and MySQL databases for speed, reliability, and cost efficiency. Expert performance tuning and query optimization.",
+  alternates: {
+    canonical: "/services/database-optimization",
+  },
   robots: {
     index: true,
     follow: true,
