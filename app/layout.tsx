@@ -1,11 +1,19 @@
 import type React from "react"
 import { Inter, DM_Sans } from "next/font/google"
 import { GoogleTagManager } from "@next/third-parties/google"
-import { Analytics } from "@vercel/analytics/next"
+//import { Analytics } from "@vercel/analytics/next"
 import { CookieConsent } from "@/components/cookie-consent"
-import "./globals.css"
 import dynamic from "next/dynamic"
 
+const Analytics = dynamic(
+  () => import("@vercel/analytics/next").then(mod => mod.Analytics),
+  { ssr: false }
+)
+
+const GoogleTagManager = dynamic(
+  () => import("@next/third-parties/google").then(mod => mod.GoogleTagManager),
+  { ssr: false }
+)
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display" })
 
