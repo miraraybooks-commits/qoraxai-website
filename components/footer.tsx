@@ -33,22 +33,22 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
                 <Link href="#services" className="hover:text-primary transition">
-                  Sales Growth
+                  Business Growth
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="hover:text-primary transition">
-                  Cost Reduction
+                  GEO, SEO & AEO Services
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="hover:text-primary transition">
-                  Website Performance
+                  ERP Implementation
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="hover:text-primary transition">
-                  Managed IT Services
+                  Courier Software
                 </Link>
               </li>
             </ul>
