@@ -8,34 +8,34 @@ export function FAQSection() {
 
   const faqs = [
     {
-      question: "What is Business Growth Consulting and how does it work?",
+      question: "We're not sure how to grow - where do we even start?",
       answer:
-        "Business Growth Consulting is a strategic service that combines market analysis, competitive research, and data-driven planning to unlock revenue growth. We use methods like market segmentation analysis, customer journey mapping, and growth opportunity identification to create a customized roadmap. Our approach helps businesses reach new customers, optimize operations, and scale sustainably with measurable results.",
+        "That's the biggest challenge most business owners face. We start by understanding your market, who your customers really are, and what opportunities you're missing. Then we map out a clear plan - where to focus, which channels work best, and how to scale without breaking the bank. We've helped companies find 30-40% more revenue just by adjusting their strategy.",
     },
     {
-      question: "How does Social Media CRM Integration improve customer relationships?",
+      question: "Our social media gets lots of followers but no real customers - what's wrong?",
       answer:
-        "Social Media CRM Integration connects your social platforms with customer relationship management systems to automate lead capture and nurture customer interactions. We implement integration of Facebook, Instagram, and LinkedIn with CRM tools for real-time lead management. This ensures no customer inquiry is missed and enables personalized communication at scale.",
+        "Followers don't pay bills - customers do. The problem is usually that your leads aren't being captured or followed up on properly. We connect your Facebook, Instagram, and WhatsApp directly to a CRM system so every inquiry is tracked and responded to automatically. No more lost leads disappearing into your messages.",
     },
     {
-      question: "What does ERP Implementation involve for my business?",
+      question: "We're drowning in spreadsheets. Will a new system make things worse?",
       answer:
-        "ERP Implementation uses ERPNext to streamline business processes across departments - from inventory and finance to human resources. Our implementation methodology includes system configuration, data migration, staff training, and go-live support. This consolidates all operations into one integrated platform, improving efficiency, reducing errors, and providing real-time business insights.",
+        "Actually, ERPNext is the opposite of disruptive. We set it up carefully, migrate your data without losing anything, and train your team step-by-step. Most clients tell us the transition is smooth - suddenly everything talks to each other, accounting knows what inventory ordered, and you actually have time to work on growing the business instead of managing spreadsheets.",
     },
     {
-      question: "How can Courier Management Software optimize delivery operations?",
+      question: "Our courier business is growing but we can't keep up with logistics",
       answer:
-        "Courier Management Software automates booking, parcel tracking, COD settlement, and delivery dispatch using intelligent routing algorithms. The system provides real-time tracking for customers, automated branch management, and streamlined payment reconciliation. This reduces operational costs, improves delivery times, and enhances customer satisfaction with transparency.",
+        "Growing too fast without the right tools kills profitability. We implement a courier management system that automates bookings, tracks parcels in real-time, handles COD payments automatically, and optimizes delivery routes. Your customers get tracking updates, your operations get 20% faster, and you finally have peace of mind.",
     },
     {
-      question: "What is AI SEO, GEO & AEO Optimization and why is it important?",
+      question: "Everyone talks about AI - how does that help us online?",
       answer:
-        "AI SEO, GEO & AEO Optimization ensures your content ranks well across ChatGPT, Google Search, Gemini, and voice assistants like Alexa and Siri. Our methods include schema markup implementation, natural language optimization, local business listings management, and voice-search keyword targeting. This future-proofs your visibility across AI-powered search platforms and emerging search technologies.",
+        "AI is changing how people search - through ChatGPT, voice commands, and Google's new AI features. If your content isn't optimized for these, you're invisible. We make sure your website shows up when customers ask AI assistants about your services, ranks for voice searches, and appears correctly on Google Maps and local listings. It's the future of search.",
     },
     {
-      question: "How does Database Optimization improve performance and reduce costs?",
+      question: "Our database is slow but we don't want to buy expensive new servers",",
       answer:
-        "Database Optimization involves analyzing and tuning SQL Server and MySQL databases for speed and efficiency. We use query optimization, index creation, storage analysis, and performance monitoring to eliminate bottlenecks. The result is faster data retrieval, reduced server load, lower hosting costs, and improved user experience.",
+        "Nine times out of ten, it's not your servers - it's how your database is organized. We analyze your queries, add the right indexes, clean up inefficiencies, and sometimes you see 2-3x speed improvement. Same hardware, same servers, way better performance. Plus your hosting costs go down because you're using less resources.",
     },
   ]
 
