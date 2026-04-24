@@ -20,7 +20,7 @@ const GoogleTagManager = dynamic(
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" })
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display", display: "swap" })
 
-// ─── Shared copy ──────────────────────────────────────────────────────────────
+// ─── Shared copy ───────────────────────────────────────────────────────────
 const META_TITLE = "AI SEO, CRM & ERPNext Services in Bangladesh | QoraxAI"
 const META_DESCRIPTION =
   "ERPNext implementation, CRM setup, AI SEO (GEO/AEO), and courier software solutions in Bangladesh. Grow your business with QoraxAI."
