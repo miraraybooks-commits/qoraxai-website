@@ -19,7 +19,7 @@ const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-display", display
 
 export const metadata = {
   metadataBase: new URL("https://qoraxai.com"),
-  title: "QoraxAI - AI-Powered Digital Growth Agency — Results Proven",
+  title: "AI SEO, CRM & ERPNext Services in Bangladesh | QoraxAI",
   description:
     "Boost revenue with QoraxAI's IT services—business consulting, SEO Service, CRM Setup & integration, ERPNext implementation, and Courier Software in Dhaka.",
   authors: [{ name: "QoraxAI" }],
