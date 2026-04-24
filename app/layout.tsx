@@ -21,7 +21,7 @@ export const metadata = {
   metadataBase: new URL("https://qoraxai.com"),
   title: "AI SEO, CRM & ERPNext Services in Bangladesh | QoraxAI",
   description:
-    "Boost revenue with QoraxAI's IT services—business consulting, SEO Service, CRM Setup & integration, ERPNext implementation, and Courier Software in Dhaka.",
+    "ERPNext implementation, CRM setup, AI SEO (GEO/AEO), and courier software solutions in Bangladesh. Grow your business with QoraxAI.",
   authors: [{ name: "QoraxAI" }],
   creator: "QoraxAI",
   publisher: "QoraxAI",
@@ -40,7 +40,7 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://qoraxai.com",
-    title: "QoraxAI | Revenue Growth Through Automation & IT Services",
+    title: "AI SEO, CRM & ERPNext Services in Bangladesh | QoraxAI",
     description:
       "Accelerate your revenue by 40% with QoraxAI's sales-focused technology services. Drive growth through digital transformation.",
     siteName: "QoraxAI",
