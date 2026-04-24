@@ -42,13 +42,13 @@ export const metadata = {
     url: "https://qoraxai.com",
     title: "AI SEO, CRM & ERPNext Services in Bangladesh | QoraxAI",
     description:
-      "Accelerate your revenue by 40% with QoraxAI's sales-focused technology services. Drive growth through digital transformation.",
+      "ERPNext implementation, CRM setup, AI SEO (GEO/AEO), and courier software solutions in Bangladesh. Grow your business with QoraxAI.",
     siteName: "QoraxAI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "QoraxAI: Accelerate Revenue Through Technology",
-    description: "Boost revenue by up to 40% with QoraxAI's sales-focused IT services, digital transformation, and growth technology solutions.",
+    title: "AI SEO, CRM & ERPNext Services in Bangladesh | QoraxAI",
+    description: "ERPNext implementation, CRM setup, AI SEO (GEO/AEO), and courier software solutions in Bangladesh. Grow your business with QoraxAI.",
   },
   //verification: {
   //  google: "your-google-verification-code",
@@ -76,7 +76,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "QoraxAI",
-    description: "Revenue growth through technology - Sales-focused IT support services",
+    description: "ERPNext implementation, CRM setup, AI SEO (GEO/AEO), and courier software solutions in Bangladesh. Grow your business with QoraxAI.",
     url: "https://qoraxai.com",
     logo: "https://qoraxai.com/qoraxai-icon.png",
     image: "https://qoraxai.com/banner.webp",
