@@ -263,7 +263,7 @@ export default function RootLayout({
 
         <Analytics />
         {/*<GoogleTagManager gtmId="GTM-P2ZSVZXQ" />*/}
-        <AnalyticsWrapper gtmId="GTM-P2ZSVZXQ" />
+        <AnalyticsWrapper gtmId="GTM-XXXXXXX" />
       </body>
     </html>
   )
