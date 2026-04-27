@@ -4,16 +4,59 @@ import Image from "next/image"
 import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
+const SITE_URL = "https://qoraxai.com"
+const OG_IMAGE = {
+  url: "https://qoraxai.com/og-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Business growth consulting services by QoraxAI Bangladesh",
+}
+
 export const metadata = {
-  title: "AI-powered business growth consulting in Bangladesh | QoraxAI",
+  title: "Business Growth Consulting for SMEs in Bangladesh | QoraxAI",
   description:
-    "Accelerate business growth with expert consulting. Data-driven strategies for market expansion, revenue optimization, and competitive advantage.",
+    "Data-driven business growth consulting in Bangladesh. Market expansion, revenue optimisation, operational scaling & digital transformation for SMEs in Dhaka.",
   alternates: {
-    canonical: "/services/business-growth-consulting",
+    canonical: `${SITE_URL}/services/business-growth-consulting`,
   },
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/services/business-growth-consulting`,
+    title: "Business Growth Consulting for SMEs in Bangladesh | QoraxAI",
+    description:
+      "Data-driven business growth consulting in Bangladesh. Market expansion, revenue optimisation & digital transformation for SMEs in Dhaka.",
+    siteName: "QoraxAI",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Business Growth Consulting for SMEs in Bangladesh | QoraxAI",
+    description:
+      "Data-driven growth consulting in Bangladesh — market expansion, revenue optimisation & digital transformation for SMEs.",
+    images: [OG_IMAGE.url],
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Business Growth Consulting",
+  description:
+    "Strategic market analysis, business model optimisation, market expansion planning, operational scaling, and leadership coaching for SMEs in Bangladesh.",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "QoraxAI",
+    url: SITE_URL,
+  },
+  areaServed: { "@type": "Country", name: "Bangladesh" },
+  serviceType: "Business Consulting",
+  url: `${SITE_URL}/services/business-growth-consulting`,
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "BDT",
+    availability: "https://schema.org/InStock",
+    url: `${SITE_URL}/services/business-growth-consulting`,
   },
 }
 
@@ -21,6 +64,10 @@ export default function BusinessGrowthConsultingPage() {
   return (
     <>
       <ServicePageHeader />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         {/* Hero Section */}
@@ -58,28 +105,22 @@ export default function BusinessGrowthConsultingPage() {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-semibold text-primary mb-4">The Growth Challenge</h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              A lot of businesses hit a wall because they don't have a clear plan for growth, market knowledge, or a way to carry it out. Companies miss out on business opportunities, waste money on projects that don't work, and have trouble growing in a way that lasts without the right consulting partner.
+              A lot of businesses hit a wall because they don&apos;t have a clear plan for growth, market knowledge, or a way to carry it out. Companies miss out on business opportunities, waste money on projects that don&apos;t work, and have trouble growing in a way that lasts without the right consulting partner.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-2xl shadow-sm">
               <h3 className="text-xl font-semibold mb-2 text-primary">Not sure on how to grow</h3>
-              <p className="text-muted-foreground">
-                Without a strategy based on data, efforts to grow lack focus and the return on investment (ROI) is hard to predict.
-              </p>
+              <p className="text-muted-foreground">Without a strategy based on data, efforts to grow lack focus and the return on investment (ROI) is hard to predict.</p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-sm">
               <h3 className="text-xl font-semibold mb-2 text-primary">Missed Opportunities</h3>
-              <p className="text-muted-foreground">
-                While you stay in your comfort zone in your current market, your competitors take advantage of untapped segments.
-              </p>
+              <p className="text-muted-foreground">While you stay in your comfort zone in your current market, your competitors take advantage of untapped segments.</p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-sm">
               <h3 className="text-xl font-semibold mb-2 text-primary">Poor Execution</h3>
-              <p className="text-muted-foreground">
-                Without the right implementation frameworks, accountability, and ongoing improvement, strategic plans don't work.
-              </p>
+              <p className="text-muted-foreground">Without the right implementation frameworks, accountability, and ongoing improvement, strategic plans don&apos;t work.</p>
             </div>
           </div>
         </div>
@@ -92,36 +133,24 @@ export default function BusinessGrowthConsultingPage() {
             <div className="grid md:grid-cols-2 gap-8 text-left">
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">1. Strategic Market Analysis</h3>
-                <p className="text-muted-foreground mb-6">
-                  We analyze your market position, competitive landscape, and untapped opportunities to identify the highest-impact growth vectors for your business.
-                </p>
+                <p className="text-muted-foreground mb-6">We analyze your market position, competitive landscape, and untapped opportunities to identify the highest-impact growth vectors for your business.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">2. Business Model Optimization</h3>
-                <p className="text-muted-foreground mb-6">
-                  We redesign revenue streams, pricing strategies, and service offerings to maximize profitability while improving customer value.
-                </p>
+                <p className="text-muted-foreground mb-6">We redesign revenue streams, pricing strategies, and service offerings to maximize profitability while improving customer value.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">3. Market Expansion Strategy</h3>
-                <p className="text-muted-foreground">
-                  Whether geographic expansion, new product lines, or market segment penetration, we create actionable plans backed by data and market research.
-                </p>
+                <p className="text-muted-foreground">Whether geographic expansion, new product lines, or market segment penetration, we create actionable plans backed by data and market research.</p>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">4. Operational Scaling</h3>
-                <p className="text-muted-foreground mb-6">
-                  We align your operations, technology, and team structure to support growth without compromising quality or efficiency.
-                </p>
+                <p className="text-muted-foreground mb-6">We align your operations, technology, and team structure to support growth without compromising quality or efficiency.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">5. Performance Monitoring & Optimization</h3>
-                <p className="text-muted-foreground mb-6">
-                  Real-time dashboards and KPI tracking ensure your growth initiatives stay on course and deliver measurable returns on investment.
-                </p>
+                <p className="text-muted-foreground mb-6">Real-time dashboards and KPI tracking ensure your growth initiatives stay on course and deliver measurable returns on investment.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">6. Leadership Coaching & Change Management</h3>
-                <p className="text-muted-foreground">
-                  We prepare your team with frameworks and mindsets needed to lead organizational change and sustain growth momentum.
-                </p>
+                <p className="text-muted-foreground">We prepare your team with frameworks and mindsets needed to lead organizational change and sustain growth momentum.</p>
               </div>
             </div>
           </div>
@@ -137,22 +166,17 @@ export default function BusinessGrowthConsultingPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-            <div className="p-6 bg-white rounded-2xl shadow-sm">
-              <h3 className="text-lg font-semibold text-primary mb-1">Data-Driven Strategy</h3>
-              <p className="text-muted-foreground">Every recommendation is backed by market data, competitive analysis, and proven frameworks.</p>
-            </div>
-            <div className="p-6 bg-white rounded-2xl shadow-sm">
-              <h3 className="text-lg font-semibold text-primary mb-1">Industry Expertise</h3>
-              <p className="text-muted-foreground">Our consultants bring 15+ years of experience across diverse industries and business models.</p>
-            </div>
-            <div className="p-6 bg-white rounded-2xl shadow-sm">
-              <h3 className="text-lg font-semibold text-primary mb-1">Execution-Focused</h3>
-              <p className="text-muted-foreground">Beyond strategy, we help implement plans, track progress, and optimize for results.</p>
-            </div>
-            <div className="p-6 bg-white rounded-2xl shadow-sm">
-              <h3 className="text-lg font-semibold text-primary mb-1">Measurable Results</h3>
-              <p className="text-muted-foreground">Growth targets are tracked with real-time KPIs and regular performance reviews.</p>
-            </div>
+            {[
+              { title: "Data-Driven Strategy", body: "Every recommendation is backed by market data, competitive analysis, and proven frameworks." },
+              { title: "Industry Expertise", body: "Our consultants bring 15+ years of experience across diverse industries and business models." },
+              { title: "Execution-Focused", body: "Beyond strategy, we help implement plans, track progress, and optimize for results." },
+              { title: "Measurable Results", body: "Growth targets are tracked with real-time KPIs and regular performance reviews." },
+            ].map((card) => (
+              <div key={card.title} className="p-6 bg-white rounded-2xl shadow-sm">
+                <h3 className="text-lg font-semibold text-primary mb-1">{card.title}</h3>
+                <p className="text-muted-foreground">{card.body}</p>
+              </div>
+            ))}
           </div>
         </div>
 
