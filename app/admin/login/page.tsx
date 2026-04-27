@@ -11,6 +11,9 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 import Image from "next/image"
 
+// Prevent this page from being prerendered during build
+export const dynamic = "force-dynamic"
+
 export default function AdminLoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
