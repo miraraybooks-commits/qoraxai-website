@@ -23,7 +23,6 @@ const TestimonialSection = dynamic(
   () => import("@/components/testimonial-section").then((mod) => ({ default: mod.TestimonialSection })),
   {
     loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
-    ssr: false,
   },
 )
 
