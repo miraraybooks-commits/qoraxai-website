@@ -16,7 +16,7 @@ import dynamic from "next/dynamic"
 //  { ssr: false }
 //)
 
-import { AnalyticsWrapper } from "@/components/analytics-wrapper"
+import { AnalyticsWrapper, GoogleTagManager } from "@/components/analytics-wrapper"
 
 // Next.js handles font preloading automatically — no need for preload:true
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" })
