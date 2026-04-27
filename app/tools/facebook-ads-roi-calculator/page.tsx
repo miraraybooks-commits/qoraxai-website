@@ -225,7 +225,8 @@ export default function FacebookAdsROICalculator() {
             />
             <MetricCard
               label="Net Profit"
-              value={formatNum(currencySymbol, netProfit)}
+              //value={formatNum(currencySymbol, netProfit)}
+              value={(netProfit < 0 ? "-" : "") + formatNum(currencySymbol, Math.abs(netProfit))}
             />
             <MetricCard
               label="ROI"
@@ -251,7 +252,8 @@ export default function FacebookAdsROICalculator() {
             <BarRow
               label="Net Profit"
               pct={profitPct}
-              value={formatNum(currencySymbol, netProfit)}
+              //value={formatNum(currencySymbol, netProfit)}
+              value={(netProfit < 0 ? "-" : "") + formatNum(currencySymbol, Math.abs(netProfit))}
               color="bg-green-500"
             />
           </div>
