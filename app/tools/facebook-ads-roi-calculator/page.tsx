@@ -65,6 +65,13 @@ export default function FacebookAdsROICalculator() {
     <section className="min-h-screen bg-[#0a0e1a] text-white px-4 py-16 font-sans">
       <div className="max-w-3xl mx-auto">
 
+        <a
+          href="/"
+          className="fixed top-4 right-4 z-50 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-md transition"
+        >
+          ← Back to Home
+        </a>
+
         {/* Header */}
         <div className="mb-10">
           <p className="text-xs font-semibold tracking-widest uppercase text-blue-400 mb-2">
