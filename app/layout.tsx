@@ -264,7 +264,7 @@ export default function RootLayout({
         <CookieConsent />
 
         {/* Analytics handled through AnalyticsWrapper */}
-        <AnalyticsWrapper gtmId="GTM-XXXXXXX" />
+        <AnalyticsWrapper gtmId="GTM-P2ZSVZXQ" />
       </body>
     </html>
   )
