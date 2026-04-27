@@ -16,7 +16,7 @@ import dynamic from "next/dynamic"
 //  { ssr: false }
 //)
 
-import { AnalyticsWrapper, GoogleTagManager } from "@/components/analytics-wrapper"
+import { AnalyticsWrapper } from "@/components/analytics-wrapper"
 
 // Next.js handles font preloading automatically — no need for preload:true
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" })
@@ -262,7 +262,8 @@ export default function RootLayout({
         <CookieConsent />
 
         <Analytics />
-        <GoogleTagManager gtmId="GTM-P2ZSVZXQ" />
+        {/*<GoogleTagManager gtmId="GTM-P2ZSVZXQ" />*/}
+        <AnalyticsWrapper gtmId="GTM-XXXXXXX" />
       </body>
     </html>
   )
