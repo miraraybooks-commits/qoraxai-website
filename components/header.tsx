@@ -31,8 +31,8 @@ export function Header() {
           <Link href="#services" className="text-sm font-medium text-muted-foreground hover:text-primary transition">
             Services
           </Link>
-          <Link href="#process" className="text-sm font-medium text-muted-foreground hover:text-primary transition">
-            How It Works
+          <Link href="/tools/facebook-ads-roi-calculator" className="text-sm font-medium text-muted-foreground hover:text-primary transition">
+            Free Tools
           </Link>
           <Link
             href="#case-studies"
