@@ -1,309 +1,363 @@
-export const revalidate = 3600
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { ServicePageHeader } from "@/components/service-page-header"
+import { useState, useEffect } from "react";
 
-export const metadata = {
-  title: "Generative Engine Optimization Service | QoraxAI",
-  description:
-    "Dominate Google, ChatGPT, Gemini, and AI search. QoraxAI delivers AI SEO, GEO, and AEO to future-proof your search visibility.",
-  alternates: {
-    canonical: "/services/ai-seo-geo-aeo",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+const CURRENCIES = [
+  { label: "USD ($)", symbol: "$" },
+  { label: "BDT (৳)", symbol: "৳" },
+  { label: "INR (₹)", symbol: "₹" },
+  { label: "EUR (€)", symbol: "€" },
+  { label: "GBP (£)", symbol: "£" },
+];
+
+function formatNum(symbol: string, n: number): string {
+  if (n >= 1_000_000) return symbol + (n / 1_000_000).toFixed(1) + "M";
+  if (n >= 1_000) return symbol + (n / 1_000).toFixed(1) + "k";
+  return symbol + Math.round(n).toLocaleString();
 }
 
-export default function AISEOPage() {
+// ─── Replace with your actual WhatsApp number ───────────────────────────────
+const WHATSAPP_NUMBER = "+88 01718 723202";
+const WHATSAPP_MESSAGE =
+  "Hi%2C%20I%20used%20the%20ROI%20Calculator%20on%20QoraxAI%20and%20want%20a%20free%20ad%20audit.";
+// ────────────────────────────────────────────────────────────────────────────
+
+export default function FacebookAdsROICalculator() {
+  const [budget, setBudget] = useState(500);
+  const [cpc, setCpc] = useState(0.8);
+  const [lpRate, setLpRate] = useState(3);
+  const [saleRate, setSaleRate] = useState(10);
+  const [saleVal, setSaleVal] = useState(200);
+  const [margin, setMargin] = useState(40);
+  const [currencySymbol, setCurrencySymbol] = useState("$");
+
+  // ── Derived values ──────────────────────────────────────────────────────
+  const clicks = Math.round(budget / Math.max(cpc, 0.01));
+  const leads = Math.round(clicks * (lpRate / 100));
+  const customers = Math.round(leads * (saleRate / 100));
+  const revenue = customers * saleVal;
+  const grossProfit = revenue * (margin / 100);
+  const netProfit = grossProfit - budget;
+  const roi = budget > 0 ? (netProfit / budget) * 100 : 0;
+  const cpl = leads > 0 ? budget / leads : 0;
+  const cpcCust = customers > 0 ? budget / customers : 0;
+
+  const maxBar = Math.max(budget, revenue, grossProfit, 1);
+  const spendPct = Math.round((budget / maxBar) * 100);
+  const revPct = Math.round((revenue / maxBar) * 100);
+  const profitPct = Math.max(0, Math.round((netProfit / maxBar) * 100));
+
+  // ── Verdict ─────────────────────────────────────────────────────────────
+  let verdictColor = "text-yellow-400";
+  let verdictTitle = "Breaking even — room to improve";
+  let verdictBody = `Your campaign covers its costs but profit is thin at ${Math.round(roi)}% ROI. Small improvements to your landing page conversion rate or ad targeting could make a big difference.`;
+  if (roi >= 100) {
+    verdictColor = "text-green-400";
+    verdictTitle = "Strong ROI — your campaign is profitable";
+    verdictBody = `At ${Math.round(roi)}% ROI, every ${currencySymbol}1 spent is returning ${currencySymbol}${(1 + roi / 100).toFixed(2)} in net profit. Focus on scaling budget while keeping your CPC and conversion rates stable.`;
+  } else if (roi < 0) {
+    verdictColor = "text-red-400";
+    verdictTitle = "Negative ROI — your ads are losing money";
+    verdictBody = `At ${Math.round(roi)}% ROI, you're spending more than you're earning back. This usually points to high CPC (poor targeting), a weak landing page, or a low-converting offer. Don't scale until this is fixed.`;
+  }
+
   return (
-    <>
-      <ServicePageHeader />
+    <section className="min-h-screen bg-[#0a0e1a] text-white px-4 py-16 font-sans">
+      <div className="max-w-3xl mx-auto">
 
-      <main className="bg-white">
+        {/* Header */}
+        <div className="mb-10">
+          <p className="text-xs font-semibold tracking-widest uppercase text-blue-400 mb-2">
+            Free Tool · QoraxAI
+          </p>
+          <h1 className="text-3xl font-bold text-white mb-2">
+            Facebook Ads ROI Calculator
+          </h1>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            Enter your campaign numbers below and instantly see your estimated
+            leads, revenue, and return on ad spend.
+          </p>
+        </div>
 
-        {/* ── Breadcrumb / Back ───────────────────────────────────────────── */}
-        <div className="border-b border-gray-100">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/#services" className="hover:text-primary transition-colors">Services</Link>
-            <span>/</span>
-            <span className="text-gray-800 font-medium">AI SEO, GEO & AEO</span>
+        {/* Input Card */}
+        <div className="bg-[#111827] border border-white/10 rounded-2xl p-6 mb-6">
+          <p className="text-xs font-semibold tracking-widest uppercase text-slate-500 mb-5">
+            Your Campaign Inputs
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <Field label="Monthly Ad Budget">
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">
+                  {currencySymbol}
+                </span>
+                <input
+                  type="number"
+                  value={budget}
+                  min={1}
+                  step={50}
+                  onChange={(e) => setBudget(Number(e.target.value))}
+                  className="w-full bg-[#1e293b] border border-white/10 rounded-lg pl-7 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition"
+                />
+              </div>
+            </Field>
+
+            <Field label="Avg. Cost Per Click">
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">
+                  {currencySymbol}
+                </span>
+                <input
+                  type="number"
+                  value={cpc}
+                  min={0.01}
+                  step={0.05}
+                  onChange={(e) => setCpc(Number(e.target.value))}
+                  className="w-full bg-[#1e293b] border border-white/10 rounded-lg pl-7 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition"
+                />
+              </div>
+            </Field>
+
+            <Field label="Landing Page Conv. Rate (%)">
+              <input
+                type="number"
+                value={lpRate}
+                min={0.1}
+                step={0.5}
+                onChange={(e) => setLpRate(Number(e.target.value))}
+                className="w-full bg-[#1e293b] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition"
+              />
+            </Field>
+
+            <Field label="Lead-to-Sale Conv. Rate (%)">
+              <input
+                type="number"
+                value={saleRate}
+                min={0.1}
+                step={1}
+                onChange={(e) => setSaleRate(Number(e.target.value))}
+                className="w-full bg-[#1e293b] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition"
+              />
+            </Field>
+
+            <Field label="Average Sale Value">
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">
+                  {currencySymbol}
+                </span>
+                <input
+                  type="number"
+                  value={saleVal}
+                  min={1}
+                  step={10}
+                  onChange={(e) => setSaleVal(Number(e.target.value))}
+                  className="w-full bg-[#1e293b] border border-white/10 rounded-lg pl-7 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition"
+                />
+              </div>
+            </Field>
+
+            <Field label="Currency">
+              <select
+                value={currencySymbol}
+                onChange={(e) => setCurrencySymbol(e.target.value)}
+                className="w-full bg-[#1e293b] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 transition"
+              >
+                {CURRENCIES.map((c) => (
+                  <option key={c.symbol} value={c.symbol}>
+                    {c.label}
+                  </option>
+                ))}
+              </select>
+            </Field>
+          </div>
+
+          {/* Margin Slider */}
+          <div>
+            <div className="flex justify-between mb-1">
+              <label className="text-sm text-slate-400">
+                Profit Margin per Sale
+              </label>
+              <span className="text-sm font-semibold text-blue-400">
+                {margin}%
+              </span>
+            </div>
+            <input
+              type="range"
+              min={5}
+              max={95}
+              step={1}
+              value={margin}
+              onChange={(e) => setMargin(Number(e.target.value))}
+              className="w-full accent-blue-500"
+            />
+            <div className="flex justify-between text-xs text-slate-600 mt-1">
+              <span>5%</span>
+              <span>95%</span>
+            </div>
           </div>
         </div>
 
-        {/* ── Hero ────────────────────────────────────────────────────────── */}
-        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="inline-block bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-4 tracking-wide uppercase">
-                AI SEO · GEO · AEO
-              </span>
-              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-5">
-                Get Found Where It <span className="text-primary">Actually Matters</span>
-              </h1>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Your customers are no longer just searching Google. They&apos;re asking ChatGPT, Gemini,
-                and voice assistants for answers. The real question is: when they ask, is your business
-                the one being recommended? QoraxAI&apos;s AI SEO, GEO, and AEO services are built to
-                put you in front of those results — consistently.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/#contact"
-                  className="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors"
-                >
-                  Get a Free SEO Audit
-                </Link>
-                <Link
-                  href="/#services"
-                  className="border border-gray-300 text-gray-700 px-6 py-3 rounded-full font-medium hover:border-primary hover:text-primary transition-colors"
-                >
-                  ← Back to Services
-                </Link>
-              </div>
-            </div>
+        {/* Results Card */}
+        <div className="bg-[#111827] border border-white/10 rounded-2xl p-6 mb-6">
+          <p className="text-xs font-semibold tracking-widest uppercase text-slate-500 mb-5">
+            Your Estimated Results
+          </p>
 
-            <div className="relative h-72 sm:h-96 lg:h-[420px] overflow-hidden rounded-2xl">
-              <Image
-                src="/ai-seo-geo-aeo.jpg"
-                alt="AI SEO, GEO and AEO optimization services for Google, ChatGPT and Gemini"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                className="object-cover object-center"
-                priority
-              />
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            <MetricCard label="Total Clicks" value={clicks.toLocaleString()} />
+            <MetricCard label="Leads Generated" value={leads.toLocaleString()} />
+            <MetricCard label="Customers Won" value={customers.toLocaleString()} />
+            <MetricCard
+              label="Total Revenue"
+              value={formatNum(currencySymbol, revenue)}
+            />
+            <MetricCard
+              label="Cost Per Lead"
+              value={leads > 0 ? currencySymbol + cpl.toFixed(2) : "—"}
+            />
+            <MetricCard
+              label="Cost Per Customer"
+              value={
+                customers > 0
+                  ? currencySymbol + Math.round(cpcCust).toLocaleString()
+                  : "—"
+              }
+            />
+            <MetricCard
+              label="Net Profit"
+              value={formatNum(currencySymbol, netProfit)}
+            />
+            <MetricCard
+              label="ROI"
+              value={Math.round(roi) + "%"}
+              highlight
+            />
           </div>
-        </section>
 
-        {/* ── The Problem ─────────────────────────────────────────────────── */}
-        <section className="bg-gray-50 py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Search Has Changed. Has Your Strategy?
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Traditional SEO alone is no longer enough. AI-powered search tools are now answering
-                questions directly — pulling from trusted sources and skipping the rest. If your website
-                isn&apos;t optimised for how AI reads and recommends content, you&apos;re invisible to a
-                growing share of your audience.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Missing AI Recommendations",
-                  body: "ChatGPT, Gemini, and Perplexity cite sources they trust. If your brand isn't one of them, your competitors are getting that visibility — and those customers.",
-                },
-                {
-                  title: "No Featured Snippet Presence",
-                  body: "Google's AI Overviews and Featured Snippets now sit above organic results. Without AEO, your content gets buried even when it ranks on page one.",
-                },
-                {
-                  title: "Falling Behind on Voice Search",
-                  body: "Voice assistants answer in full sentences, not lists of links. If your content isn't structured for conversational queries, you won't be the answer they give.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="bg-white rounded-2xl p-6 border border-gray-100">
-                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <span className="text-primary font-bold text-lg">!</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
-                </div>
-              ))}
-            </div>
+          {/* Bars */}
+          <div className="space-y-3">
+            <BarRow
+              label="Ad Spend"
+              pct={spendPct}
+              value={formatNum(currencySymbol, budget)}
+              color="bg-blue-500"
+            />
+            <BarRow
+              label="Revenue"
+              pct={revPct}
+              value={formatNum(currencySymbol, revenue)}
+              color="bg-teal-500"
+            />
+            <BarRow
+              label="Net Profit"
+              pct={profitPct}
+              value={formatNum(currencySymbol, netProfit)}
+              color="bg-green-500"
+            />
           </div>
-        </section>
+        </div>
 
-        {/* ── What's Included ─────────────────────────────────────────────── */}
-        <section className="py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                What&apos;s Included in Our Service
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                We don&apos;t sell random tasks. We build search systems — ones that work for Google
-                today and for AI-powered search tomorrow.
-              </p>
-            </div>
+        {/* Verdict */}
+        <div className="bg-[#111827] border border-white/10 rounded-2xl p-5 mb-6">
+          <p className={`text-sm font-semibold mb-1 ${verdictColor}`}>
+            {verdictTitle}
+          </p>
+          <p className="text-sm text-slate-400 leading-relaxed">{verdictBody}</p>
+        </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  num: "01",
-                  title: "Full On-Page SEO Optimisation",
-                  body: "We start with a thorough website audit, keyword research, meta tag optimisation, header tag structuring, and fixing any technical issues holding your rankings back. A clean foundation makes everything else work better.",
-                },
-                {
-                  num: "02",
-                  title: "AEO — Answer Engine Optimisation",
-                  body: "We optimise your content for conversational intent, structure FAQs around real user queries, and implement complete schema markup (FAQ, Article, Local Business, and more) so Google and AI tools pull your answers to the top.",
-                },
-                {
-                  num: "03",
-                  title: "GEO — Generative Engine Optimisation",
-                  body: "We align your content with how generative AI models interpret, summarise, and recommend information — AI-intent keyword architecture, NLP-based topical relevance, internal linking, and content blocks crafted for AI-generated summaries.",
-                },
-                {
-                  num: "04",
-                  title: "AI Citations & Brand Mentions",
-                  body: "We secure genuine AI citations and brand mentions across high-authority platforms so that ChatGPT, Gemini, and other LLMs recognise your brand as a trusted source. Every mention is earned through real outreach — no shortcuts.",
-                },
-                {
-                  num: "05",
-                  title: "Authority Backlink Building",
-                  body: "High DA guest posts, niche edits, UGC mentions in real forums, and diversified backlink profiles from sites with real traffic. We build links that signal trust to both Google and AI platforms.",
-                },
-                {
-                  num: "06",
-                  title: "Monthly Reporting & Strategy Updates",
-                  body: "Every month you get clear reporting on what's moved, what's next, and how we're adapting your strategy to stay ahead of Google updates and AI algorithm changes.",
-                },
-              ].map((item) => (
-                <div key={item.num} className="flex gap-5 p-6 bg-gray-50 rounded-2xl border border-gray-100">
-                  <span className="text-3xl font-bold text-primary/20 leading-none shrink-0 mt-1">
-                    {item.num}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Is This For You ─────────────────────────────────────────────── */}
-        <section className="bg-gray-50 py-16 lg:py-20">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Is This Service Right for You?
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                We work best with clients who are serious about long-term growth. Results typically
-                begin showing within 8 to 12 weeks and build from there.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-2xl p-8 border-l-4 border-primary">
-                <h3 className="text-xl font-semibold text-gray-900 mb-5">This Is For You If...</h3>
-                <ul className="space-y-3 text-gray-600">
-                  {[
-                    "You're tired of SEO strategies that never delivered",
-                    "You want to be found on Google, ChatGPT, Gemini, and voice search",
-                    "You understand SEO is an investment, not an expense",
-                    "You want steady, compounding traffic growth month over month",
-                    "You want your brand to be the trusted authority in your niche",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span className="text-primary font-bold mt-0.5 shrink-0">✓</span>
-                      <span className="text-sm leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 border-l-4 border-gray-200">
-                <h3 className="text-xl font-semibold text-gray-400 mb-5">This Is Not For You If...</h3>
-                <ul className="space-y-3 text-gray-500">
-                  {[
-                    "You're expecting page-one rankings in days or weeks",
-                    "You're looking for the cheapest option available",
-                    "You want one-off tasks rather than a proper strategy",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span className="text-gray-300 font-bold mt-0.5 shrink-0">✗</span>
-                      <span className="text-sm leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Why QoraxAI ─────────────────────────────────────────────────── */}
-        <section className="py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose QoraxAI for AI SEO & GEO
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                We don&apos;t just follow trends — we build strategies that hold up when Google updates
-                and AI search evolves.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  title: "Built for AI Search",
-                  body: "We optimise for Google and for ChatGPT, Gemini, Perplexity, and every AI platform your customers are already using.",
-                },
-                {
-                  title: "100% White Hat",
-                  body: "Every backlink, citation, and piece of content we produce is earned manually through genuine outreach. No shortcuts that put your site at risk.",
-                },
-                {
-                  title: "Strategy, Not Tasks",
-                  body: "We build systems, not checklists. Everything connects back to growing your visibility, authority, and revenue over time.",
-                },
-                {
-                  title: "Transparent Reporting",
-                  body: "You always know what we're doing and why. Monthly reports with real data, clear explanations, and next steps mapped out.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
-                  <div className="w-8 h-8 bg-primary rounded-lg mb-4" />
-                  <h3 className="text-base font-semibold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── CTA ─────────────────────────────────────────────────────────── */}
-        <section className="bg-primary py-16 lg:py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              The AI Search Revolution Is Already Here
-            </h2>
-            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Every day without an AI SEO strategy is a day your competitors are being cited instead
-              of you. Let&apos;s build a plan that gets your business found — on Google, in AI answers,
-              and everywhere your customers are looking.
+        {/* CTA */}
+        <div className="bg-[#111827] border border-white/10 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="flex-1">
+            <p className="text-sm font-semibold text-white mb-1">
+              Want better results from your Facebook Ads?
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Link
-                href="/#contact"
-                className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Get Your Free SEO Audit
-              </Link>
-              <Link
-                href="/#services"
-                className="border border-white/40 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-colors"
-              >
-                ← Back to Services
-              </Link>
-            </div>
+            <p className="text-xs text-slate-400">
+              Get a free audit from Qorax AI — we&apos;ll show you exactly where
+              your budget is leaking.
+            </p>
           </div>
-        </section>
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 bg-green-600 hover:bg-green-500 transition text-white text-sm font-semibold px-5 py-2.5 rounded-xl"
+          >
+            💬 WhatsApp Me
+          </a>
+        </div>
 
-      </main>
-    </>
-  )
+      </div>
+    </section>
+  );
+}
+
+// ── Sub-components ──────────────────────────────────────────────────────────
+
+function Field({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex flex-col gap-1.5">
+      <label className="text-xs text-slate-400">{label}</label>
+      {children}
+    </div>
+  );
+}
+
+function MetricCard({
+  label,
+  value,
+  highlight = false,
+}: {
+  label: string;
+  value: string;
+  highlight?: boolean;
+}) {
+  return (
+    <div
+      className={`rounded-xl p-3 ${highlight
+          ? "bg-blue-600/20 border border-blue-500/30"
+          : "bg-[#1e293b] border border-white/5"
+        }`}
+    >
+      <p className="text-xs text-slate-500 mb-1">{label}</p>
+      <p
+        className={`text-lg font-semibold ${highlight ? "text-blue-400" : "text-white"
+          }`}
+      >
+        {value}
+      </p>
+    </div>
+  );
+}
+
+function BarRow({
+  label,
+  pct,
+  value,
+  color,
+}: {
+  label: string;
+  pct: number;
+  value: string;
+  color: string;
+}) {
+  return (
+    <div className="flex items-center gap-3">
+      <span className="text-xs text-slate-500 w-20 shrink-0">{label}</span>
+      <div className="flex-1 h-2 bg-white/5 rounded-full overflow-hidden">
+        <div
+          className={`h-full rounded-full ${color} transition-all duration-500`}
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+      <span className="text-xs font-medium text-white w-16 text-right shrink-0">
+        {value}
+      </span>
+    </div>
+  );
 }
