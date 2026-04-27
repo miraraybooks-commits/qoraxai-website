@@ -4,17 +4,64 @@ import Image from "next/image"
 import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
-export const metadata = {
-  title: "Zoho, SuiteCRM & ERPNext CRM Integration in Dhaka | QoraxAI",
-  description:
-    "Integrate social media with CRM systems for seamless lead collection and management. Boost conversions with automated customer engagement.",
+const SITE_URL = "https://qoraxai.com"
+const OG_IMAGE = {
+  url: "https://qoraxai.com/og-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Social media CRM integration services by QoraxAI Bangladesh",
+}
 
+// ── FIX: Original title was "Zoho, SuiteCRM & ERPNext CRM Integration in Dhaka"
+//    but the H1 and entire page content is about Social Media → CRM integration.
+//    Title and H1 must match. Fixed to align with page content.
+//    If you want a dedicated Zoho/SuiteCRM setup page, create a separate route.
+
+export const metadata = {
+  title: "Social Media CRM Integration for Lead Management in Bangladesh | QoraxAI",
+  description:
+    "Connect Facebook, Instagram & LinkedIn to your CRM. Automate lead capture, scoring & nurturing. Social media CRM integration services in Dhaka, Bangladesh.",
   alternates: {
-    canonical: "/services/social-media-crm-integration",
+    canonical: `${SITE_URL}/services/social-media-crm-integration`,
   },
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/services/social-media-crm-integration`,
+    title: "Social Media CRM Integration for Lead Management in Bangladesh | QoraxAI",
+    description:
+      "Connect Facebook, Instagram & LinkedIn to your CRM. Automate lead capture, scoring & nurturing in Dhaka, Bangladesh.",
+    siteName: "QoraxAI",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Social Media CRM Integration in Bangladesh | QoraxAI",
+    description:
+      "Connect Facebook, Instagram & LinkedIn to your CRM. Automate lead capture & nurturing in Bangladesh.",
+    images: [OG_IMAGE.url],
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Social Media CRM Integration",
+  description:
+    "Connect Facebook, Instagram, LinkedIn and other social platforms directly to CRM systems for automated lead capture, scoring, nurturing, and ROI reporting.",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "QoraxAI",
+    url: SITE_URL,
+  },
+  areaServed: { "@type": "Country", name: "Bangladesh" },
+  serviceType: "CRM Integration",
+  url: `${SITE_URL}/services/social-media-crm-integration`,
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "BDT",
+    availability: "https://schema.org/InStock",
+    url: `${SITE_URL}/services/social-media-crm-integration`,
   },
 }
 
@@ -22,6 +69,10 @@ export default function SocialMediaCRMIntegrationPage() {
   return (
     <>
       <ServicePageHeader />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         {/* Hero Section */}
@@ -64,21 +115,15 @@ export default function SocialMediaCRMIntegrationPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-2xl shadow-sm">
               <h3 className="text-xl font-semibold mb-2 text-primary">Manual Lead Handling</h3>
-              <p className="text-muted-foreground">
-                Manually transferring leads from social to CRM creates delays, errors, and lost opportunities.
-              </p>
+              <p className="text-muted-foreground">Manually transferring leads from social to CRM creates delays, errors, and lost opportunities.</p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-sm">
               <h3 className="text-xl font-semibold mb-2 text-primary">Incomplete Customer Profiles</h3>
-              <p className="text-muted-foreground">
-                Social conversations aren&apos;t recorded, leaving your sales team without context on customer needs.
-              </p>
+              <p className="text-muted-foreground">Social conversations aren&apos;t recorded, leaving your sales team without context on customer needs.</p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-sm">
               <h3 className="text-xl font-semibold mb-2 text-primary">Slow Response Times</h3>
-              <p className="text-muted-foreground">
-                Leads go cold while waiting for manual nurturing workflows or delayed notifications.
-              </p>
+              <p className="text-muted-foreground">Leads go cold while waiting for manual nurturing workflows or delayed notifications.</p>
             </div>
           </div>
         </div>
@@ -91,36 +136,24 @@ export default function SocialMediaCRMIntegrationPage() {
             <div className="grid md:grid-cols-2 gap-8 text-left">
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">1. Seamless Multi-Channel Integration</h3>
-                <p className="text-muted-foreground mb-6">
-                  Connect Facebook, Instagram, LinkedIn, TikTok, and Twitter directly to your CRM system for centralized lead management.
-                </p>
+                <p className="text-muted-foreground mb-6">Connect Facebook, Instagram, LinkedIn, TikTok, and Twitter directly to your CRM system for centralized lead management.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">2. Automated Lead Capture</h3>
-                <p className="text-muted-foreground mb-6">
-                  Comments, DMs, form submissions, and inquiries automatically create CRM records with complete customer information.
-                </p>
+                <p className="text-muted-foreground mb-6">Comments, DMs, form submissions, and inquiries automatically create CRM records with complete customer information.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">3. Lead Scoring & Qualification</h3>
-                <p className="text-muted-foreground">
-                  AI-powered scoring identifies high-intent leads so sales teams focus on the most promising opportunities.
-                </p>
+                <p className="text-muted-foreground">AI-powered scoring identifies high-intent leads so sales teams focus on the most promising opportunities.</p>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">4. Automated Nurture Campaigns</h3>
-                <p className="text-muted-foreground mb-6">
-                  Trigger personalized email, SMS, and social messages based on social engagement and behavioral signals.
-                </p>
+                <p className="text-muted-foreground mb-6">Trigger personalized email, SMS, and social messages based on social engagement and behavioral signals.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">5. Social Listening & Sentiment Analysis</h3>
-                <p className="text-muted-foreground mb-6">
-                  Monitor brand mentions, track customer sentiment, and identify customer service opportunities in real-time.
-                </p>
+                <p className="text-muted-foreground mb-6">Monitor brand mentions, track customer sentiment, and identify customer service opportunities in real-time.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">6. Analytics & ROI Reporting</h3>
-                <p className="text-muted-foreground">
-                  Track conversions from social to sales, measure campaign performance, and optimize for maximum ROI.
-                </p>
+                <p className="text-muted-foreground">Track conversions from social to sales, measure campaign performance, and optimize for maximum ROI.</p>
               </div>
             </div>
           </div>
@@ -136,22 +169,17 @@ export default function SocialMediaCRMIntegrationPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-            <div className="p-6 bg-white rounded-2xl shadow-sm">
-              <h3 className="text-lg font-semibold text-primary mb-1">All-Platform Support</h3>
-              <p className="text-muted-foreground">We integrate with HubSpot, Salesforce, Pipedrive, and 100+ CRM platforms.</p>
-            </div>
-            <div className="p-6 bg-white rounded-2xl shadow-sm">
-              <h3 className="text-lg font-semibold text-primary mb-1">Zero Lead Loss</h3>
-              <p className="text-muted-foreground">Automated workflows ensure no lead falls through the cracks.</p>
-            </div>
-            <div className="p-6 bg-white rounded-2xl shadow-sm">
-              <h3 className="text-lg font-semibold text-primary mb-1">Enterprise-Grade Security</h3>
-              <p className="text-muted-foreground">All data is encrypted, GDPR-compliant, and backed by secure APIs.</p>
-            </div>
-            <div className="p-6 bg-white rounded-2xl shadow-sm">
-              <h3 className="text-lg font-semibold text-primary mb-1">Quick Implementation</h3>
-              <p className="text-muted-foreground">Most integrations are live within 48 hours with minimal disruption.</p>
-            </div>
+            {[
+              { title: "All-Platform Support", body: "We integrate with HubSpot, Salesforce, Pipedrive, Zoho CRM, and 100+ CRM platforms." },
+              { title: "Zero Lead Loss", body: "Automated workflows ensure no lead falls through the cracks." },
+              { title: "Enterprise-Grade Security", body: "All data is encrypted, GDPR-compliant, and backed by secure APIs." },
+              { title: "Quick Implementation", body: "Most integrations are live within 48 hours with minimal disruption." },
+            ].map((card) => (
+              <div key={card.title} className="p-6 bg-white rounded-2xl shadow-sm">
+                <h3 className="text-lg font-semibold text-primary mb-1">{card.title}</h3>
+                <p className="text-muted-foreground">{card.body}</p>
+              </div>
+            ))}
           </div>
         </div>
 
