@@ -4,6 +4,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
+const SITE_URL = "https://qoraxai.com"
+const OG_IMAGE = {
+  url: "https://qoraxai.com/og-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "AI SEO, GEO and AEO services by QoraxAI",
+}
+
+
 export const metadata = {
   title: "generative engine optimization service | QoraxAI",
   description:
@@ -24,7 +33,7 @@ export default function AISEOPage() {
       <ServicePageHeader />
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        {/* ── Breadcrumb / Back ───────────────────────────────────────────── */}
+        {/* ── Breadcrumb / Back ─ ──────────────────────────────────────────── */}
         <div className="border-b border-gray-100">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-sm text-gray-500">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
