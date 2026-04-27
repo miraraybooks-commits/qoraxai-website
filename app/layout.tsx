@@ -1,4 +1,5 @@
 import type React from "react"
+import "./globals.css"
 import { Inter, DM_Sans } from "next/font/google"
 import { CookieConsent } from "@/components/cookie-consent"
 import dynamic from "next/dynamic"
