@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const CURRENCIES = [
   { label: "USD ($)", symbol: "$" },
@@ -17,7 +17,7 @@ function formatNum(symbol: string, n: number): string {
 }
 
 // ─── Replace with your actual WhatsApp number ───────────────────────────────
-const WHATSAPP_NUMBER = "+88 01718 723202";
+const WHATSAPP_NUMBER = "+8801718723202";
 const WHATSAPP_MESSAGE =
   "Hi%2C%20I%20used%20the%20ROI%20Calculator%20on%20QoraxAI%20and%20want%20a%20free%20ad%20audit.";
 // ────────────────────────────────────────────────────────────────────────────
@@ -225,7 +225,8 @@ export default function FacebookAdsROICalculator() {
             />
             <MetricCard
               label="Net Profit"
-              value={formatNum(currencySymbol, netProfit)}
+              //value={formatNum(currencySymbol, netProfit)}
+              value={(netProfit < 0 ? "-" : "") + formatNum(currencySymbol, Math.abs(netProfit))}
             />
             <MetricCard
               label="ROI"
@@ -251,7 +252,8 @@ export default function FacebookAdsROICalculator() {
             <BarRow
               label="Net Profit"
               pct={profitPct}
-              value={formatNum(currencySymbol, netProfit)}
+              //value={formatNum(currencySymbol, netProfit)}
+              value={(netProfit < 0 ? "-" : "") + formatNum(currencySymbol, Math.abs(netProfit))}
               color="bg-green-500"
             />
           </div>
@@ -320,8 +322,8 @@ function MetricCard({
   return (
     <div
       className={`rounded-xl p-3 ${highlight
-          ? "bg-blue-600/20 border border-blue-500/30"
-          : "bg-[#1e293b] border border-white/5"
+        ? "bg-blue-600/20 border border-blue-500/30"
+        : "bg-[#1e293b] border border-white/5"
         }`}
     >
       <p className="text-xs text-slate-500 mb-1">{label}</p>
