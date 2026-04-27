@@ -9,6 +9,9 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Trash2, Edit, Plus, LogOut } from "lucide-react"
 
+// Prevent this page from being prerendered during build
+export const dynamic = "force-dynamic"
+
 export default function AdminBlogPage() {
   const router = useRouter()
   const supabase = createBrowserClient()
