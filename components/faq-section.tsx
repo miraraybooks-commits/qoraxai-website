@@ -33,7 +33,7 @@ export function FAQSection() {
         "AI is changing how people search - through ChatGPT, voice commands, and Google's new AI features. If your content isn't optimized for these, you're invisible. We make sure your website shows up when customers ask AI assistants about your services, ranks for voice searches, and appears correctly on Google Maps and local listings. It's the future of search.",
     },
     {
-      question: "Our database is slow but we don't want to buy expensive new servers",",
+      question: "Our database is slow but we don't want to buy expensive new servers",
       answer:
         "Nine times out of ten, it's not your servers - it's how your database is organized. We analyze your queries, add the right indexes, clean up inefficiencies, and sometimes you see 2-3x speed improvement. Same hardware, same servers, way better performance. Plus your hosting costs go down because you're using less resources.",
     },

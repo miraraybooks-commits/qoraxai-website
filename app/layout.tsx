@@ -4,17 +4,19 @@ import { CookieConsent } from "@/components/cookie-consent"
 import dynamic from "next/dynamic"
 
 // Dynamically imported to avoid SSR issues — GTM is consent-gated via CookieConsent component
-const Analytics = dynamic(
-  () => import("@vercel/analytics/next").then(mod => mod.Analytics),
-  { ssr: false }
-)
+//const Analytics = dynamic(
+//  () => import("@vercel/analytics/next").then(mod => mod.Analytics),
+//  { ssr: false }
+//)
 
 // GTM should only fire after cookie consent — wire this inside CookieConsent if possible,
 // or conditionally render based on consent state. Kept here as dynamic (ssr:false) for now.
-const GoogleTagManager = dynamic(
-  () => import("@next/third-parties/google").then(mod => mod.GoogleTagManager),
-  { ssr: false }
-)
+//const GoogleTagManager = dynamic(
+//  () => import("@next/third-parties/google").then(mod => mod.GoogleTagManager),
+//  { ssr: false }
+//)
+
+import { AnalyticsWrapper } from "@/components/analytics-wrapper"
 
 // Next.js handles font preloading automatically — no need for preload:true
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" })
@@ -260,7 +262,8 @@ export default function RootLayout({
         <CookieConsent />
 
         <Analytics />
-        <GoogleTagManager gtmId="GTM-P2ZSVZXQ" />
+        {/*<GoogleTagManager gtmId="GTM-P2ZSVZXQ" />*/}
+        <AnalyticsWrapper gtmId="GTM-XXXXXXX" />
       </body>
     </html>
   )
