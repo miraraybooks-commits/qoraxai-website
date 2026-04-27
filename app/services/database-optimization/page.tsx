@@ -4,16 +4,59 @@ import Image from "next/image"
 import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
+const SITE_URL = "https://qoraxai.com"
+const OG_IMAGE = {
+  url: "https://qoraxai.com/og-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Database optimization and performance tuning by QoraxAI",
+}
+
 export const metadata = {
-  title: "SQL Server & MySQL Database Performance Tuning | QoraxAI",
+  title: "SQL Server & MySQL Database Optimization Services in Bangladesh | QoraxAI",
   description:
-    "Optimize SQL Server and MySQL databases for speed, reliability, and cost efficiency. Expert performance tuning and query optimization.",
+    "Speed up slow queries, cut downtime & reduce hosting costs. Expert SQL Server, MySQL & PostgreSQL performance tuning for businesses in Bangladesh. Free health check.",
   alternates: {
-    canonical: "/services/database-optimization",
+    canonical: `${SITE_URL}/services/database-optimization`,
   },
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/services/database-optimization`,
+    title: "SQL Server & MySQL Database Optimization in Bangladesh | QoraxAI",
+    description:
+      "Speed up slow queries, cut downtime & reduce hosting costs. Expert database performance tuning for businesses in Bangladesh. Free health check.",
+    siteName: "QoraxAI",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Database Optimization Services in Bangladesh | QoraxAI",
+    description:
+      "Speed up slow queries, cut downtime & reduce hosting costs. Expert SQL Server, MySQL & PostgreSQL performance tuning.",
+    images: [OG_IMAGE.url],
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Database Optimization & Performance Tuning",
+  description:
+    "Comprehensive database performance analysis, query optimization, index strategy, high availability setup, and scaling planning for SQL Server, MySQL, PostgreSQL, and cloud databases.",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "QoraxAI",
+    url: SITE_URL,
+  },
+  areaServed: { "@type": "Country", name: "Bangladesh" },
+  serviceType: "Database Consulting",
+  url: `${SITE_URL}/services/database-optimization`,
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "BDT",
+    availability: "https://schema.org/InStock",
+    url: `${SITE_URL}/services/database-optimization`,
   },
 }
 
@@ -21,6 +64,10 @@ export default function DatabaseOptimizationPage() {
   return (
     <>
       <ServicePageHeader />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
         {/* HERO SECTION */}
@@ -29,7 +76,7 @@ export default function DatabaseOptimizationPage() {
             <h1 className="text-4xl font-bold text-primary mb-4">Database Optimization & Performance</h1>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               Your database is the backbone of your application — slow queries, poor indexing, and inefficient
-              architecture can cripple performance and frustrate users. QoraxAI's{" "}
+              architecture can cripple performance and frustrate users. QoraxAI&apos;s{" "}
               <strong>Database Optimization & Performance</strong> service ensures your database runs fast, scales
               smoothly, and supports business growth.
             </p>
@@ -64,21 +111,15 @@ export default function DatabaseOptimizationPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             <div className="p-6 bg-white rounded-2xl shadow-sm">
               <h3 className="text-xl font-semibold text-primary mb-2">Slow Query Performance</h3>
-              <p className="text-muted-foreground">
-                Queries taking seconds or minutes to execute, causing timeouts and poor user experience.
-              </p>
+              <p className="text-muted-foreground">Queries taking seconds or minutes to execute, causing timeouts and poor user experience.</p>
             </div>
             <div className="p-6 bg-white rounded-2xl shadow-sm">
               <h3 className="text-xl font-semibold text-primary mb-2">Frequent Downtime</h3>
-              <p className="text-muted-foreground">
-                Database crashes, connection pool exhaustion, and unplanned maintenance windows.
-              </p>
+              <p className="text-muted-foreground">Database crashes, connection pool exhaustion, and unplanned maintenance windows.</p>
             </div>
             <div className="p-6 bg-white rounded-2xl shadow-sm">
               <h3 className="text-xl font-semibold text-primary mb-2">Scalability Bottlenecks</h3>
-              <p className="text-muted-foreground">
-                Unable to handle growing data volumes or increased user traffic without performance degradation.
-              </p>
+              <p className="text-muted-foreground">Unable to handle growing data volumes or increased user traffic without performance degradation.</p>
             </div>
           </div>
         </div>
@@ -93,48 +134,30 @@ export default function DatabaseOptimizationPage() {
             <div className="grid md:grid-cols-2 gap-10">
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">1. Comprehensive Database Health Check</h3>
-                <p className="text-muted-foreground mb-6">
-                  We analyze your database architecture, schema design, indexing strategy, query patterns, and server
-                  configuration to identify performance bottlenecks.
-                </p>
+                <p className="text-muted-foreground mb-6">We analyze your database architecture, schema design, indexing strategy, query patterns, and server configuration to identify performance bottlenecks.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">2. Query Optimization & Tuning</h3>
-                <p className="text-muted-foreground mb-6">
-                  Identifying slow queries, rewriting inefficient SQL, adding proper indexes, and implementing caching
-                  strategies to reduce response times by 50-90%.
-                </p>
+                <p className="text-muted-foreground mb-6">Identifying slow queries, rewriting inefficient SQL, adding proper indexes, and implementing caching strategies to reduce response times by 50–90%.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">3. Index Strategy & Schema Redesign</h3>
-                <p className="text-muted-foreground">
-                  Creating optimal indexes, removing redundant ones, and restructuring tables for better performance and
-                  maintainability.
-                </p>
+                <p className="text-muted-foreground">Creating optimal indexes, removing redundant ones, and restructuring tables for better performance and maintainability.</p>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">4. Connection Pool & Resource Management</h3>
-                <p className="text-muted-foreground mb-6">
-                  Configuring connection pools, memory allocation, and server resources to handle peak traffic without
-                  crashes or slowdowns.
-                </p>
+                <p className="text-muted-foreground mb-6">Configuring connection pools, memory allocation, and server resources to handle peak traffic without crashes or slowdowns.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">5. Replication & High Availability Setup</h3>
-                <p className="text-muted-foreground mb-6">
-                  Implementing read replicas, failover systems, and backup strategies to ensure 99.9%+ uptime and data
-                  durability.
-                </p>
+                <p className="text-muted-foreground mb-6">Implementing read replicas, failover systems, and backup strategies to ensure 99.9%+ uptime and data durability.</p>
 
                 <h3 className="text-xl font-semibold mb-2 text-primary">6. Scaling Strategy & Future-Proofing</h3>
-                <p className="text-muted-foreground">
-                  Designing horizontal and vertical scaling plans, partitioning strategies, and migration paths for
-                  future growth.
-                </p>
+                <p className="text-muted-foreground">Designing horizontal and vertical scaling plans, partitioning strategies, and migration paths for future growth.</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* SECTION 3: Technologies We Work With */}
+        {/* SECTION 3: Technologies */}
         <div className="max-w-6xl mx-auto mt-20 mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold text-primary mb-4">Technologies We Optimize</h2>
@@ -144,22 +167,17 @@ export default function DatabaseOptimizationPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-              <h3 className="text-lg font-semibold text-primary mb-2">Relational Databases</h3>
-              <p className="text-muted-foreground">PostgreSQL, MySQL, MariaDB, SQL Server, Oracle</p>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-              <h3 className="text-lg font-semibold text-primary mb-2">NoSQL Databases</h3>
-              <p className="text-muted-foreground">MongoDB, Redis, DynamoDB, Cassandra, Elasticsearch</p>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-              <h3 className="text-lg font-semibold text-primary mb-2">Cloud Databases</h3>
-              <p className="text-muted-foreground">AWS RDS, Azure SQL, Google Cloud SQL, Supabase, PlanetScale</p>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
-              <h3 className="text-lg font-semibold text-primary mb-2">Data Warehouses</h3>
-              <p className="text-muted-foreground">Snowflake, BigQuery, Redshift, Azure Synapse</p>
-            </div>
+            {[
+              { title: "Relational Databases", body: "PostgreSQL, MySQL, MariaDB, SQL Server, Oracle" },
+              { title: "NoSQL Databases", body: "MongoDB, Redis, DynamoDB, Cassandra, Elasticsearch" },
+              { title: "Cloud Databases", body: "AWS RDS, Azure SQL, Google Cloud SQL, Supabase, PlanetScale" },
+              { title: "Data Warehouses", body: "Snowflake, BigQuery, Redshift, Azure Synapse" },
+            ].map((card) => (
+              <div key={card.title} className="bg-white p-6 rounded-2xl shadow-sm text-center">
+                <h3 className="text-lg font-semibold text-primary mb-2">{card.title}</h3>
+                <p className="text-muted-foreground">{card.body}</p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -169,58 +187,19 @@ export default function DatabaseOptimizationPage() {
             <h2 className="text-3xl font-semibold text-primary text-center mb-10">Real Performance Improvements</h2>
 
             <div className="grid sm:grid-cols-2 gap-8">
-              <div className="p-8 bg-gray-50 rounded-2xl">
-                <h3 className="text-xl font-semibold text-primary mb-3">SaaS Platform (Dhaka)</h3>
-                <p className="text-muted-foreground mb-4">
-                  <strong>Problem:</strong> Dashboard queries taking 8-12 seconds, causing customer complaints and churn
-                  risk.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  <strong>Solution:</strong> Added composite indexes, implemented Redis caching, optimized 15 slow
-                  queries.
-                </p>
-                <p className="text-primary font-semibold">Result: Reduced query time to 0.3-0.8 seconds (93% faster)</p>
-              </div>
-
-              <div className="p-8 bg-gray-50 rounded-2xl">
-                <h3 className="text-xl font-semibold text-primary mb-3">E-commerce Store (Bangladesh)</h3>
-                <p className="text-muted-foreground mb-4">
-                  <strong>Problem:</strong> Database crashes during peak traffic hours, losing sales during high-demand
-                  periods.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  <strong>Solution:</strong> Configured connection pooling, set up read replicas, optimized memory
-                  settings.
-                </p>
-                <p className="text-primary font-semibold">Result: 99.97% uptime, handled 5x traffic with no crashes</p>
-              </div>
-
-              <div className="p-8 bg-gray-50 rounded-2xl">
-                <h3 className="text-xl font-semibold text-primary mb-3">Logistics Company (Chittagong)</h3>
-                <p className="text-muted-foreground mb-4">
-                  <strong>Problem:</strong> Reports taking 20+ minutes to generate, blocking real-time decision making.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  <strong>Solution:</strong> Implemented materialized views, partitioned large tables, added scheduled
-                  aggregations.
-                </p>
-                <p className="text-primary font-semibold">
-                  Result: Reports now generate in under 2 minutes (90% faster)
-                </p>
-              </div>
-
-              <div className="p-8 bg-gray-50 rounded-2xl">
-                <h3 className="text-xl font-semibold text-primary mb-3">Healthcare Platform (Sylhet)</h3>
-                <p className="text-muted-foreground mb-4">
-                  <strong>Problem:</strong> Database growing uncontrollably, storage costs increasing monthly.
-                </p>
-                <p className="text-muted-foreground mb-4">
-                  <strong>Solution:</strong> Implemented data archiving, removed duplicate records, compressed old data.
-                </p>
-                <p className="text-primary font-semibold">
-                  Result: Reduced database size by 42%, saved $780/month in storage costs
-                </p>
-              </div>
+              {[
+                { location: "SaaS Platform (Dhaka)", problem: "Dashboard queries taking 8–12 seconds, causing customer complaints and churn risk.", solution: "Added composite indexes, implemented Redis caching, optimized 15 slow queries.", result: "Reduced query time to 0.3–0.8 seconds (93% faster)" },
+                { location: "E-commerce Store (Bangladesh)", problem: "Database crashes during peak traffic hours, losing sales during high-demand periods.", solution: "Configured connection pooling, set up read replicas, optimized memory settings.", result: "99.97% uptime, handled 5x traffic with no crashes" },
+                { location: "Logistics Company (Chittagong)", problem: "Reports taking 20+ minutes to generate, blocking real-time decision making.", solution: "Implemented materialized views, partitioned large tables, added scheduled aggregations.", result: "Reports now generate in under 2 minutes (90% faster)" },
+                { location: "Healthcare Platform (Sylhet)", problem: "Database growing uncontrollably, storage costs increasing monthly.", solution: "Implemented data archiving, removed duplicate records, compressed old data.", result: "Reduced database size by 42%, saved $780/month in storage costs" },
+              ].map((item) => (
+                <div key={item.location} className="p-8 bg-gray-50 rounded-2xl">
+                  <h3 className="text-xl font-semibold text-primary mb-3">{item.location}</h3>
+                  <p className="text-muted-foreground mb-4"><strong>Problem:</strong> {item.problem}</p>
+                  <p className="text-muted-foreground mb-4"><strong>Solution:</strong> {item.solution}</p>
+                  <p className="text-primary font-semibold">Result: {item.result}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -230,22 +209,17 @@ export default function DatabaseOptimizationPage() {
           <h2 className="text-3xl font-semibold text-primary mb-6">Benefits of Database Optimization</h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="text-3xl font-bold text-primary mb-2">50-90%</h3>
-              <p className="text-muted-foreground">Faster query response times</p>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="text-3xl font-bold text-primary mb-2">99.9%+</h3>
-              <p className="text-muted-foreground">Database uptime and availability</p>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="text-3xl font-bold text-primary mb-2">30-50%</h3>
-              <p className="text-muted-foreground">Reduction in storage and hosting costs</p>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="text-3xl font-bold text-primary mb-2">5-10x</h3>
-              <p className="text-muted-foreground">Improved scalability capacity</p>
-            </div>
+            {[
+              { stat: "50–90%", label: "Faster query response times" },
+              { stat: "99.9%+", label: "Database uptime and availability" },
+              { stat: "30–50%", label: "Reduction in storage and hosting costs" },
+              { stat: "5–10x", label: "Improved scalability capacity" },
+            ].map((item) => (
+              <div key={item.label} className="bg-white p-6 rounded-2xl shadow-sm">
+                <h3 className="text-3xl font-bold text-primary mb-2">{item.stat}</h3>
+                <p className="text-muted-foreground">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
 

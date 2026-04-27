@@ -4,26 +4,68 @@ import Image from "next/image"
 import Link from "next/link"
 import { ServicePageHeader } from "@/components/service-page-header"
 
+const SITE_URL = "https://qoraxai.com"
+const OG_IMAGE = {
+  url: "https://qoraxai.com/og-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "ERPNext implementation services by QoraxAI Bangladesh",
+}
+
 export const metadata = {
-  title: "ERPNext Setup & Implementation in Bangladesh | QoraxAI",
+  title: "ERPNext Implementation Services in Bangladesh | QoraxAI",
   description:
-    "ERPNext implementation. We handle installation, configuration, data migration, training, and ongoing support. Get started with a free consultation.",
+    "Expert ERPNext setup, configuration, data migration & training for Dhaka businesses. Open-source ERP with no licensing fees. Free consultation.",
   keywords: [
     "ERPNext implementation Bangladesh",
-    "ERPNext setup",
-    "open source ERP",
+    "ERPNext setup Dhaka",
+    "open source ERP Bangladesh",
     "ERP for small business",
     "ERPNext consultant Dhaka",
     "Frappe ERP",
     "ERP implementation service",
   ],
-
   alternates: {
-    canonical: "/services/erp-implementation",
+    canonical: `${SITE_URL}/services/erp-implementation`,
   },
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/services/erp-implementation`,
+    title: "ERPNext Implementation Services in Bangladesh | QoraxAI",
+    description:
+      "Expert ERPNext setup, configuration, data migration & training for Dhaka businesses. Open-source ERP with no licensing fees. Free consultation.",
+    siteName: "QoraxAI",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ERPNext Implementation Services in Bangladesh | QoraxAI",
+    description:
+      "Expert ERPNext setup, configuration, data migration & training for Dhaka businesses. Open-source ERP with no licensing fees.",
+    images: [OG_IMAGE.url],
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "ERPNext Implementation",
+  description:
+    "End-to-end ERPNext installation, configuration, data migration, team training, and ongoing support for businesses in Bangladesh.",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "QoraxAI",
+    url: SITE_URL,
+  },
+  areaServed: { "@type": "Country", name: "Bangladesh" },
+  serviceType: "ERP Implementation",
+  url: `${SITE_URL}/services/erp-implementation`,
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "BDT",
+    availability: "https://schema.org/InStock",
+    url: `${SITE_URL}/services/erp-implementation`,
   },
 }
 
@@ -31,12 +73,15 @@ export default function ERPImplementationPage() {
   return (
     <>
       <ServicePageHeader />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center mb-24">
           <div>
-            {/* Small label above H1 */}
             <span className="inline-block text-sm font-medium text-primary bg-primary/10 px-4 py-1 rounded-full mb-4">
               Open-Source ERP · No Licensing Fees
             </span>
@@ -160,30 +205,12 @@ export default function ERPImplementationPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                {
-                  title: "Trading & Distribution",
-                  desc: "Track purchase orders, stock movement, supplier payments, and customer invoices across multiple warehouses. Know exactly what you have and what you owe — at any moment."
-                },
-                {
-                  title: "Manufacturing",
-                  desc: "Manage your Bill of Materials, work orders, raw material consumption, and finished goods production. See the true cost of every product you make."
-                },
-                {
-                  title: "Retail & Ecommerce",
-                  desc: "Connect your point-of-sale, online store, and warehouse inventory in one place. Avoid overselling and stock-outs with live inventory syncing."
-                },
-                {
-                  title: "Healthcare & Pharmacy",
-                  desc: "Track medicine inventory, expiry dates, patient billing, and supplier accounts. Stay compliant without drowning in manual paperwork."
-                },
-                {
-                  title: "Construction & Real Estate",
-                  desc: "Manage project costs, subcontractor payments, material procurement, and client invoicing per project. Know which projects are profitable."
-                },
-                {
-                  title: "Service Businesses",
-                  desc: "Handle client contracts, project timelines, team timesheets, and invoicing in one system. Bill accurately and get paid faster."
-                },
+                { title: "Trading & Distribution", desc: "Track purchase orders, stock movement, supplier payments, and customer invoices across multiple warehouses. Know exactly what you have and what you owe — at any moment." },
+                { title: "Manufacturing", desc: "Manage your Bill of Materials, work orders, raw material consumption, and finished goods production. See the true cost of every product you make." },
+                { title: "Retail & Ecommerce", desc: "Connect your point-of-sale, online store, and warehouse inventory in one place. Avoid overselling and stock-outs with live inventory syncing." },
+                { title: "Healthcare & Pharmacy", desc: "Track medicine inventory, expiry dates, patient billing, and supplier accounts. Stay compliant without drowning in manual paperwork." },
+                { title: "Construction & Real Estate", desc: "Manage project costs, subcontractor payments, material procurement, and client invoicing per project. Know which projects are profitable." },
+                { title: "Service Businesses", desc: "Handle client contracts, project timelines, team timesheets, and invoicing in one system. Bill accurately and get paid faster." },
               ].map((item) => (
                 <div key={item.title} className="p-6 bg-gray-50 rounded-2xl">
                   <h3 className="text-lg font-semibold text-primary mb-2">{item.title}</h3>
@@ -246,30 +273,12 @@ export default function ERPImplementationPage() {
 
           <div className="space-y-5">
             {[
-              {
-                label: "Stop losing money to manual errors",
-                detail: "Double entries, wrong stock counts, missed invoices — these are expensive. When everything flows through one system, the errors go away because there is nothing to re-enter manually."
-              },
-              {
-                label: "Know your real financial position at any time",
-                detail: "Most small business owners only know how they are doing at month end when the accountant finishes. With ERPNext, your profit and loss, outstanding payments, and cash position update in real time."
-              },
-              {
-                label: "No more 'I thought we had stock'",
-                detail: "ERPNext tracks every stock movement — purchases, sales, transfers, returns. Your team will always know what is available before they promise delivery to a customer."
-              },
-              {
-                label: "Reduce your operational costs",
-                detail: "Companies implementing ERPNext typically reduce administrative overhead by 30–40% within the first year. Tasks that took hours — like month-end closing or inventory audits — take minutes."
-              },
-              {
-                label: "Scale without hiring more admin staff",
-                detail: "As your business grows, manual processes force you to hire more people just to handle paperwork. ERPNext lets your operations grow without a proportional increase in admin headcount."
-              },
-              {
-                label: "Zero software licensing cost",
-                detail: "ERPNext is 100% open source. You pay nothing to use the software itself — ever. Your only costs are hosting (typically $20–50/month on a cloud server) and implementation support."
-              },
+              { label: "Stop losing money to manual errors", detail: "Double entries, wrong stock counts, missed invoices — these are expensive. When everything flows through one system, the errors go away because there is nothing to re-enter manually." },
+              { label: "Know your real financial position at any time", detail: "Most small business owners only know how they are doing at month end when the accountant finishes. With ERPNext, your profit and loss, outstanding payments, and cash position update in real time." },
+              { label: "No more 'I thought we had stock'", detail: "ERPNext tracks every stock movement — purchases, sales, transfers, returns. Your team will always know what is available before they promise delivery to a customer." },
+              { label: "Reduce your operational costs", detail: "Companies implementing ERPNext typically reduce administrative overhead by 30–40% within the first year. Tasks that took hours — like month-end closing or inventory audits — take minutes." },
+              { label: "Scale without hiring more admin staff", detail: "As your business grows, manual processes force you to hire more people just to handle paperwork. ERPNext lets your operations grow without a proportional increase in admin headcount." },
+              { label: "Zero software licensing cost", detail: "ERPNext is 100% open source. You pay nothing to use the software itself — ever. Your only costs are hosting (typically $20–50/month on a cloud server) and implementation support." },
             ].map((benefit, i) => (
               <div key={i} className="bg-white rounded-2xl shadow-sm p-6 flex gap-5 items-start">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold text-sm">
@@ -297,36 +306,12 @@ export default function ERPImplementationPage() {
 
             <div className="grid md:grid-cols-2 gap-8">
               {[
-                {
-                  step: "Step 1",
-                  title: "Discovery & requirements gathering",
-                  desc: "We start by understanding your business — not pitching software. We map your current processes, find the pain points, and decide which ERPNext modules you actually need. This usually takes 1–2 working sessions."
-                },
-                {
-                  step: "Step 2",
-                  title: "Server setup & installation",
-                  desc: "We install ERPNext on a cloud server (or your own server if preferred), configure the domain, SSL security, backups, and email settings. Your system is live and secure before we touch any business data."
-                },
-                {
-                  step: "Step 3",
-                  title: "Configuration & customisation",
-                  desc: "We configure the system for your business — your chart of accounts, tax rules, item and customer masters, warehouses, workflows, and print formats. ERPNext adapts to your processes, not the other way around."
-                },
-                {
-                  step: "Step 4",
-                  title: "Data migration",
-                  desc: "We import your existing data — customers, suppliers, items, opening stock balances, and outstanding invoices — from your spreadsheets or old system. You do not start from zero."
-                },
-                {
-                  step: "Step 5",
-                  title: "Training your team",
-                  desc: "We train your staff hands-on in your own system, with your own data. Not a generic demo. Each role gets training relevant to what they will actually do every day."
-                },
-                {
-                  step: "Step 6",
-                  title: "Go-live & ongoing support",
-                  desc: "We stay with you through go-live week. After that, we are available for questions, small adjustments, and as your business grows, expanding the system to new modules or locations."
-                },
+                { step: "Step 1", title: "Discovery & requirements gathering", desc: "We start by understanding your business — not pitching software. We map your current processes, find the pain points, and decide which ERPNext modules you actually need. This usually takes 1–2 working sessions." },
+                { step: "Step 2", title: "Server setup & installation", desc: "We install ERPNext on a cloud server (or your own server if preferred), configure the domain, SSL security, backups, and email settings. Your system is live and secure before we touch any business data." },
+                { step: "Step 3", title: "Configuration & customisation", desc: "We configure the system for your business — your chart of accounts, tax rules, item and customer masters, warehouses, workflows, and print formats. ERPNext adapts to your processes, not the other way around." },
+                { step: "Step 4", title: "Data migration", desc: "We import your existing data — customers, suppliers, items, opening stock balances, and outstanding invoices — from your spreadsheets or old system. You do not start from zero." },
+                { step: "Step 5", title: "Training your team", desc: "We train your staff hands-on in your own system, with your own data. Not a generic demo. Each role gets training relevant to what they will actually do every day." },
+                { step: "Step 6", title: "Go-live & ongoing support", desc: "We stay with you through go-live week. After that, we are available for questions, small adjustments, and as your business grows, expanding the system to new modules or locations." },
               ].map((item) => (
                 <div key={item.step} className="flex gap-4">
                   <div className="flex-shrink-0 text-sm font-semibold text-primary/40 pt-1 w-14">{item.step}</div>
