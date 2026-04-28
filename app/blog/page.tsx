@@ -1,13 +1,23 @@
 import Link from "next/link"
 import Image from "next/image"
 import { createServerClient } from "@/lib/supabase/server"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata = {
   title: "Blog - Latest Insights on Business Technology | QoraxAI",
   description:
     "Read expert articles on business growth, technology solutions, digital transformation, and IT strategies for Bangladesh businesses.",
+  openGraph: {
+    title: "Blog - Latest Insights on Business Technology | QoraxAI",
+    description:
+      "Read expert articles on business growth, technology solutions, digital transformation, and IT strategies for Bangladesh businesses.",
+    type: "website",
+    url: "https://qoraxai.com/blog",
+  },
+  alternates: {
+    canonical: "https://qoraxai.com/blog",
+  },
 }
 
 export default async function BlogPage() {
@@ -20,25 +30,39 @@ export default async function BlogPage() {
     .order("created_at", { ascending: false })
 
   if (error) {
-    console.error("[v0] Error fetching blog posts:", error)
+    console.error("Error fetching blog posts:", error)
   }
-
-  console.log("[v0] Blog posts fetched:", posts?.length || 0)
-  posts?.forEach((post: any) => {
-    console.log("[v0] Post slug:", post.slug, "| Title:", post.title, "| Published:", post.published)
-  })
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">QoraxAI Blog</h1>
-          <p className="text-xl text-blue-50">
+      {/* Minimal Header with Logo and Back Button */}
+      <header className="border-b border-gray-200 sticky top-0 bg-white z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link href="/">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                Q
+              </div>
+              <span className="font-bold text-gray-900 hidden sm:inline">QoraxAI</span>
+            </div>
+          </Link>
+          <Link href="/">
+            <Button variant="ghost" className="text-gray-600 hover:text-gray-900">
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back Home
+            </Button>
+          </Link>
+        </div>
+      </header>
+
+      {/* Minimal Hero Section */}
+      <div className="border-b border-gray-200">
+        <div className="container mx-auto px-4 py-12 md:py-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">QoraxAI Blog</h1>
+          <p className="text-xl text-gray-600 max-w-2xl">
             Latest insights on business growth, technology, and digital transformation
           </p>
         </div>
-      </header>
+      </div>
 
       {/* Blog Posts Grid */}
       <div className="container mx-auto px-4 py-16">

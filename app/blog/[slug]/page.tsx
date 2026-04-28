@@ -16,16 +16,61 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const supabase = await createServerClient()
     const { data: post } = await supabase
       .from("blog_posts")
-      .select("title, excerpt")
+      .select("*")
       .eq("slug", slug)
       .eq("published", true)
       .single()
 
     if (!post) return { title: "Blog Post Not Found | QoraxAI" }
 
+    const postUrl = `https://qoraxai.com/blog/${post.slug}`
+    const ogImage = post.featured_image || "https://qoraxai.com/og-image.jpg"
+
     return {
       title: `${post.title} | QoraxAI Blog`,
       description: post.excerpt || "Read the latest insights from QoraxAI",
+      keywords: post.keywords || `${post.title}, QoraxAI Blog`,
+      authors: [{ name: post.author_name || "QoraxAI" }],
+      creator: post.author_name || "QoraxAI",
+      robots: {
+        index: true,
+        follow: true,
+      },
+
+      // Canonical URL — essential for SEO to avoid duplicate content penalties
+      alternates: {
+        canonical: postUrl,
+      },
+
+      // Open Graph — critical for social media sharing (Facebook, LinkedIn, WhatsApp)
+      openGraph: {
+        type: "article",
+        title: post.title,
+        description: post.excerpt || "Read the latest insights from QoraxAI",
+        url: postUrl,
+        siteName: "QoraxAI",
+        publishedTime: new Date(post.created_at).toISOString(),
+        authors: [post.author_name || "QoraxAI"],
+        tags: [post.category, ...(post.keywords?.split(",").map((k: string) => k.trim()) || [])],
+        images: [
+          {
+            url: ogImage,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+            type: "image/jpeg",
+          },
+        ],
+      },
+
+      // Twitter / X Card — for better Twitter preview
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.excerpt || "Read the latest insights from QoraxAI",
+        images: [ogImage],
+        creator: "@qoraxai",
+      },
     }
   } catch (error) {
     return { title: "Blog Post | QoraxAI" }
@@ -34,8 +79,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-
-  console.log("[v0] Requested slug:", slug)
 
   const supabase = await createServerClient()
 
@@ -46,17 +89,47 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .eq("published", true)
     .single()
 
-  console.log("[v0] Post found:", !!post, "| Error:", error?.message || "none")
-  if (!post) {
-    console.log("[v0] No post found for slug:", slug)
-  }
-
   if (!post || error) {
     notFound()
   }
 
+  // JSON-LD BlogPosting Schema — improves visibility in Google Search results and AI search
+  const blogPostSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt || post.title,
+    image: [post.featured_image || "https://qoraxai.com/og-image.jpg"],
+    datePublished: new Date(post.created_at).toISOString(),
+    dateModified: post.updated_at ? new Date(post.updated_at).toISOString() : new Date(post.created_at).toISOString(),
+    author: {
+      "@type": "Person",
+      name: post.author_name || "QoraxAI",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "QoraxAI",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://qoraxai.com/qoraxai-icon.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://qoraxai.com/blog/${post.slug}`,
+    },
+    keywords: post.keywords || post.title,
+    articleSection: post.category,
+    wordCount: post.content ? Math.ceil(post.content.split(/\s+/).length) : 0,
+  }
+
   return (
     <div className="min-h-screen bg-white">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
+      />
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Back Button */}
         <Link href="/blog">
