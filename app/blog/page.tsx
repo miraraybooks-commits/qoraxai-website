@@ -1,8 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
 import { createServerClient } from "@/lib/supabase/server"
-import { ArrowRight, ArrowLeft } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { BlogPageHeader } from "@/components/blog-page-header"
 
 export const metadata = {
   title: "Blog - Latest Insights on Business Technology | QoraxAI",
@@ -35,37 +36,18 @@ export default async function BlogPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Minimal Header with Logo and Back Button */}
-      <header className="border-b border-gray-200 sticky top-0 bg-white z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                Q
-              </div>
-              <span className="font-bold text-gray-900 hidden sm:inline">QoraxAI</span>
-            </div>
-          </Link>
-          <Link href="/">
-            <Button variant="ghost" className="text-gray-600 hover:text-gray-900">
-              <ArrowLeft className="mr-2 h-4 w-4" /> Back Home
-            </Button>
-          </Link>
-        </div>
-      </header>
+      {/* Blog Page Header */}
+      <BlogPageHeader />
 
-      {/* Minimal Hero Section */}
-      <div className="border-b border-gray-200">
-        <div className="container mx-auto px-4 py-12 md:py-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">QoraxAI Blog</h1>
-          <p className="text-xl text-gray-600 max-w-2xl">
-            Latest insights on business growth, technology, and digital transformation
-          </p>
-        </div>
+      {/* Blog Introduction */}
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <p className="text-lg text-gray-600 max-w-2xl">
+          Latest insights on business growth, technology, and digital transformation
+        </p>
       </div>
 
       {/* Blog Posts Grid */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 pb-16">
         {error && (
           <div className="text-center py-20">
             <p className="text-red-600 text-lg">Error loading posts: {error.message}</p>
