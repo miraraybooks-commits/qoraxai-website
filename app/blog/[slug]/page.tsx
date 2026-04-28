@@ -139,7 +139,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </Link>
 
         {/* Article Header */}
-        <article className="prose prose-lg max-w-none prose-img:mx-auto prose-img:rounded-lg">
+        {/*<article className="prose prose-lg max-w-none prose-img:mx-auto prose-img:rounded-lg">*/}
+        <article className="w-full">
           <header className="mb-8 text-center">
             <div className="flex items-center justify-center gap-4 mb-4 text-sm text-gray-600">
               <span className="flex items-center">
@@ -175,7 +176,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Article Content */}
           <div
-            className="text-center prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 hover:prose-a:text-blue-700 prose-strong:text-gray-900 prose-p:text-center prose-headings:text-center"
+            //className="text-center prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 hover:prose-a:text-blue-700 prose-strong:text-gray-900 prose-p:text-center prose-headings:text-center"
+            className="w-full"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
