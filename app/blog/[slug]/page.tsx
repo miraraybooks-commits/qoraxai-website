@@ -130,7 +130,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
       />
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="container mx-auto px-4 py-8 max-w-3xl">
         {/* Back Button */}
         <Link href="/blog">
           <Button variant="ghost" className="mb-8">
@@ -139,9 +139,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </Link>
 
         {/* Article Header */}
-        <article className="prose prose-lg max-w-none">
-          <header className="mb-8">
-            <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
+        <article className="prose prose-lg max-w-none prose-img:mx-auto prose-img:rounded-lg">
+          <header className="mb-8 text-center">
+            <div className="flex items-center justify-center gap-4 mb-4 text-sm text-gray-600">
               <span className="flex items-center">
                 <Calendar className="mr-1 h-4 w-4" />
                 {new Date(post.created_at).toLocaleDateString("en-US", {
@@ -156,8 +156,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </span>
               <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs">{post.category}</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{post.title}</h1>
-            {post.excerpt && <p className="text-xl text-gray-600 leading-relaxed">{post.excerpt}</p>}
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">{post.title}</h1>
+            {post.excerpt && <p className="text-xl text-gray-600 leading-relaxed text-center">{post.excerpt}</p>}
           </header>
 
           {/* Featured Image */}
@@ -175,7 +175,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Article Content */}
           <div
-            className="prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 hover:prose-a:text-blue-700 prose-strong:text-gray-900"
+            className="text-center prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 hover:prose-a:text-blue-700 prose-strong:text-gray-900 prose-p:text-center prose-headings:text-center"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
