@@ -139,7 +139,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </Link>
 
         {/* Article Header */}
-        {/*<article className="prose prose-lg max-w-none prose-img:mx-auto prose-img:rounded-lg">*/}
+        {/*<article className="prose prose-lg max-w-none prose-img:mx-auto prose-img:rounded-lg">
         <article className="w-full">
           <header className="mb-8 text-center">
             <div className="flex items-center justify-center gap-4 mb-4 text-sm text-gray-600">
@@ -159,6 +159,102 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">{post.title}</h1>
             {post.excerpt && <p className="text-xl text-gray-600 leading-relaxed text-center">{post.excerpt}</p>}
+          </header>*/}
+
+
+        <article className="w-full">
+          <header className="mb-8">
+            {/* Date / Author / Category bar — stays at top, centered */}
+            <div className="flex items-center justify-center gap-4 mb-8 text-sm text-gray-600">
+              <span className="flex items-center">
+                <Calendar className="mr-1 h-4 w-4" />
+                {new Date(post.created_at).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </span>
+              <span className="flex items-center">
+                <User className="mr-1 h-4 w-4" />
+                {post.author_name}
+              </span>
+              <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs">
+                {post.category}
+              </span>
+            </div>
+
+            {/* Styled heading — matches the HTML blog design */}
+            <style>{`
+                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
+                .blog-post-tag {
+                  display: inline-block;
+                  font-size: 11px;
+                  font-weight: 600;
+                  letter-spacing: 0.18em;
+                  text-transform: uppercase;
+                  color: #059669;
+                  border: 1.5px solid #059669;
+                  padding: 4px 14px;
+                  margin-bottom: 20px;
+                }
+                .blog-post-title {
+                  font-family: 'Playfair Display', Georgia, serif;
+                  font-size: clamp(1.9rem, 5vw, 3rem);
+                  font-weight: 900;
+                  line-height: 1.2;
+                  color: #0f172a;
+                  margin-bottom: 20px;
+                  letter-spacing: -0.02em;
+                  text-align: left;
+                }
+                .blog-post-title span {
+                  color: #059669;
+                }
+                .blog-post-meta {
+                  display: flex;
+                  gap: 16px;
+                  align-items: center;
+                  font-size: 13px;
+                  color: #6b7280;
+                  margin-bottom: 0;
+                  padding-bottom: 28px;
+                  border-bottom: 1.5px solid #e2e8f0;
+                  font-style: italic;
+                  flex-wrap: wrap;
+                }
+              `}</style>
+
+            {/* Category tag */}
+            {post.category && (
+              <div>
+                <span className="blog-post-tag">{post.category}</span>
+              </div>
+            )}
+
+            {/* Styled H1 — Playfair Display, left aligned */}
+            <h1
+              className="blog-post-title"
+              dangerouslySetInnerHTML={{
+                __html: post.title.replace(
+                  /(:.*)/,
+                  (match: string) =>
+                    `: <span>${match.replace(/^:\s*/, "")}</span>`
+                ),
+              }}
+            />
+
+            {/* Author / category / read time meta row */}
+            <div className="blog-post-meta">
+              <span>By {post.author_name} · QoraxAI</span>
+              <span>·</span>
+              <span>{post.category}</span>
+              <span>·</span>
+              <span>
+                {post.content
+                  ? `${Math.ceil(post.content.split(/\s+/).length / 200)} min read`
+                  : "5 min read"}
+              </span>
+            </div>
           </header>
 
           {/* Featured Image */}
