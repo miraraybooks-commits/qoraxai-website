@@ -40,10 +40,10 @@ export default async function BlogPage() {
       <BlogPageHeader />
 
       {/* Blog Introduction */}
-      <div className="container mx-auto px-4 py-8 md:py-12">
-        <p className="text-lg text-gray-600 max-w-2xl">
+      <div className="container mx-auto px-4 py-4 md:py-6">
+        {/*<p className="text-lg text-gray-600 max-w-2xl">
           Latest insights on business growth, technology, and digital transformation
-        </p>
+        </p>*/}
       </div>
 
       {/* Blog Posts Grid */}
