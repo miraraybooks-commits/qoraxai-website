@@ -312,7 +312,7 @@ export default function AdminBlogPage() {
                     {uploading && <span className="text-sm text-gray-500">Uploading...</span>}
                   </div>
                   <p className="text-xs text-gray-500">
-                    Accepts: .jpg, .jpeg, .png, .webp, .gif, .svg and all image formats
+                    Accepts: .jpg, .jpeg, .png, .webp, .gif, .svg and all image formats - 736x400 px
                   </p>
                   <Input
                     value={formData.featured_image}
