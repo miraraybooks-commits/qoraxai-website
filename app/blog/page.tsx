@@ -21,14 +21,28 @@ export const metadata = {
   },
 }
 
-export default async function BlogPage() {
+const POSTS_PER_PAGE = 9
+
+export default async function BlogPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
+  const params = await searchParams
+  const currentPage = Math.max(1, parseInt(params.page || "1"))
+  const skip = (currentPage - 1) * POSTS_PER_PAGE
+
   const supabase = await createServerClient()
 
+  // Get total count of published posts
+  const { count: totalCount } = await supabase
+    .from("blog_posts")
+    .select("*", { count: "exact", head: true })
+    .eq("published", true)
+
+  // Get paginated posts
   const { data: posts, error } = await supabase
     .from("blog_posts")
     .select("*")
     .eq("published", true)
     .order("created_at", { ascending: false })
+    .range(skip, skip + POSTS_PER_PAGE - 1)
 
   if (error) {
     console.error("Error fetching blog posts:", error)
@@ -100,6 +114,24 @@ export default async function BlogPage() {
                   </Link>
                 </div>
               </article>
+            ))}
+          </div>
+        )}
+
+        {/* Pagination */}
+        {posts && posts.length > 0 && totalCount && totalCount > POSTS_PER_PAGE && (
+          <div className="flex justify-center items-center gap-2 mt-16">
+            {Array.from({ length: Math.ceil(totalCount / POSTS_PER_PAGE) }, (_, i) => i + 1).map((pageNum) => (
+              <Link key={pageNum} href={`/blog?page=${pageNum}`}>
+                <Button
+                  variant={pageNum === currentPage ? "default" : "outline"}
+                  className={`min-w-10 h-10 ${
+                    pageNum === currentPage ? "bg-blue-600 text-white" : "text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  {pageNum}
+                </Button>
+              </Link>
             ))}
           </div>
         )}
