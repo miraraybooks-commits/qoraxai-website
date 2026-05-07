@@ -30,6 +30,7 @@ export default function AdminBlogPage() {
     featured_image: "",
     category: "technology",
     published: false,
+    created_at: new Date().toISOString().split("T")[0],
   })
 
   useEffect(() => {
@@ -143,6 +144,7 @@ export default function AdminBlogPage() {
       featured_image: "",
       category: "technology",
       published: false,
+      created_at: new Date().toISOString().split("T")[0],
     })
     setEditingPost(null)
     setShowForm(false)
@@ -341,6 +343,16 @@ export default function AdminBlogPage() {
                   value={formData.category}
                   onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                 />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-1">Publish Date</label>
+                <Input
+                  type="date"
+                  value={formData.created_at}
+                  onChange={(e) => setFormData({ ...formData, created_at: e.target.value })}
+                />
+                <p className="text-xs text-gray-500 mt-1">This date will be displayed on the blog post</p>
               </div>
 
               <div className="flex items-center gap-2">
