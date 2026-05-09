@@ -131,6 +131,25 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
       />
       <div className="container mx-auto px-4 py-8 max-w-3xl">
+        {/* Breadcrumbs */}
+        <nav className="mb-6 text-sm text-gray-600">
+          <ol className="flex items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-blue-600 transition-colors">
+                Home
+              </Link>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li>
+              <Link href="/blog" className="hover:text-blue-600 transition-colors">
+                Blog
+              </Link>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li className="text-gray-900 font-medium truncate">{post.title}</li>
+          </ol>
+        </nav>
+
         {/* Back Button */}
         <Link href="/blog">
           <Button variant="ghost" className="mb-8">
