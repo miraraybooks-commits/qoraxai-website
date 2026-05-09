@@ -62,7 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly" as const,
       priority: 0.5,
     },
-
+RM
     // Dynamic entries
     ...blogPostEntries,
     ...serviceEntries,

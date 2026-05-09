@@ -93,6 +93,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound()
   }
 
+  // Fetch related articles from the same category (exclude current post)
+  const { data: relatedArticles } = await supabase
+    .from("blog_posts")
+    .select("*")
+    .eq("category", post.category)
+    .eq("published", true)
+    .neq("slug", slug)
+    .order("created_at", { ascending: false })
+    .limit(4)
+
   // JSON-LD BlogPosting Schema — improves visibility in Google Search results and AI search
   const blogPostSchema = {
     "@context": "https://schema.org",
@@ -296,6 +306,75 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
+
+        {/* Related Articles Section */}
+        {relatedArticles && relatedArticles.length > 0 && (
+          <div className="mt-16 pt-12 border-t border-gray-200">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Related Articles</h2>
+            
+            {/* Grid Layout - 4 columns on desktop, 3 on tablet, 1 on mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {relatedArticles.map((article) => {
+                // Truncate excerpt to 50-70 characters
+                const excerptLength = 65
+                const truncatedExcerpt =
+                  (article.excerpt || "").substring(0, excerptLength) +
+                  ((article.excerpt || "").length > excerptLength ? "..." : "")
+
+                return (
+                  <Link href={`/blog/${article.slug}`} key={article.slug} className="group">
+                    <div className="flex flex-col h-full bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                      {/* Featured Image */}
+                      {article.featured_image && (
+                        <div className="relative w-full h-40 overflow-hidden bg-gray-200">
+                          <Image
+                            src={article.featured_image}
+                            alt={article.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      )}
+
+                      {/* Content */}
+                      <div className="flex flex-col flex-grow p-4">
+                        {/* Category Badge */}
+                        <span className="inline-block text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded mb-2 w-fit">
+                          {article.category}
+                        </span>
+
+                        {/* Title */}
+                        <h3 className="text-sm font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                          {article.title}
+                        </h3>
+
+                        {/* Excerpt */}
+                        <p className="text-xs text-gray-600 mb-3 flex-grow line-clamp-2">
+                          {truncatedExcerpt}
+                        </p>
+
+                        {/* Date */}
+                        <div className="text-xs text-gray-500">
+                          {new Date(article.created_at).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "short",
+                            day: "numeric",
+                          })}
+                        </div>
+
+                        {/* Read Article Link */}
+                        <span className="mt-3 text-sm font-semibold text-blue-600 group-hover:text-blue-700 transition-colors flex items-center gap-1">
+                          {article.title}
+                          <span className="ml-auto">→</span>
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        )}
 
         {/* CTA Section */}
         <div className="mt-12 p-8 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg text-white text-center">
