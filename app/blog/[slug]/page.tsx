@@ -94,7 +94,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   // Fetch related articles from the same category (exclude current post)
-  const { data: relatedArticles } = await supabase
+  const { data: relatedArticles, error: relatedError } = await supabase
     .from("blog_posts")
     .select("*")
     .eq("category", post.category)
@@ -102,6 +102,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .neq("slug", slug)
     .order("created_at", { ascending: false })
     .limit(4)
+
+  if (relatedError) {
+    console.error("[v0] Error fetching related articles:", relatedError)
+  } else {
+    console.log("[v0] Related articles found:", relatedArticles?.length || 0, "for category:", post.category)
+  }
 
   // JSON-LD BlogPosting Schema — improves visibility in Google Search results and AI search
   const blogPostSchema = {
@@ -308,7 +314,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </article>
 
         {/* Related Articles Section */}
-        {relatedArticles && relatedArticles.length > 0 && (
+        {relatedArticles && relatedArticles.length > 0 ? (
           <div className="mt-16 pt-12 border-t border-gray-200">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Related Articles</h2>
             
@@ -374,7 +380,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               })}
             </div>
           </div>
-        )}
+        ) : null}
 
         {/* CTA Section */}
         <div className="mt-12 p-8 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg text-white text-center">
