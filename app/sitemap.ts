@@ -13,13 +13,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .eq("published", true)
     .order("created_at", { ascending: false })
 
-  // Fetch all published services dynamically
-  const { data: services } = await supabase
-    .from("services")
-    .select("slug, updated_at, created_at")
-    .eq("published", true)
-    .order("created_at", { ascending: false })
-
   // Map blog posts to sitemap entries
   const blogPostEntries: MetadataRoute.Sitemap = (blogPosts || []).map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
@@ -28,13 +21,45 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  // Map services to sitemap entries
-  const serviceEntries: MetadataRoute.Sitemap = (services || []).map((service) => ({
-    url: `${baseUrl}/services/${service.slug}`,
-    lastModified: new Date(service.updated_at || service.created_at),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }))
+  // Static service pages (individual service routes)
+  const serviceEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/services/business-growth-consulting`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/social-media-crm-integration`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/erp-implementation`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/courier-management-software`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/ai-seo-geo-aeo`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/database-optimization`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+  ]
 
   return [
     // Static pages
