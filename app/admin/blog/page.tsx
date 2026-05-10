@@ -31,6 +31,8 @@ export default function AdminBlogPage() {
     category: "technology",
     published: false,
     created_at: new Date().toISOString().split("T")[0],
+    is_featured: false,
+    is_insights: false,
   })
 
   useEffect(() => {
@@ -145,6 +147,8 @@ export default function AdminBlogPage() {
       category: "technology",
       published: false,
       created_at: new Date().toISOString().split("T")[0],
+      is_featured: false,
+      is_insights: false,
     })
     setEditingPost(null)
     setShowForm(false)
@@ -355,14 +359,44 @@ export default function AdminBlogPage() {
                 <p className="text-xs text-gray-500 mt-1">This date will be displayed on the blog post</p>
               </div>
 
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  checked={formData.published}
-                  onChange={(e) => setFormData({ ...formData, published: e.target.checked })}
-                  className="h-4 w-4"
-                />
-                <label className="text-sm font-medium">Published</label>
+              <div className="space-y-3 border-t pt-4">
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={formData.published}
+                    onChange={(e) => setFormData({ ...formData, published: e.target.checked })}
+                    className="h-4 w-4"
+                  />
+                  <label className="text-sm font-medium">Published</label>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={formData.is_featured}
+                    onChange={(e) => setFormData({ ...formData, is_featured: e.target.checked })}
+                    className="h-4 w-4"
+                    id="is_featured"
+                  />
+                  <label htmlFor="is_featured" className="text-sm font-medium">
+                    Featured Article
+                  </label>
+                  <span className="text-xs text-gray-500">(Shows in Featured Articles section)</span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={formData.is_insights}
+                    onChange={(e) => setFormData({ ...formData, is_insights: e.target.checked })}
+                    className="h-4 w-4"
+                    id="is_insights"
+                  />
+                  <label htmlFor="is_insights" className="text-sm font-medium">
+                    Recent Insights
+                  </label>
+                  <span className="text-xs text-gray-500">(Shows in Recent Insights section)</span>
+                </div>
               </div>
 
               <div className="flex gap-2">

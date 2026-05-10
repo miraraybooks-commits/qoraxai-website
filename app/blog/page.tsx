@@ -30,7 +30,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
 
   const supabase = await createServerClient()
 
-  // Fetch featured posts (latest 3)
+  // Fetch Latest Posts (3 most recent published posts)
   const { data: featuredPosts } = await supabase
     .from("blog_posts")
     .select("*")
@@ -38,12 +38,12 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
     .order("created_at", { ascending: false })
     .limit(3)
 
-  // Fetch posts by category for "Featured Articles" section
+  // Fetch Featured Articles (marked as is_featured)
   const { data: technologyPosts } = await supabase
     .from("blog_posts")
     .select("*")
     .eq("published", true)
-    .eq("category", "technology")
+    .eq("is_featured", true)
     .order("created_at", { ascending: false })
     .limit(4)
 
