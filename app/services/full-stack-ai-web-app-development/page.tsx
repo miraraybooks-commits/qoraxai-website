@@ -10,7 +10,7 @@ const SITE_URL = "https://qoraxai.com"
 // ── Replaces: /services/social-media-crm-integration
 
 const OG_IMAGE = {
-  url: "https://qoraxai.com/og-web-saas-automation.jpg",
+  url: "https://qoraxai.com/og-image.jpg",
   width: 1200,
   height: 630,
   alt: "AI-powered full-stack web, SaaS and automation development by QoraxAI Bangladesh",
