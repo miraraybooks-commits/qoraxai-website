@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { ArrowRight, BarChart3, Shield, PieChart, DollarSign, Headphones } from "lucide-react"
 import Link from "next/link"
 import { Bot } from "lucide-react";
