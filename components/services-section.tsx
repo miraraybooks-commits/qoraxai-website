@@ -13,7 +13,7 @@ export function ServicesSection() {
       slug: "business-growth-consulting",
     },
   {
-    icon: Database,
+    icon: Code2,
     title: "Full-Stack AI Web & App Development",
     description: "Custom AI-powered websites, SaaS platforms, web apps, mobile apps, and automation solutions",
     slug: "full-stack-ai-web-app-development",
