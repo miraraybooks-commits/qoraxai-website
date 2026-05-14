@@ -237,7 +237,7 @@ export default function WebSaaSAutomationPage() {
 
           <div className="relative h-72 sm:h-96 lg:h-[420px] overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/web-saas-automation.jpg"
+              src="/full-stack-ai-web-app-development.jpg"
               alt="AI-powered full-stack web and SaaS development by QoraxAI Bangladesh"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
