@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, BarChart3, Database, Shield, PieChart, DollarSign, Headphones } from "lucide-react"
+import { ArrowRight, BarChart3, Shield, PieChart, DollarSign, Headphones } from "lucide-react"
 import Link from "next/link"
+import { Bot } from "lucide-react";
 
 export function ServicesSection() {
   const services = [
@@ -12,12 +13,12 @@ export function ServicesSection() {
       description: "Strategic planning and market expansion",
       slug: "business-growth-consulting",
     },
-  {
-    icon: Code2,
-    title: "Full-Stack AI Web & App Development",
-    description: "Custom AI-powered websites, SaaS platforms, web apps, mobile apps, and automation solutions",
-    slug: "full-stack-ai-web-app-development",
-  },
+    {
+      icon: Bot,
+      title: "Full-Stack AI Web & App Development",
+      description: "Custom AI-powered websites, SaaS platforms, web apps, mobile apps, and automation solutions",
+      slug: "full-stack-ai-web-app-development",
+    },
     {
       icon: Shield,
       title: "ERPNext Implementation",
