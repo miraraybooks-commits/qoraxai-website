@@ -12,12 +12,12 @@ export function ServicesSection() {
       description: "Strategic planning and market expansion",
       slug: "business-growth-consulting",
     },
-    {
-      icon: Database,
-      title: "Social Media CRM Integration",
-      description: "Lead collection and customer management",
-      slug: "social-media-crm-integration",
-    },
+  {
+    icon: Database,
+    title: "Full-Stack AI Web & App Development",
+    description: "Custom AI-powered websites, SaaS platforms, web apps, mobile apps, and automation solutions",
+    slug: "full-stack-ai-web-app-development",
+  },
     {
       icon: Shield,
       title: "ERPNext Implementation",
