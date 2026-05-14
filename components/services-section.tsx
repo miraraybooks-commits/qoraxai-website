@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, BarChart3, Database, Shield, PieChart, DollarSign, Headphones } from "lucide-react"
+import { Bot } from "lucide-react";
+import { ArrowRight, BarChart3, Shield, PieChart, DollarSign, Headphones } from "lucide-react"
 import Link from "next/link"
 
 export function ServicesSection() {
@@ -13,7 +14,7 @@ export function ServicesSection() {
       slug: "business-growth-consulting",
     },
   {
-    icon: Database,
+    icon: Bot,
     title: "Full-Stack AI Web & App Development",
     description: "Custom AI-powered websites, SaaS platforms, web apps, mobile apps, and automation solutions",
     slug: "full-stack-ai-web-app-development",
