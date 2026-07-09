@@ -12,38 +12,38 @@ export default function Privacy() {
       </Head>
 
       <main className="max-w-4xl mx-auto px-6 py-16">
-        <h1 className="text-4xl font-bold mb-6 text-white">
+        <h1 className="text-4xl font-bold mb-6 text-blue-600">
           Privacy Policy
         </h1>
 
-        <p className="text-white/90 mb-4">
+        <p className="text-blue-400/90 mb-4">
           At <strong>Qorax AI</strong>, your privacy is important to us. This
           Privacy Policy explains how we collect, use, and protect your personal
           information when you use our website and services.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
+        <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
           1. Information We Collect
         </h2>
-        <p className="text-white/90 mb-4">
+        <p className="text-black/90 mb-4">
           We may collect personal data such as your name, email address, company
           information, and any details you provide through contact forms or
           subscriptions.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
+        <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
           2. How We Use Your Information
         </h2>
-        <p className="text-white/90 mb-4">
+        <p className="text-black/90 mb-4">
           We use your information to provide services, communicate with you, and
           improve our offerings. We never sell your personal information to
           third parties.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
+        <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
           3. Data Security
         </h2>
-        <p className="text-white/90 mb-4">
+        <p className="text-black/90 mb-4">
           We use modern security measures to protect your data from
           unauthorized access, alteration, or disclosure.
         </p>
@@ -51,15 +51,15 @@ export default function Privacy() {
         <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
           4. Changes to This Policy
         </h2>
-        <p className="text-white/90 mb-4">
+        <p className="text-black/90 mb-4">
           We may update this Privacy Policy periodically. Updates will be
           reflected on this page with a new “Last Updated” date.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
+        <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
           5. Contact Us
         </h2>
-        <p className="text-white/90 mb-4">
+        <p className="text-black/90 mb-4">
           If you have any questions about our Privacy Policy, please contact us
           at{" "}
           <a
@@ -71,7 +71,7 @@ export default function Privacy() {
           .
         </p>
 
-        <p className="text-sm text-white/90 mt-10">
+        <p className="text-sm text-black/90 mt-10">
           Last Updated: November 1, 2025
         </p>
       </main>
