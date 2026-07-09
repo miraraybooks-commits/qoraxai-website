@@ -9,7 +9,7 @@ export default function TermsPage() {
     <main className="max-w-4xl mx-auto px-6 py-16">
       <h1 className="text-4xl font-bold mb-6 text-blue-600">Terms of Service</h1>
 
-      <p className="text-white/90 mb-4">
+      <p className="text-black/90 mb-4">
         Welcome to <strong>Qorax AI</strong>. By accessing or using our website
         and services, you agree to comply with and be bound by these Terms of
         Service. Please read them carefully.
@@ -18,7 +18,7 @@ export default function TermsPage() {
       <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
         1. Acceptance of Terms
       </h2>
-      <p className="text-white/90 mb-4">
+      <p className="text-black/90 mb-4">
         By using our site, you confirm that you are at least 18 years old and
         that you accept these Terms in full. If you do not agree, please
         discontinue using our site.
