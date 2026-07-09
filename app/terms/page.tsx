@@ -44,7 +44,59 @@ export default function TermsPage() {
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
-        4. Limitation of Liability
+        4. Communications via Facebook, Messenger & WhatsApp
+      </h2>
+      <p className="text-black/90 mb-4">
+        Qorax AI may communicate with you through Meta Platforms services,
+        including Facebook, Messenger, and the WhatsApp Business API,
+        integrated with our automation workflows such as n8n. By messaging us
+        or opting in through these channels, you agree to receive replies,
+        support responses, and service-related updates from us through the
+        same channel. Your use of these channels to communicate with us is
+        also subject to Meta&apos;s own terms and policies, including the{" "}
+        <a
+          href="https://www.whatsapp.com/legal/business-terms"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:underline"
+        >
+          WhatsApp Business Terms
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://www.facebook.com/terms.php"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:underline"
+        >
+          Meta Platform Terms
+        </a>
+        .
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
+        5. Acceptable Use of Messaging Channels
+      </h2>
+      <p className="text-black/90 mb-4">
+        When contacting us via Facebook, Messenger, or WhatsApp, you agree not
+        to send spam, unlawful, abusive, or fraudulent content. We reserve the
+        right to block or report any user who misuses these channels in
+        violation of Meta&apos;s policies or applicable law.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
+        6. Third-Party Platforms Disclaimer
+      </h2>
+      <p className="text-black/90 mb-4">
+        Our services may integrate with third-party platforms such as Meta,
+        ERPNext, and other automation or messaging tools. We are not
+        responsible for the availability, performance, or policies of these
+        third-party platforms, and your use of them is subject to their
+        respective terms of service.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
+        7. Limitation of Liability
       </h2>
       <p className="text-black/90 mb-4">
         Qorax AI is not liable for any direct, indirect, or consequential
@@ -53,7 +105,17 @@ export default function TermsPage() {
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
-        5. Changes to These Terms
+        8. Termination
+      </h2>
+      <p className="text-black/90 mb-4">
+        We reserve the right to suspend or terminate access to our services,
+        including messaging channels, for any user who violates these Terms
+        or engages in conduct that is unlawful, abusive, or harmful to Qorax
+        AI or others.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
+        9. Changes to These Terms
       </h2>
       <p className="text-black/90 mb-4">
         We may update these Terms occasionally. Updates take effect upon being
@@ -62,7 +124,7 @@ export default function TermsPage() {
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
-        6. Contact Information
+        10. Contact Information
       </h2>
       <p className="text-black/90 mb-4">
         If you have any questions about these Terms, please contact us at{" "}
