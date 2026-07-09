@@ -2,6 +2,7 @@ export const revalidate = 3600
 
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
+import { Footer } from "@/components/footer"
 import dynamic from "next/dynamic"
 import { Suspense } from "react"
 
@@ -47,18 +48,12 @@ const ProcessSection = dynamic(
   },
 )
 
-
-
 const FAQSection = dynamic(() => import("@/components/faq-section").then((mod) => ({ default: mod.FAQSection })), {
   loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
 })
 
 const ContactForm = dynamic(() => import("@/components/contact-form").then((mod) => ({ default: mod.ContactForm })), {
   loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
-})
-
-const Footer = dynamic(() => import("@/components/footer").then((mod) => ({ default: mod.Footer })), {
-  loading: () => <div className="h-48 bg-muted/20 animate-pulse" />,
 })
 
 export default function Home() {
@@ -90,9 +85,7 @@ export default function Home() {
       <Suspense fallback={<div className="h-96 bg-muted/20 animate-pulse" />}>
         <ContactForm />
       </Suspense>
-      <Suspense fallback={<div className="h-48 bg-muted/20 animate-pulse" />}>
-        <Footer />
-      </Suspense>
+      <Footer />
     </main>
   )
 }

@@ -75,12 +75,6 @@ export function Footer() {
                   Terms of Service
                 </Link>
               </li>
-              <li>
-                <Link href="/data-delete" className="hover:text-primary transition">
-                  User Data Deletion Policy
-                </Link>
-              </li>
-            </ul>
           </div>
 
           <div>
