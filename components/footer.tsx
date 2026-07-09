@@ -75,6 +75,7 @@ export function Footer() {
                   Terms of Service
                 </Link>
               </li>
+            </ul>
           </div>
 
           <div>
