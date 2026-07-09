@@ -7,7 +7,7 @@ export const metadata = {
 export default function TermsPage() {
   return (
     <main className="max-w-4xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold mb-6 text-white">Terms of Service</h1>
+      <h1 className="text-4xl font-bold mb-6 text-blue-600">Terms of Service</h1>
 
       <p className="text-white/90 mb-4">
         Welcome to <strong>Qorax AI</strong>. By accessing or using our website
@@ -15,7 +15,7 @@ export default function TermsPage() {
         Service. Please read them carefully.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
+      <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
         1. Acceptance of Terms
       </h2>
       <p className="text-white/90 mb-4">
@@ -24,7 +24,7 @@ export default function TermsPage() {
         discontinue using our site.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
+      <h2 className="text-2xl font-semibold mt-10 mb-3 text-blacck/90">
         2. Use of Services
       </h2>
       <p className="text-white/90 mb-4">
@@ -33,38 +33,38 @@ export default function TermsPage() {
         services.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
+      <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
         3. Intellectual Property
       </h2>
-      <p className="text-white/90 mb-4">
+      <p className="text-black/90 mb-4">
         All content, designs, text, and graphics on this site are the
         intellectual property of <strong>Qorax AI</strong> and are protected by
         copyright laws. You may not reproduce or distribute any materials
         without prior written consent.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
+      <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
         4. Limitation of Liability
       </h2>
-      <p className="text-white/90 mb-4">
+      <p className="text-black/90 mb-4">
         Qorax AI is not liable for any direct, indirect, or consequential
         damages arising from your use of our website or services. Use all
         resources and tools at your own discretion.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
+      <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
         5. Changes to These Terms
       </h2>
-      <p className="text-white/90 mb-4">
+      <p className="text-black/90 mb-4">
         We may update these Terms occasionally. Updates take effect upon being
         posted to this page. Continued use of the site means you accept the new
         Terms.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
+      <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
         6. Contact Information
       </h2>
-      <p className="text-white/90 mb-4">
+      <p className="text-black/90 mb-4">
         If you have any questions about these Terms, please contact us at{" "}
         <a
           href="mailto:info@qoraxai.com"
