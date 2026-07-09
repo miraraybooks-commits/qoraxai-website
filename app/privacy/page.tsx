@@ -48,7 +48,7 @@ export default function Privacy() {
           unauthorized access, alteration, or disclosure.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-10 mb-3 text-white/90">
+        <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
           4. Changes to This Policy
         </h2>
         <p className="text-black/90 mb-4">
@@ -72,7 +72,7 @@ export default function Privacy() {
         </p>
 
         <p className="text-sm text-black/90 mt-10">
-          Last Updated: November 1, 2025
+          Last Updated: June 27, 2026
         </p>
       </main>
     </>
