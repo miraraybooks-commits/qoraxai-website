@@ -16,7 +16,7 @@ export default function Privacy() {
           Privacy Policy
         </h1>
 
-        <p className="text-blue-400/90 mb-4">
+        <p className="text-blue-500/90 mb-4">
           At <strong>Qorax AI</strong>, your privacy is important to us. This
           Privacy Policy explains how we collect, use, and protect your personal
           information when you use our website and services.
