@@ -24,10 +24,10 @@ export default function TermsPage() {
         discontinue using our site.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-10 mb-3 text-blacck/90">
+      <h2 className="text-2xl font-semibold mt-10 mb-3 text-black/90">
         2. Use of Services
       </h2>
-      <p className="text-white/90 mb-4">
+      <p className="text-black/90 mb-4">
         You agree to use our services only for lawful purposes and in a way that
         does not infringe the rights of others or restrict anyone’s use of our
         services.
@@ -76,7 +76,7 @@ export default function TermsPage() {
       </p>
 
       <p className="text-sm text-white/90 mt-10">
-        Last Updated: November 1, 2025
+        Last Updated: May 25, 2026
       </p>
     </main>
   );
